@@ -1,0 +1,5 @@
+@mixin ios() {
+  @supports (-webkit-touch-callout: none) {
+    @content;
+  }
+}
