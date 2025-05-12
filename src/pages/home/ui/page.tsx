@@ -19,7 +19,7 @@ export const HomePage = observer(() => {
       onReset={model.newQuizForm.reset}
     >
       <h1>Квиз по фронтенду</h1>
-      <div className={'flex flex-col gap-2'}>
+      <div className={'flex flex-col gap-2 min-h-[240px]'}>
         <Field
           label={'Количество вопросов'}
           error={model.newQuizForm.errors.questionsCount?.message}
@@ -28,17 +28,16 @@ export const HomePage = observer(() => {
             defaultValue={
               model.newQuizForm.defaultValues?.questionsCount ?? undefined
             }
-            {...model.newQuizForm.register('questionsCount', {
-              valueAsNumber: true,
-            })}
+            {...model.newQuizForm.register('questionsCount')}
+            className={'max-w-[220px]'}
             placeholder={'Введите число'}
             type={'number'}
             autoFocus
           />
         </Field>
       </div>
-      <div className={'flex flex-row ml-auto mt-2'}>
-        <Button>Начать</Button>
+      <div className={'flex flex-row ml-auto my-4'}>
+        <Button type={'submit'}>Начать</Button>
       </div>
     </form>
   );

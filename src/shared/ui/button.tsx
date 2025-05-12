@@ -30,6 +30,9 @@ const buttonVariants = cva(
       active: {
         true: '',
       },
+      interactive: {
+        true: 'cursor-pointer',
+      },
     },
     defaultVariants: {
       variant: 'default',
@@ -61,7 +64,14 @@ function Button({
   return (
     <Comp
       data-slot={'button'}
-      className={cn(buttonVariants({ variant, size, className }))}
+      className={cn(
+        buttonVariants({
+          variant,
+          size,
+          className,
+          interactive: !!props.onClick || props.type === 'submit',
+        }),
+      )}
       {...props}
     />
   );

@@ -17,7 +17,8 @@
     "preview": "cross-env NODE_ENV=production PROXY=true MODE=preview vite preview --host 0.0.0.0",
     "lint": "pnpm eslint src",
     "lint:fix": "pnpm lint --fix",
-    "prepare": "node build/scripts/hook-up.js"
+    "prepare": "node build/scripts/hook-up.js",
+    "dev:link-packages": "pnpm packalink"
   },
   "dependencies": {
     "@babel/plugin-proposal-decorators": "^7.27.1",
@@ -25,7 +26,10 @@
     "@hookform/resolvers": "^5.0.1",
     "@radix-ui/react-label": "^2.1.6",
     "@radix-ui/react-navigation-menu": "^1.2.12",
+    "@radix-ui/react-popover": "^1.1.13",
+    "@radix-ui/react-separator": "^1.1.6",
     "@radix-ui/react-slot": "^1.2.2",
+    "@radix-ui/react-tooltip": "^1.2.6",
     "@valibot/i18n": "^1.0.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
@@ -35,7 +39,7 @@
     "mobx-react-hook-form": "^3.0.0",
     "mobx-react-lite": "^4.1.0",
     "mobx-react-routing": "^6.3.1",
-    "mobx-route": "^0.0.36",
+    "mobx-route": "^0.0.44",
     "mobx-view-model": "^6.7.0",
     "plural-ru": "^2.0.2",
     "react": "^19.1.0",
@@ -70,6 +74,7 @@
     "js2me-eslint-config": "^1.0.8",
     "lefthook": "^1.11.12",
     "lodash": "^4.17.21",
+    "packalink": "^0.0.17",
     "postcss": "^8.5.3",
     "postcss-import": "^16.1.0",
     "postcss-normalize": "^13.0.1",

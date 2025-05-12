@@ -37,6 +37,7 @@ export default defineConfig({
   define: {
     buildEnvs: JSON.stringify(
       Object.assign({
+        packageJson,
         VERSION: packageJson.version,
         DEV: !isProd,
         BASE_URL: baseUrl,

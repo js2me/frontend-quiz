@@ -21,3 +21,4 @@ vite.config.ts
 setupTests.js
 coverage
 docs
+packalink.config.mjs

@@ -34,3 +34,4 @@ api-codegen/local-schemas
 **/__colors.scss
 
 packalink.config.js
+packalink.config.mjs

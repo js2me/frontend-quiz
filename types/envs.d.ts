@@ -3,6 +3,7 @@
  * Это статичные данные
  */
 declare interface BuildEnvVariables {
+  packageJson: Record<string, any>;
   VERSION: string;
   DEV: boolean;
   TESTS?: string;
