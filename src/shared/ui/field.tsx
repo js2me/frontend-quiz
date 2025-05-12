@@ -21,10 +21,14 @@ export const Field = ({
 }: FieldProps) => (
   <div className={cx('flex flex-col gap-2 prose', className)}>
     {label && (
-      <Label>
+      <Label
+        className={cx({
+          'text-red-400': error,
+        })}
+      >
         {label}
         {errorPlacement === 'label' && !!error && (
-          <TriangleAlert className={'text-red-400'} />
+          <TriangleAlert className={'size-4.5 -mt-1 -mb-1 -ml-0.5'} />
         )}
       </Label>
     )}

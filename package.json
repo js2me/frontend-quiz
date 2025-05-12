@@ -24,6 +24,7 @@
     "@babel/plugin-proposal-explicit-resource-management": "^7.27.1",
     "@hookform/resolvers": "^5.0.1",
     "@radix-ui/react-label": "^2.1.6",
+    "@radix-ui/react-navigation-menu": "^1.2.12",
     "@radix-ui/react-slot": "^1.2.2",
     "@valibot/i18n": "^1.0.0",
     "class-variance-authority": "^0.7.1",
