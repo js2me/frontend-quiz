@@ -10,7 +10,7 @@
   },
   "type": "module",
   "scripts": {
-    "postinstall": "lefthook install",
+    "postinstall": "if [ -z \"$CI\" ]; then lefthook install; fi",
     "dev": "cross-env NODE_ENV=development PROXY=true vite --host 0.0.0.0",
     "build": "cross-env NODE_ENV=production vite build",
     "ts:check": "tsc --noEmit",
