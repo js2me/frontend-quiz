@@ -10,7 +10,7 @@
   },
   "type": "module",
   "scripts": {
-    "postinstall": "if [ -z \"$CI\" ]; then lefthook install; fi",
+    "postinstall": "pnpm dev:install-hooks",
     "dev": "cross-env NODE_ENV=development PROXY=true vite --host 0.0.0.0",
     "build": "cross-env NODE_ENV=production vite build",
     "ts:check": "tsc --noEmit",
@@ -18,7 +18,8 @@
     "preview": "cross-env NODE_ENV=production PROXY=true MODE=preview vite preview --host 0.0.0.0",
     "lint": "pnpm eslint src",
     "lint:fix": "pnpm lint --fix",
-    "dev:link-packages": "pnpm packalink"
+    "dev:link-packages": "pnpm packalink",
+    "dev:install-hooks": "if [ -z \"$CI\" ]; then lefthook install; fi"
   },
   "dependencies": {
     "@babel/plugin-proposal-decorators": "^7.27.1",
