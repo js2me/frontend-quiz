@@ -17,7 +17,6 @@
     "preview": "cross-env NODE_ENV=production PROXY=true MODE=preview vite preview --host 0.0.0.0",
     "lint": "pnpm eslint src",
     "lint:fix": "pnpm lint --fix",
-    "prepare": "node build/scripts/hook-up.js",
     "dev:link-packages": "pnpm packalink"
   },
   "dependencies": {
