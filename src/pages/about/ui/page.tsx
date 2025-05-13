@@ -1,8 +1,37 @@
+import { ChevronsUpDown } from 'lucide-react';
 import { observer } from 'mobx-react-lite';
+import { useToggle } from 'react-shared-utils/hooks';
 
 import { Layout } from '@/pages/_layout';
+import { Button } from '@/shared/ui/button';
+import {
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger,
+} from '@/shared/ui/collapsible';
+import { MediaViewer } from '@/shared/ui/media-viewer';
+
+const oldVersionAssets = Object.values(
+  import.meta.glob('./assets/old-versions/*', { eager: true }),
+).map((module: any) => module.default as string);
+
+const oldVerionAssetsGroupped = oldVersionAssets.reduce((groups, assetUrl) => {
+  const lastGroup = groups.at(-1);
+
+  if (!lastGroup || lastGroup.length >= 3) {
+    groups.push([assetUrl]);
+  } else {
+    lastGroup.push(assetUrl);
+  }
+
+  return groups;
+}, [] as string[][]);
 
 export const AboutPage = observer(() => {
+  const [oldVersionShowed, toggleOldVersionShow] = useToggle();
+
+  console.info('oldVerionAssetsGroupped', oldVerionAssetsGroupped);
+
   return (
     <>
       <Layout.Header>О проекте</Layout.Header>
@@ -33,6 +62,51 @@ export const AboutPage = observer(() => {
         сказать спасибо GitHub пользователю{' '}
         <a href={'https://github.com/jar3b'}>jar3b</a>.
       </p>
+      <p className={'max-w-[480px] mt-0'}>
+        Дополнительные ресурсы откуда были взяты вопросы:
+        <br />
+        <a href={'https://github.com/lydiahallie/javascript-questions/'}>
+          https://github.com/lydiahallie/javascript-questions/
+        </a>
+        <br />
+        <a href={'https://github.com/vvscode/js--interview-questions'}>
+          https://github.com/vvscode/js--interview-questions
+        </a>
+        <br />
+        <a href={'https://learn.javascript.ru/'}>
+          https://learn.javascript.ru/
+        </a>
+      </p>
+      <h3>Скриншоты старой версии:</h3>
+      <Collapsible open={oldVersionShowed}>
+        <CollapsibleTrigger asChild>
+          <Button
+            variant={'secondary'}
+            size={'sm'}
+            onClick={toggleOldVersionShow}
+          >
+            <span>Посмотреть</span>
+            <ChevronsUpDown className={'h-4 w-4'} />
+          </Button>
+        </CollapsibleTrigger>
+        <CollapsibleContent>
+          <div
+            className={'mt-4 grid grid-cols-2 md:grid-cols-4 gap-4 not-prose'}
+          >
+            {oldVerionAssetsGroupped.map((group, i) => {
+              return (
+                <div className={'grid gap-4'} key={i}>
+                  {group.map((assetUrl, j) => (
+                    <div key={j}>
+                      <MediaViewer src={assetUrl} />
+                    </div>
+                  ))}
+                </div>
+              );
+            })}
+          </div>
+        </CollapsibleContent>
+      </Collapsible>
       <h3>Технический стек:</h3>
       <p>
         <span>На чем работает проект:</span>
