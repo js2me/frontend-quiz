@@ -45,6 +45,7 @@
     "react-dom": "^19.1.0",
     "react-hook-form": "^7.56.3",
     "react-router-dom": "^6.30.0",
+    "react-simple-loadable": "^2.1.0",
     "tailwind-merge": "^3.3.0",
     "valibot": "^1.1.0",
     "yummies": "^3.2.2"

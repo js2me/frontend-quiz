@@ -8,8 +8,6 @@ import { homeRoute } from '@/pages/home';
 import { vmStore } from '@/shared/config/view-models';
 import { TooltipProvider } from '@/shared/ui/tooltip';
 
-console.info('homeRoute', homeRoute, aboutRoute);
-
 export const App = observer(() => {
   return (
     <TooltipProvider>
