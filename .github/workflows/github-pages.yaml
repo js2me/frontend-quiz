@@ -6,7 +6,6 @@ on:
       - master
 
 env:
-  PUBLIC_URL: /frontend-quiz
   CI: true
   LEFTHOOK: 0
 
