@@ -5,7 +5,7 @@ import { ViewModelsProvider } from 'mobx-view-model';
 import { Layout } from '@/pages/_layout';
 import { aboutRoute } from '@/pages/about';
 import { homeRoute } from '@/pages/home';
-import { vmStore } from '@/shared/config/view-models';
+import { vmStore } from '@/shared/config';
 
 export const App = observer(() => {
   return (

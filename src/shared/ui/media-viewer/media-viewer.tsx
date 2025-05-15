@@ -1,4 +1,5 @@
 import { useMemo } from 'react';
+import { useToggle } from 'react-shared-utils/hooks';
 import { cx } from 'yummies/css';
 
 import { Dialog, DialogContent, DialogTrigger } from '../dialog';
@@ -24,6 +25,8 @@ export const MediaViewer = ({
   videoProps,
   dialogClassName,
 }: MediaViewerProps) => {
+  const [isDialogShown, toggleDialogShow] = useToggle();
+
   const { isVideo, videoFormat } = useMemo(() => {
     const videoFormat = videoFormats.find((format) => src?.endsWith(format));
 
@@ -34,8 +37,8 @@ export const MediaViewer = ({
   }, [src]);
 
   return (
-    <Dialog>
-      <DialogTrigger asChild>
+    <Dialog open={isDialogShown}>
+      <DialogTrigger asChild onClick={toggleDialogShow}>
         <img
           className={cx(
             'h-auto max-w-full rounded-lg object-cover object-center cursor-pointer min-w-[100px] min-h-[100px]',
@@ -71,6 +74,7 @@ export const MediaViewer = ({
               'h-full max-w-full rounded-lg object-contain w-full max-h-[100vh] object-center cursor-pointer',
               fullClassName,
             )}
+            onClick={toggleDialogShow}
             src={src ?? ''}
             alt={alt}
           />

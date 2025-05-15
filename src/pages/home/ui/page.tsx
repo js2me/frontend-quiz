@@ -15,12 +15,14 @@ export const HomePage = observer(() => {
     <TooltipProvider>
       <form
         className={
-          'prose flex flex-col w-[480px] absolute inset-1/2 -translate-x-1/2 -translate-y-1/2 -mt-30'
+          'prose dark:prose-invert flex flex-col w-full max-w-[480px] px-4 absolute inset-1/2 -translate-x-1/2 -translate-y-1/2 -mt-30'
         }
         onSubmit={model.newQuizForm.submit}
         onReset={model.newQuizForm.reset}
       >
-        <h1>Квиз по фронтенду</h1>
+        <h1>
+          Frontend <span className={'text-brand'}>Quiz</span>
+        </h1>
         <div className={'flex flex-col gap-2 min-h-[240px]'}>
           <Field
             label={'Количество вопросов'}

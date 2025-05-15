@@ -20,7 +20,7 @@ export const Field = ({
   errorPlacement = 'label',
   children,
 }: FieldProps) => (
-  <div className={cx('flex flex-col gap-2 prose', className)}>
+  <div className={cx('flex flex-col gap-2 prose dark:prose-invert', className)}>
     {label && (
       <Label
         className={cx({
