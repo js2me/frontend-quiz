@@ -66,8 +66,8 @@ importers:
         specifier: ^6.13.7
         version: 6.13.7
       mobx-react-hook-form:
-        specifier: ^3.0.0
-        version: 3.0.0(mobx-react-lite@4.1.0(mobx@6.13.7)(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(mobx@6.13.7)(react-hook-form@7.56.3(react@19.1.0))(react@19.1.0)
+        specifier: ^3.0.1
+        version: 3.0.1(mobx-react-lite@4.1.0(mobx@6.13.7)(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(mobx@6.13.7)(react-hook-form@7.56.3(react@19.1.0))(react@19.1.0)
       mobx-react-lite:
         specifier: ^4.1.0
         version: 4.1.0(mobx@6.13.7)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
@@ -4032,8 +4032,8 @@ packages:
     peerDependencies:
       mobx: ^6.13.3
 
-  mobx-react-hook-form@3.0.0:
-    resolution: {integrity: sha512-cKI7YbbfqlEOgdLcuoahiIFAGQzH1A4UYvvcVKLFPzLEFf32RFFMcV6FVoxZSg34Dlwij/lPwSzvMVXz0Nac5Q==}
+  mobx-react-hook-form@3.0.1:
+    resolution: {integrity: sha512-v4VOu1r0b1oN+tbMqJJAHb1CTmKQCuLMBmtjXHny/p7G+tRiez1rKg0GRq0SnvOg0ZIrQLm1Hp7BPdFqEBPljQ==}
     peerDependencies:
       mobx: ^6.12.4
       mobx-react-lite: ^4.0.7
@@ -10158,7 +10158,7 @@ snapshots:
       yummies: 3.2.2
     optional: true
 
-  mobx-react-hook-form@3.0.0(mobx-react-lite@4.1.0(mobx@6.13.7)(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(mobx@6.13.7)(react-hook-form@7.56.3(react@19.1.0))(react@19.1.0):
+  mobx-react-hook-form@3.0.1(mobx-react-lite@4.1.0(mobx@6.13.7)(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(mobx@6.13.7)(react-hook-form@7.56.3(react@19.1.0))(react@19.1.0):
     dependencies:
       '@types/react': 18.3.21
       disposer-util: 2.0.1

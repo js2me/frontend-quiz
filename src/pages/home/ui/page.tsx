@@ -11,6 +11,8 @@ import { HomePageVM } from '../model';
 export const HomePage = observer(() => {
   const model = useCreateViewModel(HomePageVM);
 
+  console.info('rerender home page');
+
   return (
     <TooltipProvider>
       <form

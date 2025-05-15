@@ -50,7 +50,13 @@ export const Container = observer(({ children }: { children?: ReactNode }) => {
                       )}
                     >
                       {Icon && <Icon />}
-                      {text}
+                      <span
+                        className={cx({
+                          'max-[320px]:hidden': !!Icon,
+                        })}
+                      >
+                        {text}
+                      </span>
                     </NavigationMenuLink>
                   </Link>
                 </NavigationMenuItem>
