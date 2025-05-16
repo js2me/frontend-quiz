@@ -12,6 +12,7 @@ export class HomePageVM implements ViewModelSimple {
     resolver: valibotResolver(newQuizSchema),
     defaultValues: {
       questionsCount: 16,
+      levels: ['junior', 'middle'],
     },
   });
 

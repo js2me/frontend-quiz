@@ -24,8 +24,8 @@ export const Container = observer(({ children }: { children?: ReactNode }) => {
   const model = useCreateViewModel(LayoutModel);
 
   return (
-    <div className={'flex flex-col min-h-[inherit] h-full'}>
-      <div className={'flex flex-row p-4'}>
+    <div className={'flex flex-col min-h-[inherit] h-full relative'}>
+      <div className={'flex flex-row p-6 max-md:p-4'}>
         <NavigationMenu
           className={'ml-auto'}
           viewport
@@ -76,7 +76,7 @@ export const Container = observer(({ children }: { children?: ReactNode }) => {
       </div>
       <div
         className={
-          'flex flex-col max-w-[840px] flex-1 w-full mx-auto prose dark:prose-invert p-4'
+          'flex flex-col max-w-210 flex-1 w-full mx-auto prose p-6 max-md:p-4'
         }
       >
         {children}

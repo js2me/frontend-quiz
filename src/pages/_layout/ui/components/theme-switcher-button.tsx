@@ -1,25 +1,25 @@
 import { Moon, Sun, SunMoon } from 'lucide-react';
 import { observer } from 'mobx-react-lite';
 
-import { themeStore } from '@/shared/config';
+import { settings } from '@/entities/settings/model';
 import { Button, ButtonProps } from '@/shared/ui/button';
 
 export const ThemeSwitcherButton = observer((props: ButtonProps) => {
   return (
-    <Button onClick={themeStore.switchTheme} variant={'secondary'} {...props}>
-      {themeStore.theme === 'light' && (
+    <Button onClick={settings.switchTheme} variant={'secondary'} {...props}>
+      {settings.theme === 'light' && (
         <>
           <Sun />
           Светлая
         </>
       )}
-      {themeStore.theme === 'auto' && (
+      {settings.theme === 'auto' && (
         <>
           <SunMoon />
           Авто
         </>
       )}
-      {themeStore.theme === 'dark' && (
+      {settings.theme === 'dark' && (
         <>
           <Moon />
           Тёмная

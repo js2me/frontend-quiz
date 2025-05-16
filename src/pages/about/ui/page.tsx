@@ -33,29 +33,29 @@ export const AboutPage = observer(() => {
   console.info('oldVerionAssetsGroupped', oldVerionAssetsGroupped);
 
   return (
-    <>
+    <div className={'prose dark:prose-invert'}>
       <Layout.Header>О проекте</Layout.Header>
-      <p className={'max-w-[480px]'}>
+      <p className={'max-w-120'}>
         Это перенесенная версия оригинального проекта <b>frontend-quiz</b>,
         который ранее был расположен по адресу:{' '}
         <a href={'https://frontend-quiz.ru'}>https://frontend-quiz.ru</a>
       </p>
-      <p className={'max-w-[480px]'}>
+      <p className={'max-w-120'}>
         Но, увы, компания <b>Hetzner</b>, где были расположены сервера этого
         проекта решила полностью остановить поддержку русскоязычного сегмента.
       </p>
-      <p className={'max-w-[480px]'}>
+      <p className={'max-w-120'}>
         В связи с этим актуальный дамп базы данных был утерян, а проект
         перенесён пока что на{' '}
         <a href={'https://github.com/js2me/frontend-quiz'}>GitHub</a>
       </p>
       <h3>Цель</h3>
-      <p className={'max-w-[480px]'}>
+      <p className={'max-w-120'}>
         Цель проекта - улучшить качество фронтенд разработчиков в русскоязычном
         сегменте!
       </p>
       <h3>Авторы</h3>
-      <p className={'max-w-[480px]'}>
+      <p className={'max-w-120'}>
         Большая часть вопросов по фронтенду была создана{' '}
         <a href={'https://github.com/js2me'}>мной лично</a>, за поддержку в
         разработке бэкенд-части и построения архитектуры базы данных хочется
@@ -122,6 +122,6 @@ export const AboutPage = observer(() => {
           )}
         </code>
       </p>
-    </>
+    </div>
   );
 });

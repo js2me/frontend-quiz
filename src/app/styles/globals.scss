@@ -1,6 +1,6 @@
 html {
   height: 100%;
-  font-size: 16px;
+  font-size: 18px;
   scrollbar-gutter: stable;
 }
 
@@ -16,6 +16,14 @@ body {
   scrollbar-gutter: stable;
 }
 
-#root {
-  min-height: 100vh;
+html, body, #root {
+  height: 100%;
+}
+
+:root[data-font-size="sm"] {
+  font-size: 16px;
+}
+
+:root[data-font-size="lg"] {
+  font-size: 20px;
 }

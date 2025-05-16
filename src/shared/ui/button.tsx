@@ -43,7 +43,7 @@ const buttonVariants = cva(
         variant: 'link',
         active: true,
         className:
-          'underline text-primary hover:text-primary focus:text-primary',
+          'underline text-primary-light hover:text-primary-light focus:text-primary-light',
       },
     ],
   },

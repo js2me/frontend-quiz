@@ -1,51 +1,57 @@
+/* eslint-disable sonarjs/no-nested-functions */
 import { observer } from 'mobx-react-lite';
 import { useCreateViewModel } from 'mobx-view-model';
 
-import { Button } from '@/shared/ui/button';
-import { Field } from '@/shared/ui/field';
-import { Input } from '@/shared/ui/input';
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from '@/shared/ui/card';
 import { TooltipProvider } from '@/shared/ui/tooltip';
 
 import { HomePageVM } from '../model';
 
-export const HomePage = observer(() => {
-  const model = useCreateViewModel(HomePageVM);
+import { StartQuizForm } from './components/start-quiz-form';
 
-  console.info('rerender home page');
+export const HomePage = observer(() => {
+  useCreateViewModel(HomePageVM);
 
   return (
     <TooltipProvider>
-      <form
-        className={
-          'prose dark:prose-invert flex flex-col w-full max-w-[480px] px-4 absolute inset-1/2 -translate-x-1/2 -translate-y-1/2 -mt-30'
-        }
-        onSubmit={model.newQuizForm.submit}
-        onReset={model.newQuizForm.reset}
-      >
-        <h1>
+      <div className={'flex flex-col !my-auto prose dark:prose-invert'}>
+        <h1
+          className={
+            'text-5xl -mt-40 max-lg:-mt-20 max-md:!mt-0 max-md:mb-4 max-sm:text-4xl'
+          }
+        >
           Frontend <span className={'text-brand'}>Quiz</span>
         </h1>
-        <div className={'flex flex-col gap-2 min-h-[240px]'}>
-          <Field
-            label={'Количество вопросов'}
-            error={model.newQuizForm.errors.questionsCount?.message}
+        <div
+          className={
+            'flex flex-row flew-wrap gap-5 max-md:flex-col max-md:gap-1'
+          }
+        >
+          <Card
+            className={
+              'relative prose dark:prose-invert w-full md:max-w-85 flex-none'
+            }
           >
-            <Input
-              defaultValue={
-                model.newQuizForm.defaultValues?.questionsCount ?? undefined
-              }
-              {...model.newQuizForm.register('questionsCount')}
-              className={'max-w-[220px]'}
-              placeholder={'Введите число'}
-              type={'number'}
-              autoFocus
-            />
-          </Field>
+            <CardHeader>
+              <CardTitle>
+                <h2 className={'!m-0'}>Начать квиз</h2>
+              </CardTitle>
+              <CardDescription>
+                {`Выберите необходимые параметры и приступайте к прохождению!`}
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <StartQuizForm />
+            </CardContent>
+          </Card>
         </div>
-        <div className={'flex flex-row ml-auto my-4'}>
-          <Button type={'submit'}>Начать</Button>
-        </div>
-      </form>
+      </div>
     </TooltipProvider>
   );
 });

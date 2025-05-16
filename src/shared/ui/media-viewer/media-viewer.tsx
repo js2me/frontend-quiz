@@ -41,7 +41,10 @@ export const MediaViewer = ({
       <DialogTrigger asChild onClick={toggleDialogShow}>
         <img
           className={cx(
-            'h-auto max-w-full rounded-lg object-cover object-center cursor-pointer min-w-[100px] min-h-[100px]',
+            'h-auto max-w-full rounded-lg object-cover object-center cursor-pointer min-w-25 min-h-25',
+            {
+              'bg-input': isVideo && !videoProps?.preview,
+            },
             className,
           )}
           src={videoProps?.preview ?? src ?? ''}
@@ -49,6 +52,11 @@ export const MediaViewer = ({
         />
       </DialogTrigger>
       <DialogContent
+        closeButtonProps={{
+          className:
+            'bg-background/80 size-6 flex items-center justify-center rounded-sm cursor-pointer',
+          onClick: toggleDialogShow,
+        }}
         className={cx(
           'p-0 min-h-[80vh] min-w-[90vw] max-h-[100vh] bg-transparent border-transparent shadow-none',
           dialogClassName,

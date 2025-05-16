@@ -44,6 +44,12 @@ importers:
       '@radix-ui/react-slot':
         specifier: ^1.2.2
         version: 1.2.2(@types/react@18.3.21)(react@19.1.0)
+      '@radix-ui/react-toggle':
+        specifier: ^1.1.8
+        version: 1.1.8(@types/react-dom@18.3.7(@types/react@18.3.21))(@types/react@18.3.21)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+      '@radix-ui/react-toggle-group':
+        specifier: ^1.1.9
+        version: 1.1.9(@types/react-dom@18.3.7(@types/react@18.3.21))(@types/react@18.3.21)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       '@radix-ui/react-tooltip':
         specifier: ^1.2.6
         version: 1.2.6(@types/react-dom@18.3.7(@types/react@18.3.21))(@types/react@18.3.21)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
@@ -56,6 +62,9 @@ importers:
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
+      linked-abort-controller:
+        specifier: ^1.1.0
+        version: 1.1.0
       lodash-es:
         specifier: ^4.17.21
         version: 4.17.21
@@ -73,16 +82,16 @@ importers:
         version: 4.1.0(mobx@6.13.7)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       mobx-react-routing:
         specifier: ^6.3.1
-        version: 6.3.1(@remix-run/router@1.23.0)(mobx-react-lite@4.1.0(mobx@6.13.7)(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(mobx-view-model@6.7.0(mobx-react-lite@4.1.0(mobx@6.13.7)(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(mobx@6.13.7)(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(mobx@6.13.7)(react-router-dom@6.30.0(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(react@19.1.0)
+        version: 6.3.1(@remix-run/router@1.23.0)(mobx-react-lite@4.1.0(mobx@6.13.7)(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(mobx-view-model@6.7.2(mobx-react-lite@4.1.0(mobx@6.13.7)(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(mobx@6.13.7)(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(mobx@6.13.7)(react-router-dom@6.30.0(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(react@19.1.0)
       mobx-route:
         specifier: ^0.0.44
-        version: 0.0.44(@types/react@18.3.21)(mobx-location-history@2.3.1(mobx@6.13.7))(mobx-react-lite@4.1.0(mobx@6.13.7)(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(mobx-view-model@6.7.0(mobx-react-lite@4.1.0(mobx@6.13.7)(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(mobx@6.13.7)(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(mobx@6.13.7)(react@19.1.0)
+        version: 0.0.44(@types/react@18.3.21)(mobx-location-history@2.3.1(mobx@6.13.7))(mobx-react-lite@4.1.0(mobx@6.13.7)(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(mobx-view-model@6.7.2(mobx-react-lite@4.1.0(mobx@6.13.7)(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(mobx@6.13.7)(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(mobx@6.13.7)(react@19.1.0)
       mobx-shared-entities:
         specifier: ^4.5.2
         version: 4.5.2(disposer-util@2.0.1)(mobx@6.13.7)
       mobx-view-model:
-        specifier: ^6.7.0
-        version: 6.7.0(mobx-react-lite@4.1.0(mobx@6.13.7)(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(mobx@6.13.7)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+        specifier: ^6.7.2
+        version: 6.7.2(mobx-react-lite@4.1.0(mobx@6.13.7)(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(mobx@6.13.7)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       plural-ru:
         specifier: ^2.0.2
         version: 2.0.2
@@ -1539,6 +1548,19 @@ packages:
       '@types/react-dom':
         optional: true
 
+  '@radix-ui/react-roving-focus@1.1.9':
+    resolution: {integrity: sha512-ZzrIFnMYHHCNqSNCsuN6l7wlewBEq0O0BCSBkabJMFXVO51LRUTq71gLP1UxFvmrXElqmPjA5VX7IqC9VpazAQ==}
+    peerDependencies:
+      '@types/react': '*'
+      '@types/react-dom': '*'
+      react: ^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc
+      react-dom: ^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc
+    peerDependenciesMeta:
+      '@types/react':
+        optional: true
+      '@types/react-dom':
+        optional: true
+
   '@radix-ui/react-separator@1.1.6':
     resolution: {integrity: sha512-Izof3lPpbCfTM7WDta+LRkz31jem890VjEvpVRoWQNKpDUMMVffuyq854XPGP1KYGWWmjmYvHvPFeocWhFCy1w==}
     peerDependencies:
@@ -1559,6 +1581,32 @@ packages:
       react: ^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc
     peerDependenciesMeta:
       '@types/react':
+        optional: true
+
+  '@radix-ui/react-toggle-group@1.1.9':
+    resolution: {integrity: sha512-HJ6gXdYVN38q/5KDdCcd+JTuXUyFZBMJbwXaU/82/Gi+V2ps6KpiZ2sQecAeZCV80POGRfkUBdUIj6hIdF6/MQ==}
+    peerDependencies:
+      '@types/react': '*'
+      '@types/react-dom': '*'
+      react: ^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc
+      react-dom: ^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc
+    peerDependenciesMeta:
+      '@types/react':
+        optional: true
+      '@types/react-dom':
+        optional: true
+
+  '@radix-ui/react-toggle@1.1.8':
+    resolution: {integrity: sha512-hrpa59m3zDnsa35LrTOH5s/a3iGv/VD+KKQjjiCTo/W4r0XwPpiWQvAv6Xl1nupSoaZeNNxW6sJH9ZydsjKdYQ==}
+    peerDependencies:
+      '@types/react': '*'
+      '@types/react-dom': '*'
+      react: ^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc
+      react-dom: ^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc
+    peerDependenciesMeta:
+      '@types/react':
+        optional: true
+      '@types/react-dom':
         optional: true
 
   '@radix-ui/react-tooltip@1.2.6':
@@ -4090,8 +4138,8 @@ packages:
       disposer-util: ^2.0.1
       mobx: ^6.12.4
 
-  mobx-view-model@6.7.0:
-    resolution: {integrity: sha512-hqgOHbBCjfQJ418ReBakjXVShxaASLaSyzwNrtDcD5JoZFI1Th51fxwXPB9PuTPNHVZe5b2uIi/yESz8HOGPqQ==}
+  mobx-view-model@6.7.2:
+    resolution: {integrity: sha512-cvm89rnwXP69+H4Cdagy/BSVyeSowKsq4E73lROY/G5+cDsYxc39DRReYRqbQVlYtJmBnO+TkxTiAoKIePYCaQ==}
     peerDependencies:
       mobx: ^6.12.4
       mobx-react-lite: ^4.0.7
@@ -7497,6 +7545,23 @@ snapshots:
       '@types/react': 18.3.21
       '@types/react-dom': 18.3.7(@types/react@18.3.21)
 
+  '@radix-ui/react-roving-focus@1.1.9(@types/react-dom@18.3.7(@types/react@18.3.21))(@types/react@18.3.21)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)':
+    dependencies:
+      '@radix-ui/primitive': 1.1.2
+      '@radix-ui/react-collection': 1.1.6(@types/react-dom@18.3.7(@types/react@18.3.21))(@types/react@18.3.21)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+      '@radix-ui/react-compose-refs': 1.1.2(@types/react@18.3.21)(react@19.1.0)
+      '@radix-ui/react-context': 1.1.2(@types/react@18.3.21)(react@19.1.0)
+      '@radix-ui/react-direction': 1.1.1(@types/react@18.3.21)(react@19.1.0)
+      '@radix-ui/react-id': 1.1.1(@types/react@18.3.21)(react@19.1.0)
+      '@radix-ui/react-primitive': 2.1.2(@types/react-dom@18.3.7(@types/react@18.3.21))(@types/react@18.3.21)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+      '@radix-ui/react-use-callback-ref': 1.1.1(@types/react@18.3.21)(react@19.1.0)
+      '@radix-ui/react-use-controllable-state': 1.2.2(@types/react@18.3.21)(react@19.1.0)
+      react: 19.1.0
+      react-dom: 19.1.0(react@19.1.0)
+    optionalDependencies:
+      '@types/react': 18.3.21
+      '@types/react-dom': 18.3.7(@types/react@18.3.21)
+
   '@radix-ui/react-separator@1.1.6(@types/react-dom@18.3.7(@types/react@18.3.21))(@types/react@18.3.21)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)':
     dependencies:
       '@radix-ui/react-primitive': 2.1.2(@types/react-dom@18.3.7(@types/react@18.3.21))(@types/react@18.3.21)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
@@ -7512,6 +7577,32 @@ snapshots:
       react: 19.1.0
     optionalDependencies:
       '@types/react': 18.3.21
+
+  '@radix-ui/react-toggle-group@1.1.9(@types/react-dom@18.3.7(@types/react@18.3.21))(@types/react@18.3.21)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)':
+    dependencies:
+      '@radix-ui/primitive': 1.1.2
+      '@radix-ui/react-context': 1.1.2(@types/react@18.3.21)(react@19.1.0)
+      '@radix-ui/react-direction': 1.1.1(@types/react@18.3.21)(react@19.1.0)
+      '@radix-ui/react-primitive': 2.1.2(@types/react-dom@18.3.7(@types/react@18.3.21))(@types/react@18.3.21)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+      '@radix-ui/react-roving-focus': 1.1.9(@types/react-dom@18.3.7(@types/react@18.3.21))(@types/react@18.3.21)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+      '@radix-ui/react-toggle': 1.1.8(@types/react-dom@18.3.7(@types/react@18.3.21))(@types/react@18.3.21)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+      '@radix-ui/react-use-controllable-state': 1.2.2(@types/react@18.3.21)(react@19.1.0)
+      react: 19.1.0
+      react-dom: 19.1.0(react@19.1.0)
+    optionalDependencies:
+      '@types/react': 18.3.21
+      '@types/react-dom': 18.3.7(@types/react@18.3.21)
+
+  '@radix-ui/react-toggle@1.1.8(@types/react-dom@18.3.7(@types/react@18.3.21))(@types/react@18.3.21)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)':
+    dependencies:
+      '@radix-ui/primitive': 1.1.2
+      '@radix-ui/react-primitive': 2.1.2(@types/react-dom@18.3.7(@types/react@18.3.21))(@types/react@18.3.21)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+      '@radix-ui/react-use-controllable-state': 1.2.2(@types/react@18.3.21)(react@19.1.0)
+      react: 19.1.0
+      react-dom: 19.1.0(react@19.1.0)
+    optionalDependencies:
+      '@types/react': 18.3.21
+      '@types/react-dom': 18.3.7(@types/react@18.3.21)
 
   '@radix-ui/react-tooltip@1.2.6(@types/react-dom@18.3.7(@types/react@18.3.21))(@types/react@18.3.21)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)':
     dependencies:
@@ -10178,20 +10269,20 @@ snapshots:
     optionalDependencies:
       react-dom: 19.1.0(react@19.1.0)
 
-  mobx-react-routing@6.3.1(@remix-run/router@1.23.0)(mobx-react-lite@4.1.0(mobx@6.13.7)(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(mobx-view-model@6.7.0(mobx-react-lite@4.1.0(mobx@6.13.7)(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(mobx@6.13.7)(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(mobx@6.13.7)(react-router-dom@6.30.0(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(react@19.1.0):
+  mobx-react-routing@6.3.1(@remix-run/router@1.23.0)(mobx-react-lite@4.1.0(mobx@6.13.7)(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(mobx-view-model@6.7.2(mobx-react-lite@4.1.0(mobx@6.13.7)(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(mobx@6.13.7)(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(mobx@6.13.7)(react-router-dom@6.30.0(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(react@19.1.0):
     dependencies:
       '@remix-run/router': 1.23.0
       linked-abort-controller: 1.1.0
       lodash-es: 4.17.21
       mobx: 6.13.7
       mobx-react-lite: 4.1.0(mobx@6.13.7)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
-      mobx-view-model: 6.7.0(mobx-react-lite@4.1.0(mobx@6.13.7)(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(mobx@6.13.7)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+      mobx-view-model: 6.7.2(mobx-react-lite@4.1.0(mobx@6.13.7)(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(mobx@6.13.7)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       react: 19.1.0
       react-router-dom: 6.30.0(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       react-shared-utils: 3.2.0(lodash-es@4.17.21)(react@19.1.0)
       yummies: 3.2.2
 
-  mobx-route@0.0.44(@types/react@18.3.21)(mobx-location-history@2.3.1(mobx@6.13.7))(mobx-react-lite@4.1.0(mobx@6.13.7)(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(mobx-view-model@6.7.0(mobx-react-lite@4.1.0(mobx@6.13.7)(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(mobx@6.13.7)(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(mobx@6.13.7)(react@19.1.0):
+  mobx-route@0.0.44(@types/react@18.3.21)(mobx-location-history@2.3.1(mobx@6.13.7))(mobx-react-lite@4.1.0(mobx@6.13.7)(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(mobx-view-model@6.7.2(mobx-react-lite@4.1.0(mobx@6.13.7)(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(mobx@6.13.7)(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(mobx@6.13.7)(react@19.1.0):
     dependencies:
       mobx: 6.13.7
       path-to-regexp: 8.2.0
@@ -10201,7 +10292,7 @@ snapshots:
       '@types/react': 18.3.21
       mobx-location-history: 2.3.1(mobx@6.13.7)
       mobx-react-lite: 4.1.0(mobx@6.13.7)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
-      mobx-view-model: 6.7.0(mobx-react-lite@4.1.0(mobx@6.13.7)(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(mobx@6.13.7)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+      mobx-view-model: 6.7.2(mobx-react-lite@4.1.0(mobx@6.13.7)(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(mobx@6.13.7)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       react: 19.1.0
 
   mobx-shared-entities@4.5.2(disposer-util@2.0.1)(mobx@6.13.7):
@@ -10214,7 +10305,7 @@ snapshots:
       mobx: 6.13.7
       yummies: 3.2.2
 
-  mobx-view-model@6.7.0(mobx-react-lite@4.1.0(mobx@6.13.7)(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(mobx@6.13.7)(react-dom@19.1.0(react@19.1.0))(react@19.1.0):
+  mobx-view-model@6.7.2(mobx-react-lite@4.1.0(mobx@6.13.7)(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(mobx@6.13.7)(react-dom@19.1.0(react@19.1.0))(react@19.1.0):
     dependencies:
       mobx: 6.13.7
       mobx-react-lite: 4.1.0(mobx@6.13.7)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
