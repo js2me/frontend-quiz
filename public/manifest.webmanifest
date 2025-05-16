@@ -1,0 +1,16 @@
+{
+  "background_color": "#ffffff",
+  "theme_color": "#f3f3f3",
+  "description": "Quiz that made for preparation to interview for web-developer position",
+  "display": "fullscreen",
+  "icons": [
+    {
+      "src": "favicon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ],
+  "name": "Фронтенд Quiz",
+  "short_name": "Front Квиз",
+  "start_url": "/"
+}
