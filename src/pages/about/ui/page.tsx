@@ -12,7 +12,7 @@ import {
 import { MediaViewer } from '@/shared/ui/media-viewer';
 
 const oldVersionAssets = Object.values(
-  import.meta.glob('./assets/old-versions/*', { eager: true }),
+  import.meta.glob('../assets/old-versions/*', { eager: true }),
 ).map((module: any) => module.default as string);
 
 const oldVerionAssetsGroupped = oldVersionAssets.reduce((groups, assetUrl) => {

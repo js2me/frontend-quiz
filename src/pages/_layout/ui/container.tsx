@@ -16,6 +16,7 @@ import {
   NavigationMenuTrigger,
 } from '@/shared/ui/navigation-menu';
 
+import { LogoSvg, tysonImage } from '../assets';
 import { LayoutModel } from '../model';
 
 import { SettingsPopup } from './components/settings-popup';
@@ -25,6 +26,18 @@ export const Container = observer(({ children }: { children?: ReactNode }) => {
 
   return (
     <div className={'flex flex-col min-h-[inherit] h-full relative'}>
+      <LogoSvg
+        className={
+          'fixed bottom-2 left-2 h-14 w-14 text-reverse max-xs:h-10 max-xs:w-10 active:scale-105 cursor-pointer select-none'
+        }
+      />
+      <img
+        src={tysonImage}
+        alt={''}
+        className={
+          'fixed bottom-2 right-2 w-36 -scale-x-100 dark:brightness-75 active:-scale-x-105 active:scale-y-105 cursor-pointer select-none'
+        }
+      />
       <div className={'flex flex-row p-6 max-md:p-4'}>
         <NavigationMenu
           className={'ml-auto'}
