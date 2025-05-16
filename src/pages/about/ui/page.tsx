@@ -30,10 +30,8 @@ const oldVerionAssetsGroupped = oldVersionAssets.reduce((groups, assetUrl) => {
 export const AboutPage = observer(() => {
   const [oldVersionShowed, toggleOldVersionShow] = useToggle();
 
-  console.info('oldVerionAssetsGroupped', oldVerionAssetsGroupped);
-
   return (
-    <div className={'prose dark:prose-invert'}>
+    <div className={'prose dark:prose-invert bg-background/80 relative'}>
       <Layout.Header>О проекте</Layout.Header>
       <p className={'max-w-120'}>
         Это перенесенная версия оригинального проекта <b>frontend-quiz</b>,

@@ -23,7 +23,7 @@ export const HomePage = observer(() => {
       <div className={'flex flex-col !my-auto prose dark:prose-invert'}>
         <h1
           className={
-            'text-5xl -mt-40 max-lg:-mt-20 max-md:!-mt-30 max-md:mb-4 max-sm:text-4xl'
+            'text-5xl -mt-40 max-lg:-mt-20 max-md:mt-auto max-md:mb-4 max-sm:text-4xl'
           }
         >
           Frontend <span className={'text-brand'}>Quiz</span>
