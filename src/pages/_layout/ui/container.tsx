@@ -34,6 +34,9 @@ export const Container = observer(({ children }: { children?: ReactNode }) => {
       <img
         src={tysonImage}
         alt={''}
+        style={{
+          filter: 'drop-shadow(0px 2px 7px #00000086)',
+        }}
         className={
           'fixed bottom-2 right-2 w-36 -scale-x-100 dark:brightness-75 active:-scale-x-105 active:scale-y-105 cursor-pointer select-none'
         }
