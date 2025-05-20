@@ -1,6 +1,5 @@
-export const QUESTION_CATEGORIES = [
+export const AVAILABLE_QUESTION_CATEGORIES = [
   'theory',
   'code',
   'html/css',
-  'async',
 ] as const;

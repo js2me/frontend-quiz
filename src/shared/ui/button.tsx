@@ -31,7 +31,7 @@ const buttonVariants = cva(
         true: '',
       },
       interactive: {
-        true: 'cursor-pointer',
+        true: 'cursor-pointer active:scale-95',
       },
     },
     defaultVariants: {
@@ -71,7 +71,8 @@ function Button({
           variant,
           size,
           className,
-          interactive: !!props.onClick || props.type === 'submit',
+          interactive:
+            (!!props.onClick || props.type === 'submit') && !props.disabled,
         }),
       )}
       {...props}

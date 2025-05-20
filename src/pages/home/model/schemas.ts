@@ -16,7 +16,9 @@ import {
 } from 'valibot';
 import { typeGuard } from 'yummies/type-guard';
 
-import { QUESTION_CATEGORIES } from '@/entities/questions/model/data/categories';
+import { AVAILABLE_QUESTION_CATEGORIES } from '@/entities/questions/model/data/categories';
+
+export const quizAvailableCountToChoose = [8, 16, 24];
 
 export const quizLevelSchema = union([
   literal('junior'),
@@ -25,7 +27,7 @@ export const quizLevelSchema = union([
 ]);
 
 export const quizCategorySchema = union(
-  QUESTION_CATEGORIES.map((category) => literal(category)),
+  AVAILABLE_QUESTION_CATEGORIES.map((category) => literal(category)),
 );
 
 export const newQuizSchema = object({
@@ -50,8 +52,6 @@ export const newQuizSchema = object({
     minValue(8),
     maxValue(32),
   ),
-  levels: pipe(
-    array(union([literal('junior'), literal('middle'), literal('senior')])),
-    minLength(1),
-  ),
+  levels: pipe(array(quizLevelSchema), minLength(1)),
+  categories: pipe(array(quizCategorySchema), minLength(1)),
 });

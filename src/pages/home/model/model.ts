@@ -3,7 +3,7 @@ import { makeAutoObservable } from 'mobx';
 import { MobxForm } from 'mobx-react-hook-form';
 import { ViewModelSimple } from 'mobx-view-model';
 
-import { newQuizSchema } from './schemas';
+import { newQuizSchema, quizAvailableCountToChoose } from './schemas';
 
 export class HomePageVM implements ViewModelSimple {
   id = 'home-page';
@@ -11,8 +11,9 @@ export class HomePageVM implements ViewModelSimple {
   newQuizForm = new MobxForm({
     resolver: valibotResolver(newQuizSchema),
     defaultValues: {
-      questionsCount: 16,
+      questionsCount: quizAvailableCountToChoose[1],
       levels: ['junior', 'middle'],
+      categories: ['theory', 'code'],
     },
   });
 
