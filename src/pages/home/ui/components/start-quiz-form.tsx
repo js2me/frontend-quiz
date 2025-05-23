@@ -2,35 +2,22 @@
 import { Controller } from 'mobx-react-hook-form';
 import { observer } from 'mobx-react-lite';
 import { useViewModel } from 'mobx-view-model';
-import { ReactNode } from 'react';
-import { InferOutput } from 'valibot';
 
+import {
+  getQuestionCategoryLabel,
+  getQuestionLevelLabel,
+} from '@/entities/question-templates/lib';
+import {
+  availableQuestionCategories,
+  availableQuestionLevels,
+} from '@/features/quiz/create/config';
 import { Button } from '@/shared/ui/button';
 import { Field } from '@/shared/ui/field';
 import { Tabs, TabsList, TabsTrigger } from '@/shared/ui/tabs';
 import { ToggleGroup, ToggleGroupItem } from '@/shared/ui/toggle-group';
 
+import { quizAvailableCountToChoose } from '../../config';
 import { HomePageVM } from '../../model';
-import {
-  quizAvailableCountToChoose,
-  quizLevelSchema,
-  quizCategorySchema,
-} from '../../model/schemas';
-
-const LEVEL_LABELS: Record<InferOutput<typeof quizLevelSchema>, ReactNode> = {
-  junior: 'Junior 😺',
-  middle: 'Middle 🤓',
-  senior: 'Senior 🤖',
-};
-
-const CATEGORY_LABELS: Record<
-  InferOutput<typeof quizCategorySchema>,
-  ReactNode
-> = {
-  code: 'Код',
-  theory: 'Теория',
-  'html/css': 'HTML/CSS',
-};
 
 export const StartQuizForm = observer(() => {
   const model = useViewModel(HomePageVM);
@@ -79,25 +66,25 @@ export const StartQuizForm = observer(() => {
                 className={'justify-left flex-wrap'}
                 value={field.value}
               >
-                {quizLevelSchema.options.map((option) => {
+                {availableQuestionLevels.map((level) => {
                   return (
                     <ToggleGroupItem
-                      key={option.literal}
-                      value={option.literal}
+                      key={level}
+                      value={level}
                       variant={'outline-brand-extra'}
                       size={'lg'}
                       className={'shadow-none'}
                       onClick={() => {
-                        if (field.value.includes(option.literal)) {
+                        if (field.value.includes(level)) {
                           field.onChange(
-                            field.value.filter((it) => it !== option.literal),
+                            field.value.filter((it) => it !== level),
                           );
                         } else {
-                          field.onChange([...field.value, option.literal]);
+                          field.onChange([...field.value, level]);
                         }
                       }}
                     >
-                      {LEVEL_LABELS[option.literal]}
+                      {getQuestionLevelLabel(level)}
                     </ToggleGroupItem>
                   );
                 })}
@@ -115,25 +102,25 @@ export const StartQuizForm = observer(() => {
                 className={'justify-left flex-wrap'}
                 value={field.value}
               >
-                {quizCategorySchema.options.map((option) => {
+                {availableQuestionCategories.map((category) => {
                   return (
                     <ToggleGroupItem
-                      key={option.literal}
-                      value={option.literal}
+                      key={category}
+                      value={category}
                       variant={'outline-brand-extra'}
                       size={'lg'}
-                      className={'shadow-none'}
+                      className={'shadow-none relative'}
                       onClick={() => {
-                        if (field.value.includes(option.literal)) {
+                        if (field.value.includes(category)) {
                           field.onChange(
-                            field.value.filter((it) => it !== option.literal),
+                            field.value.filter((it) => it !== category),
                           );
                         } else {
-                          field.onChange([...field.value, option.literal]);
+                          field.onChange([...field.value, category]);
                         }
                       }}
                     >
-                      {CATEGORY_LABELS[option.literal]}
+                      {getQuestionCategoryLabel(category)}
                     </ToggleGroupItem>
                   );
                 })}
@@ -143,8 +130,14 @@ export const StartQuizForm = observer(() => {
         />
       </div>
       <div className={'flex flex-row ml-auto mt-8'}>
-        <Button type={'submit'} variant={'default'} size={'lg'}>
-          Запуск
+        <Button
+          type={'submit'}
+          variant={'default'}
+          size={'lg'}
+          className={'relative'}
+          disabled={model.isLoading}
+        >
+          {model.isLoading ? 'Загрузка' : 'Запуск'}
         </Button>
       </div>
     </form>

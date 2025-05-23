@@ -22,3 +22,5 @@ setupTests.js
 coverage
 docs
 packalink.config.mjs
+src/entities/question-templates/model/data/*/constructor.ts
+src/entities/question-templates/model/data/**/constructor.ts

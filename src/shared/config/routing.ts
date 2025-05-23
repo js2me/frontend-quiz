@@ -1,18 +1,14 @@
 import {
-  MobxLocation,
-  QueryParams,
   routeConfig,
-  MobxHistory,
+  createMemoryHistory,
+  createQueryParams,
 } from 'mobx-route';
 
-const history = new MobxHistory();
-const location = new MobxLocation(history);
-const queryParams = new QueryParams(location, history);
+const history = createMemoryHistory();
+const queryParams = createQueryParams({ history });
 
 routeConfig.set({
   history,
-  location,
   queryParams,
-  useHashRouting: true,
   baseUrl: buildEnvs.BASE_URL,
 });
