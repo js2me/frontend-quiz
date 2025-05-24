@@ -1,14 +1,8 @@
-import {
-  routeConfig,
-  createMemoryHistory,
-  createQueryParams,
-} from 'mobx-route';
+import { routeConfig, createHashHistory } from 'mobx-route';
 
-const history = createMemoryHistory();
-const queryParams = createQueryParams({ history });
+const history = createHashHistory();
 
-routeConfig.set({
+routeConfig.update({
   history,
-  queryParams,
   baseUrl: buildEnvs.BASE_URL,
 });
