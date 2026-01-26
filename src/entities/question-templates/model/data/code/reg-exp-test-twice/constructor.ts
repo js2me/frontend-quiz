@@ -1,5 +1,5 @@
 export default function question({
-    word,
+  word,
   int,
   choice,
   string,
@@ -10,7 +10,7 @@ export default function question({
   const strVarName = choice([word(), char()]);
 
   return {
-    upperText: "Что будет выведено в консоль ?",
+    upperText: 'Что будет выведено в консоль ?',
     code: `
       const ${regexpVarName} = /${testStr}/g;
       const ${strVarName} = ${string(testStr)};
@@ -21,7 +21,7 @@ export default function question({
 Метод <code>test()</code>, вызванный несколько раз на одном и том же экземпляре глобального регулярного выражения, будет начинать проверку с конца предыдущего сопоставления.
 `,
     helpLinks: [
-      "https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/RegExp/test",
+      'https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/RegExp/test',
     ],
     answers: [
       { code: `true true` },

@@ -1,6 +1,6 @@
 export default function question({
   word,
-    value,
+  value,
   string,
   choice,
   minorBool,
@@ -15,15 +15,15 @@ export default function question({
   const modifyValue = value();
 
   return {
-    upperText: "Что будет выведено в консоль ?",
+    upperText: 'Что будет выведено в консоль ?',
     code: `
-      ${choice(["", '"use strict";'])}
+      ${choice(['', '"use strict";'])}
       const ${objName} = ${string(objContent)};
 
       ${
         anotherCase
           ? `${objName} = { ...${objName}, ${modifyField}: ${string(
-              modifyValue
+              modifyValue,
             )}}`
           : `${choice([
               `${objName}[${string(modifyField)}]`,
@@ -46,7 +46,7 @@ export default function question({
         right: !anotherCase,
       },
       { code: string({ ...objContent }) },
-      { text: "Ошибка", right: anotherCase },
+      { text: 'Ошибка', right: anotherCase },
     ],
   };
 }

@@ -1,9 +1,12 @@
-export default function question({ int, minorBool }: QuestionHelpers): RawQuestion {
+export default function question({
+  int,
+  minorBool,
+}: QuestionHelpers): RawQuestion {
   const times = int(1, 9);
   const anotherCase = minorBool();
   return {
     upperText: `Сколько раз выполнится код внутри <code>useEffect</code> при условном клике на <code><button></code> ${times} раз ?`,
-    display: "grid",
+    display: 'grid',
     gridCols: 2,
     code: `
       import { useState, useEffect } from "react";
@@ -13,7 +16,7 @@ export default function question({ int, minorBool }: QuestionHelpers): RawQuesti
         
         useEffect(() => {
           console.info('hello from useEffect!');
-        }${anotherCase ? ", []" : ""})
+        }${anotherCase ? ', []' : ''})
         
         return (
           <button onClick={() => setState(prev => !prev)}>

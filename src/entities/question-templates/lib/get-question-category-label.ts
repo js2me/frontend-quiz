@@ -1,4 +1,4 @@
-import { QuestionCategory } from '../model';
+import type { QuestionCategory } from '../model';
 
 const categoryLabels: Record<QuestionCategory, string> = {
   code: 'Код',

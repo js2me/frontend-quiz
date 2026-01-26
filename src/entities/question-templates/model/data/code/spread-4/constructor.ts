@@ -1,5 +1,5 @@
 export default function question({
-    word,
+  word,
   shuffle,
   int,
   char,
@@ -19,7 +19,7 @@ export default function question({
     { name: char(), value: intValue },
   ]);
   return {
-    upperText: "Что будет выведено в консоль ?",
+    upperText: 'Что будет выведено в консоль ?',
     code: `
     const ${a.name} = ${string(a.value)};
     const ${b.name} = ${string(b.value)};
@@ -34,7 +34,7 @@ export default function question({
     answers: [
       {
         code: string(
-          Object.assign(Object.assign({}, mergableValues.c), mergableValues.d)
+          Object.assign(Object.assign({}, mergableValues.c), mergableValues.d),
         ),
         right: true,
       },
@@ -44,13 +44,13 @@ export default function question({
           Object.assign(
             Object.assign(
               Object.assign({}, mergableValues.c),
-              mergableValues.d
+              mergableValues.d,
             ),
-            intValue.toString()
-          )
+            intValue.toString(),
+          ),
         ),
       },
-      { text: "Ошибка" },
+      { text: 'Ошибка' },
     ],
   };
 }

@@ -1,13 +1,13 @@
 export default function question({
-    word,
+  word,
   string,
   minorBool,
 }: QuestionHelpers): RawQuestion {
   const a = word();
   return {
-    upperText: "Что будет выведено в консоль ?",
+    upperText: 'Что будет выведено в консоль ?',
     code: `
-    ${minorBool() ? '"use strict";' : ""}
+    ${minorBool() ? '"use strict";' : ''}
     if (function ${a}(){}) {
       console.log(${a})
     }
@@ -20,8 +20,8 @@ export default function question({
     answers: [
       { code: string(undefined) },
       { code: string(`${a}(){}`) },
-      { code: string("object") },
-      { text: "Ошибка", right: true },
+      { code: string('object') },
+      { text: 'Ошибка', right: true },
     ],
   };
 }

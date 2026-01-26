@@ -1,4 +1,4 @@
-import { QuestionTemplateConfig } from '@/entities/question-templates/model';
+import type { QuestionTemplateConfig } from '@/entities/question-templates/model';
 
 export default {
   name: 'cloneObject',

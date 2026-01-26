@@ -1,5 +1,5 @@
 export default function question({
-    word,
+  word,
   value,
   choice,
   string,
@@ -7,10 +7,10 @@ export default function question({
 }: QuestionHelpers): RawQuestion {
   const answerText = value();
   const varName = word();
-  const fnName = camelCase(choice(["create", "call", "set"]), varName);
+  const fnName = camelCase(choice(['create', 'call', 'set']), varName);
 
   return {
-    upperText: "Что будет выведено в консоль ?",
+    upperText: 'Что будет выведено в консоль ?',
     code: `
       function ${fnName}() {
         ${varName} = ${string(answerText)};
@@ -25,7 +25,7 @@ export default function question({
     `,
     answers: [
       { code: string(answerText) },
-      { text: "Ошибка" },
+      { text: 'Ошибка' },
       { code: string(undefined), right: true },
     ],
   };

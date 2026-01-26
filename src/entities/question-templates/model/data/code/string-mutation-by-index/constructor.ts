@@ -1,5 +1,5 @@
 export default function question({
-    char,
+  char,
   word,
   int,
   choice,
@@ -11,9 +11,9 @@ export default function question({
   const modifiedValue =
     variableValue.slice(0, index) + newChar + variableValue.slice(index + 1);
   return {
-    upperText: "Что будет выведено в консоль ?",
+    upperText: 'Что будет выведено в консоль ?',
     code: `
-      ${choice(["let", "const"])} ${variableName} = "${variableValue}";
+      ${choice(['let', 'const'])} ${variableName} = "${variableValue}";
       ${variableName}[${index}] = "${newChar}";
       console.log(${variableName})
     `,
@@ -21,11 +21,11 @@ export default function question({
 Строки в JavaScript являются иммутабельными, поэтому они не имеют возможности посимвольного изменения, такого как в текущем примере кода
     `,
     helpLinks: [
-      "https://developer.mozilla.org/ru/docs/Web/JavaScript/Data_structures",
+      'https://developer.mozilla.org/ru/docs/Web/JavaScript/Data_structures',
     ],
     answers: [
       { code: `"${modifiedValue}"` },
-      { text: "Ошибка" },
+      { text: 'Ошибка' },
       { code: `"${variableValue}"`, right: true },
     ],
   };

@@ -3,7 +3,7 @@ export default function question({ int, char }: QuestionHelpers): RawQuestion {
   const startInt = int(1, 30);
   const endInt = startInt * 2;
   return {
-    upperText: "Что будет выведено в консоль ?",
+    upperText: 'Что будет выведено в консоль ?',
     code: `
       function* generator(${arg}) {
         yield ${arg};
@@ -15,14 +15,14 @@ export default function question({ int, char }: QuestionHelpers): RawQuestion {
       console.log(gen.next().value);
       console.log(gen.next().value);
     `,
-    display: "grid",
+    display: 'grid',
     gridCols: 2,
     answers: [
       { code: `[0, ${startInt}] [${startInt}, ${endInt}]` },
       { code: `${endInt} ${endInt}` },
       { code: `${startInt} ${endInt}`, right: true },
       { code: `0 ${startInt} ${startInt} ${endInt}` },
-      { text: "Ошибка" },
+      { text: 'Ошибка' },
     ],
   };
 }

@@ -1,12 +1,15 @@
-export default function question({ choice, word }: QuestionHelpers): RawQuestion {
-  const attrName = choice(["title", "foo", "bar", "id", "name"]);
+export default function question({
+  choice,
+  word,
+}: QuestionHelpers): RawQuestion {
+  const attrName = choice(['title', 'foo', 'bar', 'id', 'name']);
   const attrValue = word();
 
   return {
     upperText: `Как работает <code>[${attrName}*="${attrValue}"]</code> селектор ?`,
     helpLinks: [
-      "https://developer.mozilla.org/ru/docs/Web/CSS/Attribute_selectors",
-      "https://www.w3schools.com/cssref/tryit.asp?filename=trycss3_attr_contain2",
+      'https://developer.mozilla.org/ru/docs/Web/CSS/Attribute_selectors',
+      'https://www.w3schools.com/cssref/tryit.asp?filename=trycss3_attr_contain2',
     ],
     answers: [
       {
@@ -19,7 +22,7 @@ export default function question({ choice, word }: QuestionHelpers): RawQuestion
       {
         text: `Обозначает элемент с именем атрибута <code>${attrName}</code> чьё значение заканчивается на <code>"${attrValue}"</code>`,
       },
-      { text: "Это невалидный селектор" },
+      { text: 'Это невалидный селектор' },
     ],
   };
 }

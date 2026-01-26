@@ -1,7 +1,10 @@
-export default function question({ string, value }: QuestionHelpers): RawQuestion {
+export default function question({
+  string,
+  value,
+}: QuestionHelpers): RawQuestion {
   const [a, b, c] = [value(), value(), value()].map(string);
   return {
-    upperText: "Что будет выведено в консоль ?",
+    upperText: 'Что будет выведено в консоль ?',
     code: `
     setTimeout(() => console.info(${a}), 0)
     setTimeout(() => console.info(${b}), -1)
@@ -11,7 +14,7 @@ export default function question({ string, value }: QuestionHelpers): RawQuestio
       { code: `${a}, ${b}, ${c}`, right: true },
       { code: `${c}, ${b}, ${a}` },
       { code: `${a}` },
-      { text: "Ошибка" },
+      { text: 'Ошибка' },
     ],
   };
 }

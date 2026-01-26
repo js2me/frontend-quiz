@@ -1,5 +1,5 @@
 export default function question({
-    char,
+  char,
   word,
   string,
   choice,
@@ -8,18 +8,18 @@ export default function question({
   const [variable, field] = [char(), char()];
   const value = choice([word(), int(40, 150)]);
   return {
-    upperText: "Что будет выведено в консоль ?",
+    upperText: 'Что будет выведено в консоль ?',
     code: `
       let ${variable} = new Array();
       ${variable}[${string(field)}] = ${string(value)};
       console.log(${variable}.length);
     `,
-    display: "grid",
+    display: 'grid',
     gridCols: 2,
     answers: [
       { code: string(0), right: true },
       { code: string(1) },
-      { text: "Ошибка" },
+      { text: 'Ошибка' },
       { code: string(null) },
       { code: string(undefined) },
     ],

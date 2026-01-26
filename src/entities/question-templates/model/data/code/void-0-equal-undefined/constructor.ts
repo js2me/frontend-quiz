@@ -1,7 +1,7 @@
-export default function question({ choice }: QuestionHelpers): RawQuestion {
-  const void0 = "void 0";
+export default function question(): RawQuestion {
+  const void0 = 'void 0';
   return {
-    upperText: "Что будет выведено в консоль?",
+    upperText: 'Что будет выведено в консоль?',
     code: `
       console.log(${void0} === undefined)
     `,
@@ -10,9 +10,9 @@ export default function question({ choice }: QuestionHelpers): RawQuestion {
 Такая конструкция используется для примитивного значения <code>undefined</code>\n' +
     `,
     answers: [
-      { code: "true", right: true },
-      { code: "false" },
-      { text: "Ошибка" },
+      { code: 'true', right: true },
+      { code: 'false' },
+      { text: 'Ошибка' },
     ],
   };
 }

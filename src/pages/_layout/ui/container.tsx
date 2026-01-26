@@ -1,9 +1,9 @@
 import { Settings } from 'lucide-react';
 import { observer } from 'mobx-react-lite';
-import { AnyRoute } from 'mobx-route';
+import type { AnyRoute } from 'mobx-route';
 import { Link } from 'mobx-route/react';
 import { useCreateViewModel } from 'mobx-view-model';
-import { ReactNode } from 'react';
+import type { ReactNode } from 'react';
 import { cx } from 'yummies/css';
 
 import { buttonVariants } from '@/shared/ui/button';
@@ -25,10 +25,10 @@ export const Container = observer(({ children }: { children?: ReactNode }) => {
   const model = useCreateViewModel(LayoutModel);
 
   return (
-    <div className={'flex flex-col min-h-[inherit] h-full relative'}>
+    <div className={'relative flex h-full min-h-[inherit] flex-col'}>
       <LogoSvg
         className={
-          'fixed bottom-2 left-2 h-14 w-14 text-reverse max-xs:h-10 max-xs:w-10 active:scale-105 cursor-pointer select-none'
+          'fixed bottom-2 left-2 h-14 w-14 cursor-pointer select-none text-reverse active:scale-105 max-xs:h-10 max-xs:w-10'
         }
       />
       <img
@@ -38,7 +38,7 @@ export const Container = observer(({ children }: { children?: ReactNode }) => {
           filter: 'drop-shadow(rgba(0, 0, 0, 0.225) 0px 2px 7px)',
         }}
         className={
-          'fixed bottom-2 right-2 w-36 -scale-x-100 dark:brightness-75 active:-scale-x-105 active:scale-y-105 cursor-pointer select-none'
+          'fixed right-2 bottom-2 w-36 -scale-x-100 cursor-pointer select-none active:-scale-x-105 active:scale-y-105 dark:brightness-75'
         }
       />
       <div className={'flex flex-row p-6 max-md:p-4'}>
@@ -80,7 +80,7 @@ export const Container = observer(({ children }: { children?: ReactNode }) => {
             })}
             <NavigationMenuItem>
               <NavigationMenuTrigger chevronClassName={'max-sm:hidden'}>
-                <Settings className={'size-4 mr-1'} />
+                <Settings className={'mr-1 size-4'} />
                 <span className={'max-sm:hidden'}>Настройки</span>
               </NavigationMenuTrigger>
               <NavigationMenuContent>
@@ -92,7 +92,7 @@ export const Container = observer(({ children }: { children?: ReactNode }) => {
       </div>
       <div
         className={
-          'flex flex-col max-w-210 flex-1 w-full mx-auto prose p-6 max-md:p-4'
+          'prose mx-auto flex w-full max-w-210 flex-1 flex-col p-6 max-md:p-4'
         }
       >
         {children}

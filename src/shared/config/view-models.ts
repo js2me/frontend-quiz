@@ -1,4 +1,4 @@
-import { viewModelsConfig, ViewModelStoreBase } from 'mobx-view-model';
+import { ViewModelStoreBase, viewModelsConfig } from 'mobx-view-model';
 
 viewModelsConfig.comparePayload = false;
 viewModelsConfig.payloadComputed = 'struct';

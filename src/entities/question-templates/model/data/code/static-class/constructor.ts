@@ -1,5 +1,5 @@
 export default function question({
-    word,
+  word,
   string,
   pascalCase,
   camelCase,
@@ -7,17 +7,17 @@ export default function question({
 }: QuestionHelpers): RawQuestion {
   const Class = pascalCase(word());
   const fieldName = word();
-  const fieldNameMethod = camelCase("change", fieldName);
+  const fieldNameMethod = camelCase('change', fieldName);
   const instance = camelCase(Class);
   const values = { a: word(), b: word(), c: word() };
   const anotherCase = bool();
   return {
-    upperText: "Что будет выведено в консоль ?",
+    upperText: 'Что будет выведено в консоль ?',
     helpText: `
     Функция <code>${fieldNameMethod}</code> является статичной. Статичные методы не имеют доступа к экземплярам класса, и, соответственно, к контексту экземпляра тоже.
     `,
     helpLinks: [
-      "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/static",
+      'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/static',
     ],
     code: `
     class ${Class} {
@@ -44,7 +44,7 @@ export default function question({
       { code: string(values.a) },
       { code: string(values.b), right: anotherCase },
       { code: string(values.c) },
-      { text: "Ошибка", right: !anotherCase },
+      { text: 'Ошибка', right: !anotherCase },
     ],
   };
 }

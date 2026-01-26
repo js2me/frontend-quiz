@@ -2,15 +2,15 @@ export default function question({ int }: QuestionHelpers): RawQuestion {
   const blurValue = `${int(4, 24)}px`;
 
   return {
-    upperText: "[CSS] Как размыть изображение?",
+    upperText: '[CSS] Как размыть изображение?',
     code: `
       <img src="https://link.to/img.png" />
     `,
-    language: "html",
-    display: "grid",
+    language: 'html',
+    display: 'grid',
     gridCols: 2,
     helpLinks: [
-      "https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/blur",
+      'https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/blur',
     ],
     answers: [
       { code: `transform: blur(${blurValue})` },

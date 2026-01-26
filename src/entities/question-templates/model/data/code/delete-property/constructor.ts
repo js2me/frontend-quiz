@@ -1,5 +1,5 @@
 export default function question({
-    char,
+  char,
   word,
   string,
   minorBool,
@@ -8,7 +8,7 @@ export default function question({
   const text = word();
   const failed = minorBool();
   return {
-    upperText: "Что будет выведено в консоль ?",
+    upperText: 'Что будет выведено в консоль ?',
     helpText: `
 <h3>без режима <code>"use strict";</code></h3>
 будет выведено в консоль <code>false true</code> потому что в первом случае у нас переменная объявлена через ключевое слово <code>const</code> и она не привязывается к объекту window,
@@ -19,22 +19,22 @@ export default function question({
 <code>Uncaught SyntaxError: Delete of an unqualified identifier in strict mode.</code>
     `,
     code: `
-      ${failed ? `"use strict";` : ""}
+      ${failed ? `"use strict";` : ''}
       const ${a} = ${string(text)};
       ${b} = true;
 
       console.log(delete ${a});
       console.log(delete ${b});
     `,
-    display: "grid",
+    display: 'grid',
     gridCols: 2,
     answers: [
-      { code: "false true", right: !failed },
+      { code: 'false true', right: !failed },
       { code: `${string(text)} true` },
-      { code: "true true" },
-      { code: "undefined undefined" },
-      { code: "true false" },
-      { text: "Ошибка", right: failed },
+      { code: 'true true' },
+      { code: 'undefined undefined' },
+      { code: 'true false' },
+      { text: 'Ошибка', right: failed },
     ],
   };
 }

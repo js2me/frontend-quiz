@@ -1,5 +1,5 @@
 export default function question({
-    word,
+  word,
   int,
   choice,
   string,
@@ -12,7 +12,7 @@ export default function question({
   ];
   const anotherCase = minorBool();
   return {
-    upperText: "Что будет выведено в консоль ?",
+    upperText: 'Что будет выведено в консоль ?',
     helpText: `
     С помощью ключевого слова <code>var</code> можно определять сколько угодно переменных с одним и тем же именем.
     Переменная будет хранить последнее присвоенное значение.
@@ -22,7 +22,7 @@ export default function question({
     <code>"use strict";</code> режим никак не повлияет на исполнение этого кода
     `,
     code: `
-    ${anotherCase ? `"use strict";` : ""}
+    ${anotherCase ? `"use strict";` : ''}
     var ${variable} = ${string(a)};
     var ${variable} = ${string(b)};
     
@@ -31,7 +31,7 @@ export default function question({
     answers: [
       { code: string(a) },
       { code: string(b), right: true },
-      { text: "Ошибка" },
+      { text: 'Ошибка' },
     ],
   };
 }

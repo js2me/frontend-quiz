@@ -1,31 +1,28 @@
-import { valibotResolver } from '@hookform/resolvers/valibot';
-import { makeAutoObservable } from 'mobx';
-import { MobxForm } from 'mobx-react-hook-form';
-import { ViewModelSimple } from 'mobx-view-model';
-
+import { computed, makeObservable } from 'mobx';
+import { createModelLoader } from 'mobx-shared-entities';
+import type { ViewModelSimple } from 'mobx-view-model';
 import { quizCreateSchema } from '@/features/quiz/create/model';
-import { ModelLoader } from '@/shared/lib/mobx/model-loader';
-
+import { SchemaForm } from '@/shared/lib/react/react-hook-form';
 import { quizAvailableCountToChoose } from '../config';
 
 export class HomePageVM implements ViewModelSimple {
-  private modelLoader = new ModelLoader();
+  private abortCtrl = new AbortController();
 
-  id = 'home-page';
-
-  questionTemplates = this.modelLoader.init({
+  private modelLoader = createModelLoader({
+    abortSignal: this.abortCtrl.signal,
     context: this,
+  });
+
+  questionTemplates = this.modelLoader.connect({
     property: 'questionTemplates',
     fn: () =>
       import('@/entities/question-templates/model').then(
-        ({ QuestionTemplatesModel }) => {
-          return new QuestionTemplatesModel();
-        },
+        (m) => new m.QuestionTemplatesModel(),
       ),
   });
 
-  newQuizForm = new MobxForm({
-    resolver: valibotResolver(quizCreateSchema),
+  newQuizForm = new SchemaForm({
+    schema: quizCreateSchema,
     defaultValues: {
       questionsCount: quizAvailableCountToChoose[1],
       levels: ['low', 'medium'],
@@ -34,10 +31,16 @@ export class HomePageVM implements ViewModelSimple {
   });
 
   get isLoading() {
-    return this.modelLoader.checkLoading(this, 'questionTemplates');
+    return this.modelLoader.isLoading('questionTemplates');
+  }
+
+  unmount() {
+    this.abortCtrl.abort();
   }
 
   constructor() {
-    makeAutoObservable(this);
+    makeObservable(this, {
+      isLoading: computed,
+    });
   }
 }

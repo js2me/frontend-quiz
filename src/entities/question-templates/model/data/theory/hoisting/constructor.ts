@@ -8,8 +8,8 @@ export default function question(): RawQuestion {
 поднимаются/hoisted в верхнюю часть их функциональной/локальной области видимости (если объявляется внутри функции) или в глобальную область видимости (если объявляется вне функции) независимо от того, где была сделана фактическая декларация.
     `,
     helpLinks: [
-      "https://developer.mozilla.org/ru/docs/Glossary/Hoisting",
-      "https://frontend-stuff.com/blog/hoisting/",
+      'https://developer.mozilla.org/ru/docs/Glossary/Hoisting',
+      'https://frontend-stuff.com/blog/hoisting/',
     ],
     answers: [
       {

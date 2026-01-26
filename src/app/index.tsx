@@ -13,16 +13,16 @@ export const App = observer(() => {
       <Layout.Container>
         <RouteView
           route={homeRoute}
-          loader={Layout.Loader}
-          lazyView={async () => {
+          loading={Layout.Loader}
+          loadView={async () => {
             const { HomePage } = await import('@/pages/home/ui');
             return HomePage;
           }}
         />
         <RouteView
           route={aboutRoute}
-          loader={Layout.Loader}
-          lazyView={async () => {
+          loading={Layout.Loader}
+          loadView={async () => {
             const { AboutPage } = await import('@/pages/about/ui');
             return AboutPage;
           }}

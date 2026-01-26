@@ -1,5 +1,5 @@
 export default function question({
-    minorBool,
+  minorBool,
   char,
   int,
 }: QuestionHelpers): RawQuestion {
@@ -7,14 +7,14 @@ export default function question({
   const anotherCase = minorBool();
   const num = int(0, 10);
   return {
-    upperText: "Что будет выведено в консоль ?",
+    upperText: 'Что будет выведено в консоль ?',
     helpLinks: anotherCase
       ? [
-          "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode",
+          'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode',
         ]
       : [],
     code: `
-  ${anotherCase ? "'use strict';" : ""}
+  ${anotherCase ? "'use strict';" : ''}
   var output = (function(${a}) {
     delete ${a};
     return ${a};
@@ -23,10 +23,10 @@ export default function question({
   console.log(output);
     `,
     answers: [
-      { text: "Ничего" },
+      { text: 'Ничего' },
       { code: `undefined` },
       { code: `${num}`, right: !anotherCase },
-      { text: "Ошибка", right: anotherCase },
+      { text: 'Ошибка', right: anotherCase },
     ],
   };
 }

@@ -2,6 +2,7 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 /// <reference types="vitest" />
 
+import tailwindcss from '@tailwindcss/vite';
 import viteLegacyPlugin from '@vitejs/plugin-legacy';
 import react from '@vitejs/plugin-react';
 import browserslist from 'browserslist';
@@ -11,22 +12,18 @@ import { default as eslint } from 'vite-plugin-eslint';
 import { createHtmlPlugin as html } from 'vite-plugin-html';
 import svgr from 'vite-plugin-svgr';
 import { defineConfig } from 'vitest/config';
-import tailwindcss from '@tailwindcss/vite'
 
 import packageJson from './package.json';
 
 dotenv.config();
 
 const isProd = process.env.NODE_ENV === 'production';
-const isDev = !isProd;
 
 const browserTargets = browserslist.loadConfig({ path: '.' });
 
 const baseUrl = process.env.PUBLIC_URL || '/';
 const isPreview = process.env.MODE === 'preview';
 const port = +process.env.PORT || 8081;
-
-const useProxyTargetApiUrl = isPreview || isDev;
 
 // https://vitejs.dev/config/
 export default defineConfig({

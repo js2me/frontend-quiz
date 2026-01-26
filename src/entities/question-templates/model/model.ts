@@ -1,4 +1,4 @@
-import { QuestionCategory, QuestionTemplateConfig } from './model.types';
+import type { QuestionCategory, QuestionTemplateConfig } from './model.types';
 
 const questionTemplateScannedPaths = import.meta.glob('./data/**/index.ts', {
   eager: true,

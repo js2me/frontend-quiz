@@ -1,5 +1,5 @@
 export default function question({
-    int,
+  int,
   minorBool,
   char,
 }: QuestionHelpers): RawQuestion {
@@ -7,7 +7,7 @@ export default function question({
   const anotherCase = minorBool();
   const field = char();
   return {
-    upperText: "Что будет выведено в консоль ?",
+    upperText: 'Что будет выведено в консоль ?',
     code: () => {
       const iife = anotherCase
         ? `
@@ -29,8 +29,8 @@ fn();
     answers: [
       { code: `${a}` },
       { code: `${b}`, right: true },
-      { text: "Ошибка" },
-      { code: "undefined" },
+      { text: 'Ошибка' },
+      { code: 'undefined' },
     ],
   };
 }

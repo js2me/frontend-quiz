@@ -1,16 +1,16 @@
 export default function question({
-    word,
+  word,
   minorBool,
   value,
   string,
 }: QuestionHelpers): RawQuestion {
   const varName = word();
   const anotherCase = minorBool();
-  const weakMapOrSet = anotherCase ? "WeakMap" : "WeakMap";
+  const weakMapOrSet = anotherCase ? 'WeakMap' : 'WeakMap';
   const [key, val] = [value(), value()];
 
   return {
-    upperText: "Что будет выведено в консоль ?",
+    upperText: 'Что будет выведено в консоль ?',
     code: `
       const ${varName} = new ${weakMapOrSet}()
 
@@ -25,7 +25,7 @@ export default function question({
       { code: string(val) },
       { code: string(undefined) },
       { code: string(null) },
-      { text: "Ошибка", right: true },
+      { text: 'Ошибка', right: true },
     ],
   };
 }

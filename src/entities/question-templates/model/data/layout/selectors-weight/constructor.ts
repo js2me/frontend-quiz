@@ -1,11 +1,15 @@
-export default function question({ word, value, htmlTag }: QuestionHelpers): RawQuestion {
+export default function question({
+  word,
+  value,
+  htmlTag,
+}: QuestionHelpers): RawQuestion {
   const className = word();
   const attrValue = value();
   const id = word();
   const tagName = htmlTag();
 
   return {
-    upperText: "Вес селекторов (по убыванию)",
+    upperText: 'Вес селекторов (по убыванию)',
     ordered: true,
     multiple: true,
     helpText: `
@@ -20,16 +24,16 @@ export default function question({ word, value, htmlTag }: QuestionHelpers): Raw
 
     `,
     helpLinks: [
-      "https://doka.guide/css/specificity/",
-      "http://css.yoksel.ru/specifity/",
+      'https://doka.guide/css/specificity/',
+      'http://css.yoksel.ru/specifity/',
     ],
     answers: [
-      { code: `style=""`, right: true, order: 0, language: "js" },
-      { code: `#${id}`, right: true, order: 1, language: "css" },
-      { code: `.${className}`, right: true, order: 2, language: "css" },
-      { code: `[attr="${attrValue}"]`, right: true, order: 3, language: "css" },
-      { code: tagName, right: true, order: 4, language: "css" },
-      { code: "*", right: true, order: 5, language: "css" },
+      { code: `style=""`, right: true, order: 0, language: 'js' },
+      { code: `#${id}`, right: true, order: 1, language: 'css' },
+      { code: `.${className}`, right: true, order: 2, language: 'css' },
+      { code: `[attr="${attrValue}"]`, right: true, order: 3, language: 'css' },
+      { code: tagName, right: true, order: 4, language: 'css' },
+      { code: '*', right: true, order: 5, language: 'css' },
     ],
   };
 }

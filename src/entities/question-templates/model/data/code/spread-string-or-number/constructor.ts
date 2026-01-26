@@ -12,11 +12,11 @@ export default function question({
   const spreadedVarName = word();
 
   return {
-    upperText: "Что будет выведено в консоль?",
+    upperText: 'Что будет выведено в консоль?',
     code: `
       const ${variable} = ${string(values)}
       const [${(anotherCase ? [char(), char(), char()] : [char(), char()]).join(
-        ","
+        ',',
       )}, ...${spreadedVarName}] = ${variable}
 
       console.log(${spreadedVarName})
@@ -29,19 +29,19 @@ export default function question({
 Строка является иттерируемым типом.
 Поэтому в данном случае такая конструкция
 <code>const [${(anotherCase ? [char(), char(), char()] : [char(), char()]).join(
-          ","
+          ',',
         )}, ...${spreadedVarName}] = ${variable}</code>
 Валидна и выполнится успешно
       `,
-    helpLinks: ["https://doka.guide/js/spread/"],
+    helpLinks: ['https://doka.guide/js/spread/'],
     answers: [
       {
         code: string(
           values
             .toString()
             .substring(anotherCase ? 3 : 2)
-            .split("")
-            .map((value) => (expectError ? Number(value) : String(value)))
+            .split('')
+            .map((value) => (expectError ? Number(value) : String(value))),
         ),
         right: !expectError,
       },
@@ -51,12 +51,12 @@ export default function question({
             ? values
                 .toString()
                 .substring(anotherCase ? 3 : 2)
-                .split("")
+                .split('')
                 .map(String)
-            : values.toString().substring(anotherCase ? 3 : 2)
+            : values.toString().substring(anotherCase ? 3 : 2),
         ),
       },
-      { text: "Ошибка", right: expectError },
+      { text: 'Ошибка', right: expectError },
     ],
   };
 }

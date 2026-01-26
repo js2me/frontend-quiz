@@ -1,5 +1,5 @@
 export default function question({
-    minorBool,
+  minorBool,
   value,
   char,
   string,
@@ -8,17 +8,17 @@ export default function question({
   const withUseStrict = minorBool();
   const varName = char();
   return {
-    upperText: "Что будет выведено в консоль ?",
-    helpLinks: ["https://doka.guide/js/closures/"],
+    upperText: 'Что будет выведено в консоль ?',
+    helpLinks: ['https://doka.guide/js/closures/'],
     helpText: `
 Внутри функции создастся своя область видимости и в нее будет записана переменная <code>${varName}</code> со значением <code>${string(
-      secondValue
+      secondValue,
     )}</code><br/>
 После её вызова, при вызове последнего <code>console.log</code> мы будем уже ссылаться на глобальную область видимости к идентификатору <code>${varName}</code> глобальной области видимости<br/>
 В который записано значение <code>${string(firstValue)}</code>
     `,
     code: `
-${withUseStrict ? "'use strict';" : ""}
+${withUseStrict ? "'use strict';" : ''}
 var ${varName} = ${string(firstValue)};
 (function () {
     var ${varName} = ${string(secondValue)};
@@ -27,7 +27,7 @@ var ${varName} = ${string(firstValue)};
 console.log(${varName});
     `,
     answers: [
-      { text: "Ошибка" },
+      { text: 'Ошибка' },
       { code: `${string(secondValue)} ${string(firstValue)}`, right: true },
       { code: `${string(firstValue)} ${string(secondValue)}` },
       { code: `${string(firstValue)} ${string(firstValue)}` },

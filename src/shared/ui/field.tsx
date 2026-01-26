@@ -1,5 +1,5 @@
 import { TriangleAlert } from 'lucide-react';
-import { ReactNode } from 'react';
+import type { ReactNode } from 'react';
 import { cx } from 'yummies/css';
 
 import { Label } from './label';
@@ -20,7 +20,7 @@ export const Field = ({
   errorPlacement = 'label',
   children,
 }: FieldProps) => (
-  <div className={cx('flex flex-col gap-2 prose dark:prose-invert', className)}>
+  <div className={cx('prose dark:prose-invert flex flex-col gap-2', className)}>
     {label && (
       <Label
         className={cx({
@@ -31,7 +31,7 @@ export const Field = ({
         {errorPlacement === 'label' && !!error && (
           <Tooltip>
             <TooltipTrigger>
-              <TriangleAlert className={'size-4.5 -mt-1 -mb-1 -ml-0.5'} />
+              <TriangleAlert className={'-mt-1 -mb-1 -ml-0.5 size-4.5'} />
             </TooltipTrigger>
             <TooltipContent>{error}</TooltipContent>
           </Tooltip>

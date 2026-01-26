@@ -1,18 +1,21 @@
-export default function question({ minorBool, char }: QuestionHelpers): RawQuestion {
+export default function question({
+  minorBool,
+  char,
+}: QuestionHelpers): RawQuestion {
   const decrement = minorBool();
   const resolve = minorBool();
   const result = decrement ? -1 : 1;
   const a = char();
   return {
-    upperText: "Что будет выведено в консоль ?",
+    upperText: 'Что будет выведено в консоль ?',
     code: `
     new Promise((res, rej) => {
       let ${a} = 0;
       
       setInterval(() => {
-        if (${resolve ? (decrement ? "--" : "++") : ""}${a}${
-      resolve ? "" : decrement ? "--" : "++"
-    }) {
+        if (${resolve ? (decrement ? '--' : '++') : ''}${a}${
+          resolve ? '' : decrement ? '--' : '++'
+        }) {
           res(${a});
         } else {
           rej(${a})
@@ -25,7 +28,7 @@ export default function question({ minorBool, char }: QuestionHelpers): RawQuest
     answers: [
       { code: `then: ${result}`, right: resolve },
       { code: `catch: ${result}`, right: !resolve },
-      { text: "Ошибка" },
+      { text: 'Ошибка' },
     ],
   };
 }

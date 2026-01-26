@@ -1,7 +1,7 @@
 export default function question(): RawQuestion {
   return {
     upperText:
-      "Чем отличается поведение <code>isNaN()</code> и <code>Number.isNaN()</code>?",
+      'Чем отличается поведение <code>isNaN()</code> и <code>Number.isNaN()</code>?',
     answers: [
       {
         text: `
@@ -17,7 +17,7 @@ export default function question(): RawQuestion {
         `,
       },
       {
-        text: "<code>Number.isNaN()</code> и <code>isNaN()</code> работают одинаково",
+        text: '<code>Number.isNaN()</code> и <code>isNaN()</code> работают одинаково',
       },
     ],
   };

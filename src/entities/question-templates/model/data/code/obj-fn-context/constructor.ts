@@ -1,9 +1,13 @@
-export default function question({ word, bool, char }: QuestionHelpers): RawQuestion {
+export default function question({
+  word,
+  bool,
+  char,
+}: QuestionHelpers): RawQuestion {
   const str = word();
   const useArrowFn = bool();
   const field = char();
   return {
-    upperText: "Что будет выведено в консоль ?",
+    upperText: 'Что будет выведено в консоль ?',
     code: `
     const obj = {
       ${field}: "${str}",
@@ -14,7 +18,7 @@ export default function question({ word, bool, char }: QuestionHelpers): RawQues
       },
     }
     
-    console.log(${useArrowFn ? "obj.fn.call(obj)" : "obj.fn()"});
+    console.log(${useArrowFn ? 'obj.fn.call(obj)' : 'obj.fn()'});
     `,
     helpText: useArrowFn
       ? `
@@ -25,11 +29,11 @@ export default function question({ word, bool, char }: QuestionHelpers): RawQues
 При вызове <code>obj.fn()</code> в <code>this</code> в момент вызова функции <code>fn</code> будет записан <code>obj</code>
 `,
     helpLinks: [
-      "https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Operators/this",
-      "https://learn.javascript.ru/bind",
+      'https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Operators/this',
+      'https://learn.javascript.ru/bind',
     ],
     answers: [
-      { text: "Ошибка" },
+      { text: 'Ошибка' },
       { code: `"${str}"`, right: !useArrowFn },
       { code: `undefined`, right: useArrowFn },
     ],

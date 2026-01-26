@@ -1,5 +1,5 @@
 export default function question({
-    word,
+  word,
   int,
   choice,
   string,
@@ -11,14 +11,14 @@ export default function question({
   ];
   const anotherCase = minorBool();
   const stringParts = choice([
-    ["from point ", " to point ", "!"],
-    ["using ", " but get ", "..."],
-    ["open { ", " } and add { ", " }"],
+    ['from point ', ' to point ', '!'],
+    ['using ', ' but get ', '...'],
+    ['open { ', ' } and add { ', ' }'],
   ]);
   return {
-    upperText: "Что будет выведено в консоль ?",
+    upperText: 'Что будет выведено в консоль ?',
     code: `
-    ${anotherCase ? `"use strict";` : ""}
+    ${anotherCase ? `"use strict";` : ''}
     function fn(a, b, c) {
       console.log(a, b, c);
     }
@@ -29,7 +29,7 @@ export default function question({
     fn\`${stringParts[0]}\${a}${stringParts[1]}$\{b}${stringParts[2]}\`;
     `,
     helpLinks: [
-      "https://codeburst.io/javascript-what-are-tag-functions-97682f29521b",
+      'https://codeburst.io/javascript-what-are-tag-functions-97682f29521b',
     ],
     helpText: `
 Это валидный синтаксис tag functions, более подробно про них можно прочесть ниже
@@ -40,8 +40,8 @@ export default function question({
         code: `${string(stringParts)} ${string(a)} ${string(b)}`,
         right: true,
       },
-      { text: "Ошибка" },
-      { code: `${stringParts.map((part) => string(part)).join(" ")}` },
+      { text: 'Ошибка' },
+      { code: `${stringParts.map((part) => string(part)).join(' ')}` },
       { code: `${string(a)} ${string(b)} ${string(stringParts[0])}` },
     ],
   };

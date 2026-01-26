@@ -2,7 +2,7 @@ import { Moon, Sun, SunMoon } from 'lucide-react';
 import { observer } from 'mobx-react-lite';
 
 import { settings } from '@/entities/settings/model';
-import { Button, ButtonProps } from '@/shared/ui/button';
+import { Button, type ButtonProps } from '@/shared/ui/button';
 
 export const ThemeSwitcherButton = observer((props: ButtonProps) => {
   return (

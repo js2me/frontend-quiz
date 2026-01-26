@@ -1,4 +1,7 @@
-export default function question({ choice, minorBool }: QuestionHelpers): RawQuestion {
+export default function question({
+  choice,
+  minorBool,
+}: QuestionHelpers): RawQuestion {
   const answerText = (answer: string) => {
     const answerWithCode = `<code>${answer}</code>`;
     return choice([
@@ -12,7 +15,7 @@ export default function question({ choice, minorBool }: QuestionHelpers): RawQue
   const anotherCase = minorBool();
 
   return {
-    upperText: "Как создать макротаску ?",
+    upperText: 'Как создать макротаску ?',
     multiple: true,
     helpLinks: [
       `https://habr.com/ru/company/oleg-bunin/blog/417461/`,
@@ -27,14 +30,14 @@ export default function question({ choice, minorBool }: QuestionHelpers): RawQue
       { text: answerText(`queueMicrotask`) },
       {
         text: answerText(
-          choice([`Promise`, `async/await`, `Promise.resolve()`])
+          choice([`Promise`, `async/await`, `Promise.resolve()`]),
         ),
       },
       {
         text: answerText(
           anotherCase
             ? `setImmediate`
-            : choice([`requestAnimationFrame`, `requestIdleCallback`])
+            : choice([`requestAnimationFrame`, `requestIdleCallback`]),
         ),
         right: anotherCase,
       },

@@ -1,7 +1,7 @@
 export default function question({ word }: QuestionHelpers): RawQuestion {
   const [a, b, c] = [word(), word(), word()].map((s) => `"${s}"`);
   return {
-    upperText: "Что будет выведено в консоль ?",
+    upperText: 'Что будет выведено в консоль ?',
     code: `
   setTimeout(() => {
     console.info(${a});

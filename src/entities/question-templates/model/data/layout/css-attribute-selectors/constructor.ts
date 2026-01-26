@@ -1,15 +1,19 @@
-export default function question({ minorBool, word, choice }: QuestionHelpers): RawQuestion {
+export default function question({
+  minorBool,
+  word,
+  choice,
+}: QuestionHelpers): RawQuestion {
   const lastRight = minorBool();
-  const attrName = choice(["title", "foo", "bar", "id", "name"]);
+  const attrName = choice(['title', 'foo', 'bar', 'id', 'name']);
   const [a, b, c, d, e, f] = Array(6).fill(null).map(word);
 
   return {
-    upperText: "[CSS] Какие селекторы валидны ?",
+    upperText: '[CSS] Какие селекторы валидны ?',
     multiple: true,
-    display: "grid",
+    display: 'grid',
     gridCols: 2,
     helpLinks: [
-      "https://developer.mozilla.org/ru/docs/Web/CSS/Attribute_selectors",
+      'https://developer.mozilla.org/ru/docs/Web/CSS/Attribute_selectors',
     ],
     helpText: `
 <h3><code>[${attrName}^="${a}"]</code></h3>
@@ -31,16 +35,16 @@ export default function question({ minorBool, word, choice }: QuestionHelpers): 
     answers: [
       {
         code: choice([`[${attrName}^="${a}"]`, `[${attrName}~="${a}"]`]),
-        language: "css",
+        language: 'css',
         right: true,
       },
-      { code: `[${attrName}$="${b}"]`, language: "css", right: true },
-      { code: `[${attrName}*="${c}"]`, language: "css", right: true },
-      { code: `[${attrName}#="${d}"]`, language: "css" },
-      { code: `[${attrName}+="${e}"]`, language: "css" },
+      { code: `[${attrName}$="${b}"]`, language: 'css', right: true },
+      { code: `[${attrName}*="${c}"]`, language: 'css', right: true },
+      { code: `[${attrName}#="${d}"]`, language: 'css' },
+      { code: `[${attrName}+="${e}"]`, language: 'css' },
       {
         code: lastRight ? `[${attrName}|="${f}"]` : `[${attrName}?="${f}"]`,
-        language: "css",
+        language: 'css',
         right: lastRight,
       },
     ],

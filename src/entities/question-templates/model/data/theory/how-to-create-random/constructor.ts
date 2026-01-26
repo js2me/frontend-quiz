@@ -10,12 +10,12 @@ export default function question({ choice }: QuestionHelpers): RawQuestion {
   };
 
   return {
-    upperText: "Как получить случайное число?",
+    upperText: 'Как получить случайное число?',
     answers: [
-      { text: answerText("Math.random()"), right: true },
-      { text: answerText("Math.rnd()") },
-      { text: answerText("Math.rand()") },
-      { text: answerText("Math.seed()") },
+      { text: answerText('Math.random()'), right: true },
+      { text: answerText('Math.rnd()') },
+      { text: answerText('Math.rand()') },
+      { text: answerText('Math.seed()') },
     ],
   };
 }

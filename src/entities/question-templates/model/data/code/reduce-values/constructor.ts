@@ -1,5 +1,5 @@
 export default function question({
-    minorBool,
+  minorBool,
   int,
   word,
   shuffle,
@@ -10,17 +10,17 @@ export default function question({
   const intC = int(intB + 1, intB + 10);
   const intD = int(intC + 1, intC + 10);
   return {
-    upperText: "Что будет выведено в консоль ?",
+    upperText: 'Что будет выведено в консоль ?',
     code: `
     const array = ['', ${intA}, ${shuffle([
-      "null",
-      "undefined",
+      'null',
+      'undefined',
     ])}, '${word()}', '${intB}', ${intC}, '0${intD}'];
 
     const result = array
       .map(value => +value)
       .reduce((result, value) => {
-        if (result ${anotherCase ? ">" : "<"} value) result = value;
+        if (result ${anotherCase ? '>' : '<'} value) result = value;
   
         return result
       }, 0)
@@ -28,7 +28,7 @@ export default function question({
     console.log(result);
     `,
     answers: [
-      { text: "Ошибка" },
+      { text: 'Ошибка' },
       { code: `null` },
       { code: `undefined` },
       { code: `NaN` },

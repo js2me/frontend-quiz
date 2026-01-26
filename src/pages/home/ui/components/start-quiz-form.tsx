@@ -24,11 +24,11 @@ export const StartQuizForm = observer(() => {
 
   return (
     <form
-      className={'flex flex-col w-full'}
+      className={'flex w-full flex-col'}
       onSubmit={model.newQuizForm.submit}
       onReset={model.newQuizForm.reset}
     >
-      <div className={'flex flex-col gap-6 min-h-[240px]'}>
+      <div className={'flex min-h-[240px] flex-col gap-6'}>
         <Controller
           control={model.newQuizForm.control}
           name={'questionsCount'}
@@ -109,7 +109,7 @@ export const StartQuizForm = observer(() => {
                       value={category}
                       variant={'outline-brand-extra'}
                       size={'lg'}
-                      className={'shadow-none relative'}
+                      className={'relative shadow-none'}
                       onClick={() => {
                         if (field.value.includes(category)) {
                           field.onChange(
@@ -129,7 +129,7 @@ export const StartQuizForm = observer(() => {
           )}
         />
       </div>
-      <div className={'flex flex-row ml-auto mt-8'}>
+      <div className={'mt-8 ml-auto flex flex-row'}>
         <Button
           type={'submit'}
           variant={'default'}

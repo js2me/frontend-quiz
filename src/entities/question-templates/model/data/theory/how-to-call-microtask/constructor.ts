@@ -1,5 +1,5 @@
 export default function question({ choice }: QuestionHelpers): RawQuestion {
-  const microtaskLabel = choice(["микротаску", "микрозадачу"]);
+  const microtaskLabel = choice(['микротаску', 'микрозадачу']);
   const answerText = (choices: string[]) => {
     const answer = choice(choices);
     const answerWithCode = `<code>${answer}</code>`;

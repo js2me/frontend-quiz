@@ -1,8 +1,8 @@
 export default function question(): RawQuestion {
   return {
-    upperText: "Что такое <b>Promise</b>?",
+    upperText: 'Что такое <b>Promise</b>?',
     helpLinks: [
-      "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise",
+      'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise',
     ],
     answers: [
       {

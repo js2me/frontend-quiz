@@ -4,7 +4,7 @@ import { StorageModel, TwoColorThemeStore } from 'mobx-shared-entities';
 
 import { htmlElement } from '@/shared/config';
 
-import { FontSizeSetting } from './model.types';
+import type { FontSizeSetting } from './model.types';
 
 export class SettingsModel {
   private storageModel: StorageModel;

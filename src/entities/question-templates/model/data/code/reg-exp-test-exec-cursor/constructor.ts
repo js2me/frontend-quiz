@@ -13,9 +13,9 @@ export default function question({
   const elseOutput = value();
   const numsRegExp = bool();
 
-  const regExp = numsRegExp ? `/\d+/g` : `/[A-Za-z]+/g`;
+  const regExp = numsRegExp ? `/d+/g` : `/[A-Za-z]+/g`;
 
-  const divider = choice([".", "/", "-"]);
+  const divider = choice(['.', '/', '-']);
 
   const min = 3;
   const max = int(min, 5);
@@ -28,15 +28,15 @@ export default function question({
   const inputValue = regExpExecArr.join(divider);
 
   const log = (...args: any[]) => {
-    return `console.${choice(["log", "info", "warn", "error"])}(${args.join(
-      ", "
+    return `console.${choice(['log', 'info', 'warn', 'error'])}(${args.join(
+      ', ',
     )})`;
   };
 
   const targetingIndex = 0;
 
   return {
-    upperText: "Что будет выведено в консоль ?",
+    upperText: 'Что будет выведено в консоль ?',
     code: `
     const ${regExpVar} = ${regExp};
     const ${inputVar} = ${string(inputValue)};
@@ -47,10 +47,10 @@ export default function question({
       ${log(`${string(elseOutput)}`)}
     }
     `,
-    display: "grid",
+    display: 'grid',
     gridCols: 2,
     answers: [
-      { text: "Ошибка" },
+      { text: 'Ошибка' },
       { code: `${string(regExpExecArr[targetingIndex])}` },
       { code: `${string(regExpExecArr[targetingIndex + 1])}`, right: true },
       { code: `${string(regExpExecArr[targetingIndex + 2])}` },

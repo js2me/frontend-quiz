@@ -1,10 +1,14 @@
-export default function question({ word, htmlTag, value }: QuestionHelpers): RawQuestion {
+export default function question({
+  word,
+  htmlTag,
+  value,
+}: QuestionHelpers): RawQuestion {
   const tags = { a: htmlTag(), b: htmlTag(), c: htmlTag() };
   const logs = { a: word(), b: word(), c: word() };
   const val = value();
   return {
     upperText: `Какой элемент будет в <code>event.target</code> после клика на <code>${val}</code>?`,
-    language: "html",
+    language: 'html',
     helpText: `
 <code>event</code> это глобальная переменная, в которую записывается текущее исполняющееся событие
 Целью события является самый глубокий вложенный элемент. Остановить распространение событий можно с помощью <code>event.stopPropagation()</code>
@@ -19,10 +23,10 @@ export default function question({ word, htmlTag, value }: QuestionHelpers): Raw
     </${tags.a}>
     `,
     answers: [
-      { text: "Ошибка" },
-      { code: `<${tags.a} />`, language: "html" },
-      { code: `<${tags.b} />`, language: "html" },
-      { code: `<${tags.c} />`, language: "html", right: true },
+      { text: 'Ошибка' },
+      { code: `<${tags.a} />`, language: 'html' },
+      { code: `<${tags.b} />`, language: 'html' },
+      { code: `<${tags.c} />`, language: 'html', right: true },
     ],
   };
 }

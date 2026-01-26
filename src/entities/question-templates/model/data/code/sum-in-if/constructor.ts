@@ -12,13 +12,13 @@ export default function question({
   const sumValue = int(1, 10);
   const compareValue = int(
     startValue + sumValue + 1,
-    (startValue + sumValue + 1) * 2
+    (startValue + sumValue + 1) * 2,
   );
 
   const [insideIfWord, outsideIfWord] = [getVarName(), getVarName()];
 
   const createOutput = (category: string, value: number) => {
-    if (category === "inside") {
+    if (category === 'inside') {
       return `${string(insideIfWord)}, ${value}`;
     }
 
@@ -26,43 +26,43 @@ export default function question({
   };
 
   return {
-    upperText: "Что будет выведено в консоль ?",
+    upperText: 'Что будет выведено в консоль ?',
     code: `
   let ${varName} = ${string(startValue)};
   if (${varName} += ${string(sumValue)} && ${varName} == ${string(
-      compareValue
-    )}){
+    compareValue,
+  )}){
     console.log(${string(insideIfWord)}, ${varName})
   }
   console.log(${string(outsideIfWord)}, ${varName})
     `,
     gridCols: 2,
-    display: "grid",
+    display: 'grid',
     answers: [
       {
-        code: `${createOutput("inside", startValue)} ${createOutput(
-          "outside",
-          startValue
+        code: `${createOutput('inside', startValue)} ${createOutput(
+          'outside',
+          startValue,
         )}`,
         right: true,
       },
       {
-        code: `${createOutput("inside", startValue + 1)} ${createOutput(
-          "outside",
-          startValue + 1
+        code: `${createOutput('inside', startValue + 1)} ${createOutput(
+          'outside',
+          startValue + 1,
         )}`,
       },
       {
-        code: `${createOutput("outside", startValue)}`,
+        code: `${createOutput('outside', startValue)}`,
       },
       {
-        code: `${createOutput("inside", startValue + sumValue)} ${createOutput(
-          "outside",
-          startValue + sumValue
+        code: `${createOutput('inside', startValue + sumValue)} ${createOutput(
+          'outside',
+          startValue + sumValue,
         )}`,
       },
       {
-        code: `${createOutput("outside", startValue + sumValue)}`,
+        code: `${createOutput('outside', startValue + sumValue)}`,
       },
     ],
   };

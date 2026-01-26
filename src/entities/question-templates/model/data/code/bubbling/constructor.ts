@@ -10,7 +10,7 @@ export default function question({
 
   return {
     upperText: `Что будет выведено в консоль после клика на <code>${val}</code> ?`,
-    language: "html",
+    language: 'html',
     helpText: `
 После клика по <code>${tags.c}</code> будет выведено <code>${logs.c}</code>, <code>${logs.b}</code> и <code>${logs.a}</code>.
 В цикле жизни события есть три фазы: захват, цель и всплытие.

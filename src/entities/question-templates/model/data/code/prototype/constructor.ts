@@ -1,10 +1,13 @@
-export default function question({ choice, bool }: QuestionHelpers): RawQuestion {
-  const className = choice(["User", "Monster", "Tester", "Admin", "Foo"]);
-  const fieldName = choice(["isAdmin", "isSuperUser", "isUser", "isMonster"]);
+export default function question({
+  choice,
+  bool,
+}: QuestionHelpers): RawQuestion {
+  const className = choice(['User', 'Monster', 'Tester', 'Admin', 'Foo']);
+  const fieldName = choice(['isAdmin', 'isSuperUser', 'isUser', 'isMonster']);
   const fieldValue = bool();
   const instanceName = className.toLowerCase();
   return {
-    upperText: "Что будет выведено в консоль ?",
+    upperText: 'Что будет выведено в консоль ?',
     code: `
     function ${className}() {}
     ${className}.prototype = { ${fieldName}: ${fieldValue} };

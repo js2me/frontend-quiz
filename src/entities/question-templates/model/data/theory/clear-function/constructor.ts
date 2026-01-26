@@ -1,11 +1,11 @@
 export default function question(): RawQuestion {
   return {
-    upperText: "Что такое «чистая» функция в JavaScript ?",
+    upperText: 'Что такое «чистая» функция в JavaScript ?',
     helpText: `
 «Чистые» функции - это любые функции, исходные данные которых получены исключительно из их входных данных и не вызывают побочных эффектов в приложении.
 Математические функции являются примерами «чистых» функций.`,
     helpLinks: [
-      "https://frontend-stuff.com/blog/pure-and-impure-functions-in-js/",
+      'https://frontend-stuff.com/blog/pure-and-impure-functions-in-js/',
     ],
     answers: [
       {
@@ -16,10 +16,10 @@ export default function question(): RawQuestion {
         text: `Это функция, результат которой способен очищать память приложения`,
       },
       {
-        text: "Это функция, которая не возвращает другую функцию",
+        text: 'Это функция, которая не возвращает другую функцию',
       },
       {
-        text: "Это функция, параметры которой не являются ссылочными",
+        text: 'Это функция, параметры которой не являются ссылочными',
       },
     ],
   };

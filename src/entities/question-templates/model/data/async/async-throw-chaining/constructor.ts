@@ -1,8 +1,11 @@
-export default function question({ string, value }: QuestionHelpers): RawQuestion {
+export default function question({
+  string,
+  value,
+}: QuestionHelpers): RawQuestion {
   const [a, b, c] = [value(), value(), value()];
   return {
-    upperText: "Что будет выведено в консоль ?",
-    helpLinks: ["https://learn.javascript.ru/promise-chaining"],
+    upperText: 'Что будет выведено в консоль ?',
+    helpLinks: ['https://learn.javascript.ru/promise-chaining'],
     helpText: `
 В консоли браузера отобразится <code>${a}/${c}</code> и <code>Uncaught (in promise) ${a}</code><br/>
 Такое произойдет потому что:
@@ -29,7 +32,7 @@ result.catch(a => console.log(\`\${a}/${c}\`))
       {
         text: `<code>${a}/${c}</code>`,
       },
-      { text: "Ничего" },
+      { text: 'Ничего' },
       {
         text: `<code>${a}/${b}</code>`,
       },

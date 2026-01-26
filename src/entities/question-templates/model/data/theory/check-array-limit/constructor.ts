@@ -1,4 +1,8 @@
-export default function question({ minorBool, int, string }: QuestionHelpers): RawQuestion {
+export default function question({
+  minorBool,
+  int,
+  string,
+}: QuestionHelpers): RawQuestion {
   const anotherCase = minorBool();
   const size = int(5, 8);
   const arr = Array(size)
@@ -7,7 +11,7 @@ export default function question({ minorBool, int, string }: QuestionHelpers): R
 
   return {
     upperText: `Как убедиться что индекс ${
-      anotherCase ? "" : "НЕ "
+      anotherCase ? '' : 'НЕ '
     }выходит за верхнюю границу массива?`,
     code: `
       const items = ${string(arr)}
@@ -15,15 +19,15 @@ export default function question({ minorBool, int, string }: QuestionHelpers): R
     `,
     answers: [
       {
-        text: `<code>index < items.length${anotherCase ? " - 1" : ""}</code>`,
+        text: `<code>index < items.length${anotherCase ? ' - 1' : ''}</code>`,
         right: !anotherCase,
       },
       {
-        text: `<code>index > items.length${anotherCase ? " - 1" : ""}</code>`,
+        text: `<code>index > items.length${anotherCase ? ' - 1' : ''}</code>`,
         right: anotherCase,
       },
       {
-        text: `<code>index <= items.length${anotherCase ? " - 1" : ""}</code>`,
+        text: `<code>index <= items.length${anotherCase ? ' - 1' : ''}</code>`,
       },
     ],
   };

@@ -1,7 +1,7 @@
 import { makeAutoObservable } from 'mobx';
-import { AnyRoute } from 'mobx-route';
-import { ViewModelSimple } from 'mobx-view-model';
-import { ComponentType } from 'react';
+import type { AnyRoute } from 'mobx-route';
+import type { ViewModelSimple } from 'mobx-view-model';
+import type { ComponentType } from 'react';
 
 import { GithubIcon } from '@/shared/ui/icons/github';
 

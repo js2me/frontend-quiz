@@ -1,5 +1,5 @@
 export default function question({
-    shuffle,
+  shuffle,
   int,
   string,
 }: QuestionHelpers): RawQuestion {
@@ -20,13 +20,12 @@ export default function question({
   ]);
   return {
     upperText: `Какое значение свойства <code>key</code> у тега <code><p></code> в данном случае самое подходящее ?`,
-    display: "grid",
+    display: 'grid',
     gridCols: 2,
-    helpText:
-      `Свойство <code>key</code> должно быть уникальным, чтобы React лучше понимал какой компонент изменился`,
+    helpText: `Свойство <code>key</code> должно быть уникальным, чтобы React лучше понимал какой компонент изменился`,
     helpLinks: [
-      "https://habr.com/ru/company/hh/blog/352150/",
-      "https://reactjs.org/docs/lists-and-keys.html#keys",
+      'https://habr.com/ru/company/hh/blog/352150/',
+      'https://reactjs.org/docs/lists-and-keys.html#keys',
     ],
     code: `
       import { useState } from "react";

@@ -1,5 +1,5 @@
 export default function question({
-    value,
+  value,
   string,
   word,
   pascalCase,
@@ -8,7 +8,7 @@ export default function question({
   const logA = value();
 
   return {
-    upperText: "Что будет выведено в консоль ?",
+    upperText: 'Что будет выведено в консоль ?',
     code: `
       const ${FnName} = () => {
         console.log(${string(logA)})
@@ -19,7 +19,7 @@ export default function question({
 Стрелочные функции не могут быть функциями-конструкторами и у них нет поля <code>prototype</code>
     `,
     helpLinks: [
-      "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions",
+      'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions',
     ],
     answers: [
       { text: `Ошибка`, right: true },

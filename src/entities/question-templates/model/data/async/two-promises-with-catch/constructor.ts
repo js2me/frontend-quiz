@@ -1,4 +1,7 @@
-export default function question({ string, int }: QuestionHelpers): RawQuestion {
+export default function question({
+  string,
+  int,
+}: QuestionHelpers): RawQuestion {
   const values = {
     a: int(1, 9),
     b: int(10, 19),
@@ -16,10 +19,10 @@ export default function question({ string, int }: QuestionHelpers): RawQuestion 
     values.d * 10,
   ].map(string);
   return {
-    upperText: "Что будет выведено в консоль ?",
-    display: "grid",
+    upperText: 'Что будет выведено в консоль ?',
+    display: 'grid',
     gridCols: 2,
-    helpLinks: ["https://habr.com/ru/post/582914/"],
+    helpLinks: ['https://habr.com/ru/post/582914/'],
     code: `
 Promise.resolve()
   .then(() => console.log(${a1}))
@@ -40,7 +43,7 @@ Promise.resolve()
   .then(() => console.log(${d4}));
     `,
     answers: [
-      { text: "Ошибка" },
+      { text: 'Ошибка' },
       { code: `${a1} ${b1} ${c1} ${d1} ${a2} ${b2} ${c3} ${d4}` },
       { code: `${a1} ${a2} ${b1} ${b2} ${c1} ${c3} ${d1} ${d4}`, right: true },
       { code: `${a1} ${a2} ${b1} ${b2} ${c1} ${c3}` },

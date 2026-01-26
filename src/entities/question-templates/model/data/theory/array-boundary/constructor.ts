@@ -1,6 +1,6 @@
 export default function question(): RawQuestion {
   return {
-    upperText: "Что такое выход за границу массива?",
+    upperText: 'Что такое выход за границу массива?',
     answers: [
       {
         text: `Обращение к несуществующему индексу массива, то есть выходящему за его пределы`,

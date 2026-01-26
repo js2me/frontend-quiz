@@ -1,5 +1,5 @@
 export default function question({
-    char,
+  char,
   int,
   minorBool,
 }: QuestionHelpers): RawQuestion {
@@ -9,12 +9,12 @@ export default function question({
   const strictModeEnabled = minorBool();
 
   return {
-    upperText: "Что будет выведено в консоль ?",
+    upperText: 'Что будет выведено в консоль ?',
     helpLinks: [
-      "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/arguments",
+      'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/arguments',
     ],
     code: `
-${strictModeEnabled ? '"use strict";' : ""}
+${strictModeEnabled ? '"use strict";' : ''}
 
 function fn(${names.a}, ${names.b}, ${names.c}) {
   arguments[${anotherCase ? 0 : 2}] = arguments[${anotherCase ? 2 : 0}];
@@ -27,7 +27,7 @@ fn(${values.a}, ${values.b}, ${values.c});
         code: `${values.a}`,
         right: strictModeEnabled ? anotherCase : !anotherCase,
       },
-      { text: "Ошибка" },
+      { text: 'Ошибка' },
       {
         code: `${values.c}`,
         right: strictModeEnabled ? !anotherCase : anotherCase,

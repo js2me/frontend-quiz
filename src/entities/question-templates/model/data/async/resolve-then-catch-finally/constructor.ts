@@ -2,10 +2,10 @@ export default function question({ word, bool }: QuestionHelpers): RawQuestion {
   const [a, b, c] = [word(), word(), word()];
   const anotherCase = bool();
   return {
-    upperText: "Что будет выведено в консоль ?",
+    upperText: 'Что будет выведено в консоль ?',
     code: `
     Promise.resolve("${a}")
-      .then(result => { ${anotherCase ? "return" : "throw"} result })
+      .then(result => { ${anotherCase ? 'return' : 'throw'} result })
       .then(result => console.info(\`then1: \${result}\`))
       .catch(error => {
         console.info(\`catch: \${error}\`)
@@ -24,7 +24,7 @@ export default function question({ word, bool }: QuestionHelpers): RawQuestion {
         code: `"catch: ${a}", "finally: undefined", "then2: ${b}"`,
         right: !anotherCase,
       },
-      { text: "Ошибка" },
+      { text: 'Ошибка' },
       { code: `"catch: ${a}"` },
       { code: `"catch: ${a}", "finally: undefined"` },
       {

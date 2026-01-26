@@ -1,4 +1,4 @@
-import { QuestionLevel } from '../model';
+import type { QuestionLevel } from '../model';
 
 const levelLabels: Record<QuestionLevel, string> = {
   low: 'Junior 😺',

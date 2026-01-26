@@ -1,5 +1,5 @@
 export default function question({
-    word,
+  word,
   minorBool,
   int,
   string,
@@ -11,23 +11,23 @@ export default function question({
     : [int(1, 3) * 1000, int(4, 8) * 1000];
   const failed = minorBool();
   return {
-    upperText: "Что будет выведено в консоль ?",
+    upperText: 'Что будет выведено в консоль ?',
     helpLinks: [
-      "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/race",
+      'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/race',
     ],
-    display: "grid",
+    display: 'grid',
     gridCols: 2,
     code: `
   Promise.race([
     new Promise((resolve, reject) => {
-      setTimeout(() => ${failed ? "reject" : "resolve"}(${string(
-      a
-    )}), ${timerA});
+      setTimeout(() => ${failed ? 'reject' : 'resolve'}(${string(
+        a,
+      )}), ${timerA});
     }),
     new Promise((resolve, reject) => {
-      setTimeout(() => ${failed ? "reject" : "resolve"}(${string(
-      b
-    )}), ${timerB});
+      setTimeout(() => ${failed ? 'reject' : 'resolve'}(${string(
+        b,
+      )}), ${timerB});
     })
   ])
     .then((data) => console.log('success', data))
@@ -38,8 +38,8 @@ export default function question({
       { code: `success ${b}`, right: !failed && anotherCase },
       { code: `failed ${a}`, right: failed && !anotherCase },
       { code: `failed ${b}`, right: failed && anotherCase },
-      { text: "Ошибка" },
-      { text: "Ничего" },
+      { text: 'Ошибка' },
+      { text: 'Ничего' },
     ],
   };
 }

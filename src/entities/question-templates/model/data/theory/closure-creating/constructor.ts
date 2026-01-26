@@ -1,7 +1,7 @@
 export default function question(): RawQuestion {
   return {
-    upperText: "Когда в JavaScript создаются замыкания ?",
-    display: "grid",
+    upperText: 'Когда в JavaScript создаются замыкания ?',
+    display: 'grid',
     gridCols: 2,
     answers: [
       {
@@ -15,10 +15,10 @@ export default function question(): RawQuestion {
         text: `Во время создания переменных`,
       },
       {
-        text: "Во время обработки JavaScript файла",
+        text: 'Во время обработки JavaScript файла',
       },
       {
-        text: "Никогда",
+        text: 'Никогда',
       },
     ],
   };

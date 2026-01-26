@@ -1,5 +1,5 @@
 export default function question({
-    choice,
+  choice,
   value,
   string,
   varName,
@@ -9,9 +9,9 @@ export default function question({
   const varNewValue = value();
 
   return {
-    upperText: "Что будет выведено в консоль ?",
+    upperText: 'Что будет выведено в консоль ?',
     code: `
-    ${choice(['"use strict";', ""])}
+    ${choice(['"use strict";', ''])}
     const ${a} = ${string(varValue)}
     ${a} = ${string(varNewValue)}
     console.log(${a})
@@ -19,7 +19,7 @@ export default function question({
     answers: [
       { code: string(varValue) },
       { code: string(varNewValue) },
-      { text: "Ошибка", right: true },
+      { text: 'Ошибка', right: true },
     ],
   };
 }

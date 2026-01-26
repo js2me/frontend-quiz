@@ -6,8 +6,8 @@ export default function question({
   string,
   choice,
 }: QuestionHelpers): RawQuestion {
-  const propName = camelCase(word(), "id");
-  const componentName = pascalCase("display", propName);
+  const propName = camelCase(word(), 'id');
+  const componentName = pascalCase('display', propName);
   const propValues = choice([
     () => [int(10, 100), int(100, 200), int(200, 300)],
     () => [int(10, 100), int(100, 200)],
@@ -16,24 +16,24 @@ export default function question({
 
   // data: { values: string[], keys: string }[]
   // превращает данные в результат вывода в консоль
-  const resultFn = (data: { values: string[], keys: string[] }[]) => {
+  const resultFn = (data: { values: string[]; keys: string[] }[]) => {
     return data
       .map(({ values, keys }) =>
         values
           .map((value) =>
-            keys.map((key) => `<code>${key}:${value}</code>`).join(",")
+            keys.map((key) => `<code>${key}:${value}</code>`).join(','),
           )
-          .join(",")
+          .join(','),
       )
-      .join(",");
+      .join(',');
   };
 
   return {
-    upperText: "Что в результате выведет этот компонент?",
-    display: "grid",
+    upperText: 'Что в результате выведет этот компонент?',
+    display: 'grid',
     gridCols: 2,
     helpLinks: [
-      "https://medium.com/nuances-of-programming/%D0%BF%D1%80%D0%BE%D0%B4%D0%B2%D0%B8%D0%BD%D1%83%D1%82%D1%8B%D0%B5-react-hooks-%D0%BF%D0%BE%D0%B4%D1%80%D0%BE%D0%B1%D0%BD%D1%8B%D0%B9-%D1%80%D0%B0%D0%B7%D0%B1%D0%BE%D1%80-useeffect-2027af4d8dea",
+      'https://medium.com/nuances-of-programming/%D0%BF%D1%80%D0%BE%D0%B4%D0%B2%D0%B8%D0%BD%D1%83%D1%82%D1%8B%D0%B5-react-hooks-%D0%BF%D0%BE%D0%B4%D1%80%D0%BE%D0%B1%D0%BD%D1%8B%D0%B9-%D1%80%D0%B0%D0%B7%D0%B1%D0%BE%D1%80-useeffect-2027af4d8dea',
     ],
     helpText: `
       В текущем случае useEffect принимает массив зависимостей <code>[${propName}]</code>, соответственно функция, отправленная в useEffect, будет вызываться каждый раз при обновлении этой зависимости.<br/>
@@ -47,11 +47,11 @@ export default function question({
         ${propValues
           .map(
             (propValue, i) =>
-              `//   ${i === 0 ? "mount" : "update"}: ${propName} = ${string(
-                propValue
-              )}`
+              `//   ${i === 0 ? 'mount' : 'update'}: ${propName} = ${string(
+                propValue,
+              )}`,
           )
-          .join("\n")}
+          .join('\n')}
         //   unmount
         
         
@@ -67,12 +67,12 @@ export default function question({
       }
     `,
     answers: [
-      { text: "Ошибка" },
+      { text: 'Ошибка' },
       {
         text: resultFn([
           {
             values: propStringValues,
-            keys: ["A", "B"],
+            keys: ['A', 'B'],
           },
         ]),
         right: true,
@@ -81,11 +81,11 @@ export default function question({
         text: resultFn([
           {
             values: propStringValues,
-            keys: ["A", "B"],
+            keys: ['A', 'B'],
           },
           {
             values: propStringValues.slice(-1),
-            keys: ["B"],
+            keys: ['B'],
           },
         ]),
       },
@@ -93,11 +93,11 @@ export default function question({
         text: resultFn([
           {
             values: propStringValues.slice(0, 1),
-            keys: ["A"],
+            keys: ['A'],
           },
           {
             values: propStringValues.slice(1),
-            keys: ["A", "B"],
+            keys: ['A', 'B'],
           },
         ]),
       },
@@ -105,11 +105,11 @@ export default function question({
         text: resultFn([
           {
             values: propStringValues,
-            keys: ["A"],
+            keys: ['A'],
           },
           {
             values: propStringValues,
-            keys: ["B"],
+            keys: ['B'],
           },
         ]),
       },

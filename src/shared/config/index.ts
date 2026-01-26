@@ -1,4 +1,5 @@
 export * from './dom';
 import './routing';
-import './valibot';
+import './zod';
+
 export * from './view-models';

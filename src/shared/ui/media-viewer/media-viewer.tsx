@@ -41,7 +41,7 @@ export const MediaViewer = ({
       <DialogTrigger asChild onClick={toggleDialogShow}>
         <img
           className={cx(
-            'h-auto max-w-full rounded-lg object-cover object-center cursor-pointer min-w-25 min-h-25',
+            'h-auto min-h-25 min-w-25 max-w-full cursor-pointer rounded-lg object-cover object-center',
             {
               'bg-input': isVideo && !videoProps?.preview,
             },
@@ -58,7 +58,7 @@ export const MediaViewer = ({
           onClick: toggleDialogShow,
         }}
         className={cx(
-          'p-0 min-h-[80vh] min-w-[90vw] max-h-[100vh] bg-transparent border-transparent shadow-none',
+          'max-h-[100vh] min-h-[80vh] min-w-[90vw] border-transparent bg-transparent p-0 shadow-none',
           dialogClassName,
         )}
       >
@@ -69,7 +69,7 @@ export const MediaViewer = ({
             poster={videoProps?.preview ?? src}
             autoPlay
             className={cx(
-              'h-full max-w-full bg-background rounded-lg object-contain w-full max-h-[100vh] object-center cursor-pointer',
+              'h-full max-h-[100vh] w-full max-w-full cursor-pointer rounded-lg bg-background object-contain object-center',
               fullClassName,
             )}
           >
@@ -79,7 +79,7 @@ export const MediaViewer = ({
         ) : (
           <img
             className={cx(
-              'h-full max-w-full rounded-lg object-contain w-full max-h-[100vh] object-center cursor-pointer',
+              'h-full max-h-[100vh] w-full max-w-full cursor-pointer rounded-lg object-contain object-center',
               fullClassName,
             )}
             onClick={toggleDialogShow}

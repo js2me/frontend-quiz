@@ -1,5 +1,5 @@
 export default function question({
-    char,
+  char,
   int,
   word,
   string,
@@ -10,14 +10,14 @@ export default function question({
   const [varA, varB] = [word(), word()];
 
   const log = (...args: any[]) => {
-    return `console.${choice(["log", "warn", "info", "error"])}(${args.join(
-      ", "
+    return `console.${choice(['log', 'warn', 'info', 'error'])}(${args.join(
+      ', ',
     )})`;
   };
 
   return {
-    upperText: "Что будет выведено в консоль ?",
-    helpLinks: ["https://es5.github.io/#x11.13.1"],
+    upperText: 'Что будет выведено в консоль ?',
+    helpLinks: ['https://es5.github.io/#x11.13.1'],
     code: `
 var ${varA} = ${string({ [a]: valueA })};
 var ${varB} = ${varA};
@@ -28,7 +28,7 @@ ${log(`${varA}.${b}`)}
     answers: [
       { code: string(undefined), right: true },
       { code: string({ [a]: valueB }) },
-      { text: "Ошибка" },
+      { text: 'Ошибка' },
     ],
   };
 }

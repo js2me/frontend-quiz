@@ -1,5 +1,5 @@
 export default function question({
-    int,
+  int,
   bool,
   string,
   varName,
@@ -19,20 +19,20 @@ export default function question({
   };
 
   return {
-    upperText: "Что будет выведено в консоль ?",
+    upperText: 'Что будет выведено в консоль ?',
     code: `
-    const ${arrVarName} = [${arr.join(", ")}];
+    const ${arrVarName} = [${arr.join(', ')}];
     ${arrVarName}.length = ${length};
     
     ${callStringFunction({
-      name: "console.log",
+      name: 'console.log',
       args: arrayLengthFirst
         ? [`${arrVarName}.length`, arrVarName]
         : [arrVarName, `${arrVarName}.length`],
     })}
     `,
     answers: [
-      { text: "Ошибка" },
+      { text: 'Ошибка' },
       { code: outputFn(arr.slice(0, length), length), right: true },
       { code: outputFn(arr.slice(0, length), arr.length) },
       { code: outputFn(arr, arr.length) },

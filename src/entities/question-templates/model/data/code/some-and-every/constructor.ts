@@ -25,15 +25,15 @@ export default function question({
     const isFirstSomeBlock = log.startsWith(`console.log(${someVarName},`);
 
     return {
-      upperText: "Что будет выведено в консоль?",
-      lowerText: "",
+      upperText: 'Что будет выведено в консоль?',
+      lowerText: '',
       code: `
-          ${vars.join("\n")}
+          ${vars.join('\n')}
           ${log}
         `,
       answers: [
-        { code: "true false", right: !isFirstSomeBlock },
-        { code: "false true", right: isFirstSomeBlock },
+        { code: 'true false', right: !isFirstSomeBlock },
+        { code: 'false true', right: isFirstSomeBlock },
       ],
     };
   }
@@ -43,17 +43,17 @@ export default function question({
     `console.log(${everyConstruct})`,
   ]);
 
-  const isFirstSomeBlock = blocks[0].includes("some");
+  const isFirstSomeBlock = blocks[0].includes('some');
 
   return {
-    upperText: "Что будет выведено в консоль?",
-    lowerText: "",
+    upperText: 'Что будет выведено в консоль?',
+    lowerText: '',
     code: `
-      ${blocks.join("\n")}
+      ${blocks.join('\n')}
     `,
     answers: [
-      { code: "true false", right: !isFirstSomeBlock },
-      { code: "false true", right: isFirstSomeBlock },
+      { code: 'true false', right: !isFirstSomeBlock },
+      { code: 'false true', right: isFirstSomeBlock },
     ],
   };
 }

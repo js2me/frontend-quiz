@@ -3,7 +3,7 @@ export default function question({ int }: QuestionHelpers): RawQuestion {
 
   return {
     upperText: `Как представить число <code>${num}</code> в двоичной системе счисления ?`,
-    display: "grid",
+    display: 'grid',
     gridCols: 2,
     answers: [
       { code: `(${num}).toString(2)`, right: true },

@@ -4,12 +4,12 @@ export default function question({
   value,
   string,
 }: QuestionHelpers): RawQuestion {
-  const varName = choice(["obj", "myobj", "data", word()]);
+  const varName = choice(['obj', 'myobj', 'data', word()]);
   const objName = { [word()]: value(), [word()]: value() };
   return {
     multiple: true,
     code: `const ${varName} = ${string(objName)}`,
-    upperText: "Как можно клонировать объект?",
+    upperText: 'Как можно клонировать объект?',
     helpText: `
 В данном случае достаточно будет сделать shallow copy объекта, т.е.поверхостное копирование.
 Так как у нас нет вложенных ссылочных типов внутри объекта <code>${varName}</code>
@@ -22,7 +22,7 @@ export default function question({
 </ol>
     `,
     answers: [
-      { text: "С помощью оператора <code>spread</code>", right: true },
+      { text: 'С помощью оператора <code>spread</code>', right: true },
       { code: `Object.clone(${varName})` },
       { code: `Object.assign({}, ${varName})`, right: true },
       { code: `Object.copy(${varName})` },

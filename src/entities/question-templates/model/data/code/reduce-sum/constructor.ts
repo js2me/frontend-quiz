@@ -1,5 +1,5 @@
 export default function question({
-    int,
+  int,
   bool,
   minorBool,
 }: QuestionHelpers): RawQuestion {
@@ -17,7 +17,7 @@ export default function question({
   const calcAnswer = (...args: any[]) =>
     args.reduce((a, b) => (b === null ? a : a + b), 0);
   return {
-    upperText: "Что будет выведено в консоль ?",
+    upperText: 'Что будет выведено в консоль ?',
     code: `
     
     ${
@@ -30,19 +30,19 @@ export default function question({
       },
     }
     `
-        : ""
+        : ''
     }
     
     const sum = [${anotherCase ? `"${stringC}"` : intA}, ${boolA}, ${
       anotherCase ? intA : `"${stringC}"`
     }, ${boolD}].reduce((a,b) => a + b, 0)
     
-    console.log(sum${extraObj ? " + obj" : ""})
+    console.log(sum${extraObj ? ' + obj' : ''})
     `,
     answers: [
-      { code: "NaN" },
-      { code: "undefined" },
-      { text: "Ошибка" },
+      { code: 'NaN' },
+      { code: 'undefined' },
+      { text: 'Ошибка' },
       {
         code: `"${
           anotherCase

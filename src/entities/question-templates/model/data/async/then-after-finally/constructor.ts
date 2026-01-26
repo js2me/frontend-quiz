@@ -1,9 +1,12 @@
-export default function question({ string, word }: QuestionHelpers): RawQuestion {
+export default function question({
+  string,
+  word,
+}: QuestionHelpers): RawQuestion {
   const [a, b, c, d] = [word(), word(), word(), word()];
   return {
-    upperText: "Что будет выведено в консоль ?",
+    upperText: 'Что будет выведено в консоль ?',
     gridCols: 2,
-    display: "grid",
+    display: 'grid',
     code: `
       new Promise(resolve => {
         resolve(${string(a)});

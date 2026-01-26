@@ -9,10 +9,10 @@ export default function question({
   const anotherCase = minorBool();
 
   return {
-    upperText: "Что будет выведено в консоль?",
+    upperText: 'Что будет выведено в консоль?',
     code: `
       const ${a.name} = ${a.value};
-      ${anotherCase ? "" : `const ${b.name} = ${b.value};`}
+      ${anotherCase ? '' : `const ${b.name} = ${b.value};`}
 
       //prettier-ignore
       console.log(${a.name}+++${anotherCase ? b.value : b.name})
@@ -21,7 +21,7 @@ export default function question({
       { code: string(a.value + 1 + b.value) },
       { code: string(a.value + b.value - 1) },
       { code: string(a.value + b.value), right: true },
-      { text: "Ошибка" },
+      { text: 'Ошибка' },
     ],
   };
 }

@@ -4,14 +4,14 @@ export default function question({ bool, char }: QuestionHelpers): RawQuestion {
   const [a, b] = reverse ? [0, 1] : [0, -1];
   const right = bool();
   return {
-    upperText: "Что будет выведено в консоль ?",
+    upperText: 'Что будет выведено в консоль ?',
     code: `
     const obj = {
       ${field}: 0,
       valueOf: function () {
-        return ${right ? "" : reverse ? "++" : "--"}this.${field}${
-      right ? (reverse ? "++" : "--") : ""
-    };
+        return ${right ? '' : reverse ? '++' : '--'}this.${field}${
+          right ? (reverse ? '++' : '--') : ''
+        };
       }
     }
     
@@ -21,7 +21,7 @@ export default function question({ bool, char }: QuestionHelpers): RawQuestion {
       { code: `true`, right },
       { code: `false`, right: !right },
       { code: `undefined` },
-      { text: "Ошибка" },
+      { text: 'Ошибка' },
     ],
   };
 }

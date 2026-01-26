@@ -1,7 +1,7 @@
 export default function question(): RawQuestion {
   return {
-    upperText: "[CSS] Что такое специфичность селекторов CSS ?",
-    helpLinks: ["https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity"],
+    upperText: '[CSS] Что такое специфичность селекторов CSS ?',
+    helpLinks: ['https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity'],
     answers: [
       {
         text: `

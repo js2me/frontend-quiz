@@ -1,9 +1,8 @@
 /* eslint-disable import/order,import/no-internal-modules */
 import './bootstrap';
 import { createRoot } from 'react-dom/client';
-import { rootElement } from '@/shared/config';
-
 import { App } from '@/app';
+import { rootElement } from '@/shared/config';
 
 const root = createRoot(rootElement);
 

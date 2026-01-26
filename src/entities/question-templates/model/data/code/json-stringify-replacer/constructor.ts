@@ -1,5 +1,5 @@
 export default function question({
-    word,
+  word,
   char,
   choice,
   string,
@@ -13,8 +13,8 @@ export default function question({
   };
 
   const log = (...args: any[]) => {
-    return `console.${choice(["log", "warn", "info", "error"])}(${args.join(
-      ", "
+    return `console.${choice(['log', 'warn', 'info', 'error'])}(${args.join(
+      ', ',
     )})`;
   };
 
@@ -44,16 +44,16 @@ export default function question({
     d: JSON.stringify({
       [fields.a]: values.a,
       [fields.b]: values.b,
-      [missingField]: "undefined",
-    }).replace('"undefined"', "undefined"),
+      [missingField]: 'undefined',
+    }).replace('"undefined"', 'undefined'),
   };
   return {
-    upperText: "Что будет выведено в консоль ?",
+    upperText: 'Что будет выведено в консоль ?',
     code: `
     const ${varNames.a} = ${string(obj)}
     
     const ${varNames.b} = JSON.stringify(${varNames.a}, ${string(
-      shuffle([fields.a, fields.b, missingField])
+      shuffle([fields.a, fields.b, missingField]),
     )});
     ${log(varNames.b)}
     `,
@@ -61,7 +61,7 @@ export default function question({
 Второй аргумент у JSON.stringify позволяет отправить массив полей, которые необходимо вытащить из входящего объекта и только эти поля обработать с помощью функции JSON.stringify()
     `,
     answers: [
-      { text: "Ошибка" },
+      { text: 'Ошибка' },
       { code: string(answers.a), right: true },
       { code: string(answers.b) },
       { code: string(answers.c) },

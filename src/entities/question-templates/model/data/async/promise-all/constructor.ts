@@ -2,7 +2,7 @@ export default function question({ word, bool }: QuestionHelpers): RawQuestion {
   const [a, b, c, d] = [word(), word(), word(), word()];
   const failed = bool();
   return {
-    upperText: "Что будет выведено в консоль ?",
+    upperText: 'Что будет выведено в консоль ?',
     code: `
     const a = Promise.resolve("${a}").then(a => {
       console.log(a);
@@ -25,12 +25,12 @@ export default function question({ word, bool }: QuestionHelpers): RawQuestion {
     `,
     answers: [
       {
-        code: `"${a}", "${b}", "${c}", "result: ${[a, b, c].join(",")}"`,
+        code: `"${a}", "${b}", "${c}", "result: ${[a, b, c].join(',')}"`,
         right: !failed,
       },
       { code: `"${a}", "${b}", "${c}", "${d}"`, right: failed },
-      { code: `"result: ${[a, b, c].join(",")}", "${a}", "${b}", "${c}"` },
-      { text: "Ошибка" },
+      { code: `"result: ${[a, b, c].join(',')}", "${a}", "${b}", "${c}"` },
+      { text: 'Ошибка' },
     ],
   };
 }

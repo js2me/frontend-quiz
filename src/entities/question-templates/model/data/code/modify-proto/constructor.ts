@@ -1,23 +1,23 @@
 export default function question({
-    word,
+  word,
   minorBool,
   int,
   choice,
 }: QuestionHelpers): RawQuestion {
   const [nameA, nameB] = [word(), word()];
   const [fnNameA, fnNameB] = [
-    choice(["", nameA.toUpperCase(), nameA]),
-    choice(["", nameB.toUpperCase(), nameB]),
+    choice(['', nameA.toUpperCase(), nameA]),
+    choice(['', nameB.toUpperCase(), nameB]),
   ];
   const field = word();
   const value = choice([`"${word()}"`, int(0, 50)]);
   const anotherCase = minorBool();
   const AIsArrowFn = minorBool();
   return {
-    upperText: "Что будет выведено в консоль ?",
+    upperText: 'Что будет выведено в консоль ?',
     code: `
     const ${nameA} = ${AIsArrowFn ? `() => ` : `function ${fnNameA}()`} {}
-    ${nameA}.${anotherCase ? "prototype" : "__proto__"}.${field} = ${value}
+    ${nameA}.${anotherCase ? 'prototype' : '__proto__'}.${field} = ${value}
 
     const ${nameB} = ${choice([
       `function ${fnNameB}()`,
@@ -48,7 +48,7 @@ export default function question({
   Таким образом <code>${nameB}.${field}</code> будет содержать значение <code>${value}</code>
 `,
     answers: [
-      { text: "Ошибка", right: AIsArrowFn && anotherCase },
+      { text: 'Ошибка', right: AIsArrowFn && anotherCase },
       { code: `${value}`, right: !anotherCase },
       { code: `undefined`, right: !AIsArrowFn && anotherCase },
     ],

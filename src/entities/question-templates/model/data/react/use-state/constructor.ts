@@ -1,9 +1,13 @@
-export default function question({ int, minorBool, choice }: QuestionHelpers): RawQuestion {
+export default function question({
+  int,
+  minorBool,
+  choice,
+}: QuestionHelpers): RawQuestion {
   const [a, b] = [int(0, 9), int(10, 19)];
   const anotherCase = minorBool();
   return {
-    upperText: "Что в результате выведет этот компонент?",
-    display: "grid",
+    upperText: 'Что в результате выведет этот компонент?',
+    display: 'grid',
     gridCols: 2,
     code: `
       import { useState, useEffect } from "react";
@@ -19,7 +23,7 @@ export default function question({ int, minorBool, choice }: QuestionHelpers): R
       }
     `,
     answers: [
-      { text: "Ошибка", right: anotherCase },
+      { text: 'Ошибка', right: anotherCase },
       { code: `undefined` },
       { code: `${a}` },
       { code: `${b}`, right: !anotherCase },

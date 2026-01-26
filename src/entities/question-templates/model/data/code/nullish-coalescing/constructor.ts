@@ -1,5 +1,5 @@
 export default function question({
-    word,
+  word,
   bool,
   char,
   string,
@@ -9,7 +9,7 @@ export default function question({
   const anotherCase = bool();
   const fieldValue = bool();
   return {
-    upperText: "Что будет выведено в консоль ?",
+    upperText: 'Что будет выведено в консоль ?',
     code: `
 const ${field} = ${string(anotherCase ? null : fieldValue)};
 console.log( ${field} ?? ${string(a)} );

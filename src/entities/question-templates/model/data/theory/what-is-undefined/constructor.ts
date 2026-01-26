@@ -1,6 +1,6 @@
 export default function question(): RawQuestion {
   return {
-    upperText: "Что означает значение <code>undefined</code>?",
+    upperText: 'Что означает значение <code>undefined</code>?',
     answers: [
       {
         text: `Ссылка на несуществующий объект`,

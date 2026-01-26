@@ -1,5 +1,5 @@
 export default function question({
-    int,
+  int,
   bool,
   minorBool,
 }: QuestionHelpers): RawQuestion {
@@ -7,17 +7,17 @@ export default function question({
   const usingClosure = minorBool();
   const usingVar = bool();
   return {
-    upperText: "Что будет выведено в консоль ?",
+    upperText: 'Что будет выведено в консоль ?',
     code: `
-  for (${usingVar ? "var" : "let"} x = 0; x < ${a}; x++) {
+  for (${usingVar ? 'var' : 'let'} x = 0; x < ${a}; x++) {
     setTimeout(${
       usingClosure
-        ? "((x) => () => console.info(x))(x)"
-        : "() => console.info(x)"
+        ? '((x) => () => console.info(x))(x)'
+        : '() => console.info(x)'
     }, 0)
   }
     `,
-    answers: (helpers) => {
+    answers: () => {
       const outputFromTo = usingClosure || !usingVar;
       return [
         { text: `от ${0} до ${a - 1}`, right: outputFromTo },
@@ -26,7 +26,7 @@ export default function question({
           right: !outputFromTo,
         },
         { text: `${a} раз по ${0}` },
-        { text: "Ничего" },
+        { text: 'Ничего' },
       ];
     },
   };

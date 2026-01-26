@@ -1,12 +1,12 @@
 import { AArrowDown, AArrowUp, ALargeSmall } from 'lucide-react';
 import { observer } from 'mobx-react-lite';
-import { ComponentType } from 'react';
+import type { ComponentType } from 'react';
 
-import { FontSizeSetting, settings } from '@/entities/settings/model';
+import { type FontSizeSetting, settings } from '@/entities/settings/model';
 import {
   ToggleGroup,
   ToggleGroupItem,
-  ToggleGroupProps,
+  type ToggleGroupProps,
 } from '@/shared/ui/toggle-group';
 
 const FONT_SIZE_ICONS: Record<

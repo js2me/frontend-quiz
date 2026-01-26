@@ -31,7 +31,7 @@ export const AboutPage = observer(() => {
   const [oldVersionShowed, toggleOldVersionShow] = useToggle();
 
   return (
-    <div className={'prose dark:prose-invert bg-background/80 relative'}>
+    <div className={'prose dark:prose-invert relative bg-background/80'}>
       <Layout.Header>О проекте</Layout.Header>
       <p className={'max-w-120'}>
         Это перенесенная версия оригинального проекта <b>frontend-quiz</b>,
@@ -60,7 +60,7 @@ export const AboutPage = observer(() => {
         сказать спасибо GitHub пользователю{' '}
         <a href={'https://github.com/jar3b'}>jar3b</a>.
       </p>
-      <p className={'max-w-[480px] mt-0'}>
+      <p className={'mt-0 max-w-[480px]'}>
         Дополнительные ресурсы откуда были взяты вопросы:
         <br />
         <a href={'https://github.com/lydiahallie/javascript-questions/'}>
@@ -89,7 +89,7 @@ export const AboutPage = observer(() => {
         </CollapsibleTrigger>
         <CollapsibleContent>
           <div
-            className={'mt-4 grid grid-cols-2 md:grid-cols-4 gap-4 not-prose'}
+            className={'not-prose mt-4 grid grid-cols-2 gap-4 md:grid-cols-4'}
           >
             {oldVerionAssetsGroupped.map((group, i) => {
               return (

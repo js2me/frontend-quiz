@@ -1,10 +1,10 @@
 export default function question({ int }: QuestionHelpers): RawQuestion {
   const [a, b] = [int(0, 10), int(11, 20)];
   return {
-    upperText: "Что будет выведено в консоль ?",
+    upperText: 'Что будет выведено в консоль ?',
     helpLinks: [
-      "https://effector.dev/docs/api/effector/createStore",
-      "https://effector.dev/docs/api/effector/createEvent",
+      'https://effector.dev/docs/api/effector/createStore',
+      'https://effector.dev/docs/api/effector/createEvent',
     ],
     code: `
     import { createStore, createEvent } from "effector"
@@ -21,7 +21,7 @@ export default function question({ int }: QuestionHelpers): RawQuestion {
     event(${b});
     `,
     answers: [
-      { text: "Ошибка" },
+      { text: 'Ошибка' },
       { code: `${a}, ${b}`, right: true },
       { code: `${a}, ${b}, ${b}, ${b}` },
       { code: `${b}` },

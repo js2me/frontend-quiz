@@ -4,7 +4,7 @@ export const Loader = () => {
   return (
     <div
       className={
-        'flex flex-col space-y-3 opacity-0 fill-mode-forwards animate-out ease-in-out fade-out-100 delay-200 duration-[3s]'
+        'fade-out-100 flex animate-out flex-col space-y-3 fill-mode-forwards opacity-0 delay-200 duration-[3s] ease-in-out'
       }
     >
       <Skeleton className={'h-[125px] w-full rounded-xl'} />

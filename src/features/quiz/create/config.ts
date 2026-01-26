@@ -1,4 +1,4 @@
-import {
+import type {
   QuestionCategory,
   QuestionLevel,
 } from '@/entities/question-templates/model';

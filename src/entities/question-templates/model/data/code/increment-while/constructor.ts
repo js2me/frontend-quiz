@@ -1,7 +1,6 @@
 export default function question({
-    bool,
+  bool,
   int,
-  char,
   varName,
   string,
   minorBool,
@@ -15,13 +14,13 @@ export default function question({
   const initial = reversed ? maxNum : minNum;
   const target = reversed ? minNum : maxNum;
   const right = bool();
-  const increment = right ? "0.5" : "0.2";
+  const increment = right ? '0.5' : '0.2';
 
   const cycleCondition = `${a} != ${target}`;
-  const cycleOperation = `${a} ${reversed ? "-" : "+"}= ${increment}`;
+  const cycleOperation = `${a} ${reversed ? '-' : '+'}= ${increment}`;
 
   return {
-    upperText: "Что будет выведено в консоль ?",
+    upperText: 'Что будет выведено в консоль ?',
     code: `
     let ${a} = ${initial};
 
@@ -34,7 +33,7 @@ export default function question({
     helpText: right
       ? `
 Всё успешно выполнится, код выйдет из цикла и выведет результат <code>${string(
-          target
+          target,
         )}</code> в консоль
 `
       : `
@@ -42,11 +41,11 @@ export default function question({
 Поэтому текущий цикл будет выполняться бесконечно и мы никогда не дойдем до <code>console.log(${a})</code>
 `,
     answers: [
-      { text: "Ничего", right: !right },
+      { text: 'Ничего', right: !right },
       { code: `${target}`, right },
-      { text: "Ошибка" },
-      { code: `${reversed ? "-" : ""}${target}.00000000${+increment * 10}` },
-      { code: `${reversed ? "-" : ""}${target}.${+increment * 10}` },
+      { text: 'Ошибка' },
+      { code: `${reversed ? '-' : ''}${target}.00000000${+increment * 10}` },
+      { code: `${reversed ? '-' : ''}${target}.${+increment * 10}` },
     ],
   };
 }

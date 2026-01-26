@@ -1,7 +1,7 @@
-export default function question(helpers: QuestionHelpers): RawQuestion {
+export default function question(_helpers: QuestionHelpers): RawQuestion {
   return {
     upperText:
-      "[CSS] Что из перечисленных не является допустимой единицей в CSS?",
+      '[CSS] Что из перечисленных не является допустимой единицей в CSS?',
     helpLinks: [],
     helpText: `
     ch и rem – длина шрифта
@@ -11,18 +11,18 @@ export default function question(helpers: QuestionHelpers): RawQuestion {
     s – единица времени
     hz – единица частоты
     `,
-    display: "grid",
+    display: 'grid',
     gridCols: 2,
     multiple: true,
     answers: [
-      { code: "ems", right: true },
-      { code: "turn" },
-      { code: "px" },
-      { code: "ch" },
-      { code: "dpcm" },
-      { code: "s" },
-      { code: "hz" },
-      { code: "rem" },
+      { code: 'ems', right: true },
+      { code: 'turn' },
+      { code: 'px' },
+      { code: 'ch' },
+      { code: 'dpcm' },
+      { code: 's' },
+      { code: 'hz' },
+      { code: 'rem' },
     ],
   };
 }

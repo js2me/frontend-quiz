@@ -4,9 +4,9 @@ export default function question({ int, bool }: QuestionHelpers): RawQuestion {
 
   return {
     upperText: `Как задать ${
-      marginOffset ? "внешний" : "внутренний"
+      marginOffset ? 'внешний' : 'внутренний'
     } отступ <code>${offset}</code> у элемента?`,
-    display: "grid",
+    display: 'grid',
     gridCols: 2,
     answers: [
       { code: `padding: ${offset}`, right: !marginOffset },

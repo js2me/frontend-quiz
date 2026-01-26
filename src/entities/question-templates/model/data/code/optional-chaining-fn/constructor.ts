@@ -1,22 +1,21 @@
 export default function question({
-    minorBool,
+  minorBool,
   char,
   choice,
   word,
   int,
-  string,
 }: QuestionHelpers): RawQuestion {
   const objVariableName = word();
-  const fn = choice(["saySomething", "sayHi", "callFn", "say", "fn"]);
+  const fn = choice(['saySomething', 'sayHi', 'callFn', 'say', 'fn']);
   const intVariableName = char();
   const value = int(0, 10);
   const anotherCase = minorBool();
   const objVarValue = anotherCase
-    ? choice(["0", "false", '""'])
-    : choice(["null", "void 0", "undefined"]);
+    ? choice(['0', 'false', '""'])
+    : choice(['null', 'void 0', 'undefined']);
 
   return {
-    upperText: "Что будет выведено в консоль ?",
+    upperText: 'Что будет выведено в консоль ?',
     code: `
     let ${objVariableName} = ${objVarValue};
     let ${intVariableName} = ${value};
@@ -41,14 +40,14 @@ export default function question({
 Соответственно, несуществующая функция не будет вызвана и ошибок в консоли никаких не возникнет.
     `,
     helpLinks: [
-      "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining",
+      'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining',
     ],
     answers: [
       { code: `${value}`, right: !anotherCase },
       { code: `${value + 1}` },
       { code: `NaN` },
       { code: `null` },
-      { text: "Ошибка", right: anotherCase },
+      { text: 'Ошибка', right: anotherCase },
     ],
   };
 }

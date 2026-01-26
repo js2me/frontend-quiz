@@ -1,7 +1,7 @@
 export default function question({ word }: QuestionHelpers): RawQuestion {
   const [a, b, c] = [word(), word(), word()].map((s) => `"${s}"`);
   return {
-    upperText: "Что будет выведено в консоль ?",
+    upperText: 'Что будет выведено в консоль ?',
     code: `
   const promise = new Promise((resolve) => {
     console.info(${b});
@@ -17,7 +17,7 @@ export default function question({ word }: QuestionHelpers): RawQuestion {
   promise.then(console.log)
     `,
     answers: [
-      { text: "Ошибка" },
+      { text: 'Ошибка' },
       { code: `${b}, ${c}, ${b}, ${a}`, right: true },
       { code: `${b}, ${c}, ${a}, ${b}` },
       { code: `${a}, ${c}, ${b}, ${b}` },

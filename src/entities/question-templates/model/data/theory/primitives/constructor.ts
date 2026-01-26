@@ -1,16 +1,19 @@
-export default function question({ choice, minorBool }: QuestionHelpers): RawQuestion {
+export default function question({
+  choice,
+  minorBool,
+}: QuestionHelpers): RawQuestion {
   const anotherCase = minorBool();
   return {
-    display: "grid",
+    display: 'grid',
     gridCols: 4,
     upperText: `Какие типы данных в JavaScript ${
-      anotherCase ? "" : "НЕ "
+      anotherCase ? '' : 'НЕ '
     }являются примитивами?`,
-    helpLinks: ["https://learn.javascript.ru/types"],
+    helpLinks: ['https://learn.javascript.ru/types'],
     multiple: true,
     answers: [
       {
-        text: `<code>${choice(["Boolean", "String"])}</code>`,
+        text: `<code>${choice(['Boolean', 'String'])}</code>`,
         right: anotherCase,
       },
       { text: `<code>Object</code>`, right: !anotherCase },
@@ -20,9 +23,9 @@ export default function question({ choice, minorBool }: QuestionHelpers): RawQue
       { text: `<code>Null</code>`, right: anotherCase },
       { text: `<code>NaN</code>`, right: anotherCase },
       { text: `<code>Array</code>`, right: !anotherCase },
-      { text: `<code>${choice(["Set", "Map"])}</code>`, right: !anotherCase },
+      { text: `<code>${choice(['Set', 'Map'])}</code>`, right: !anotherCase },
       {
-        text: `<code>${choice(["WeakMap", "WeakSet"])}</code>`,
+        text: `<code>${choice(['WeakMap', 'WeakSet'])}</code>`,
         right: !anotherCase,
       },
       { text: `<code>Number</code>`, right: anotherCase },

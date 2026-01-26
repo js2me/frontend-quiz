@@ -20,22 +20,22 @@ export const HomePage = observer(() => {
 
   return (
     <TooltipProvider>
-      <div className={'flex flex-col !my-auto prose dark:prose-invert'}>
+      <div className={'!my-auto prose dark:prose-invert flex flex-col'}>
         <h1
           className={
-            'text-5xl -mt-40 max-lg:-mt-20 max-md:mt-auto max-md:mb-4 max-sm:text-4xl'
+            '-mt-40 text-5xl max-sm:text-4xl max-md:mt-auto max-md:mb-4 max-lg:-mt-20'
           }
         >
           Frontend <span className={'text-brand'}>Quiz</span>
         </h1>
         <div
           className={
-            'flex flex-row flew-wrap gap-5 max-md:flex-col max-md:gap-1'
+            'flew-wrap flex flex-row gap-5 max-md:flex-col max-md:gap-1'
           }
         >
           <Card
             className={
-              'relative prose dark:prose-invert w-full md:max-w-85 flex-none'
+              'prose dark:prose-invert relative w-full flex-none md:max-w-85'
             }
           >
             <CardHeader>

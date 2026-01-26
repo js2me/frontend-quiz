@@ -2,10 +2,10 @@ export default function question({ minorBool }: QuestionHelpers): RawQuestion {
   const anotherCase = minorBool();
 
   return {
-    display: "grid",
+    display: 'grid',
     gridCols: 3,
     upperText: `Какие значения в JavaScript ${
-      anotherCase ? "НЕ " : " "
+      anotherCase ? 'НЕ ' : ' '
     }являются ложными?`,
     multiple: true,
     answers: [
@@ -17,7 +17,7 @@ export default function question({ minorBool }: QuestionHelpers): RawQuestion {
       { code: `NaN`, right: !anotherCase },
       { code: `undefined`, right: !anotherCase },
       { code: `0n`, right: !anotherCase },
-      { code: anotherCase ? "true" : "false", right: true },
+      { code: anotherCase ? 'true' : 'false', right: true },
     ],
   };
 }

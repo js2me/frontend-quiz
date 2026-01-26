@@ -1,7 +1,7 @@
 export default function question(): RawQuestion {
   return {
-    upperText: "Что такое <b>CORS</b>?",
-    helpLinks: ["https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS"],
+    upperText: 'Что такое <b>CORS</b>?',
+    helpLinks: ['https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS'],
     answers: [
       {
         text: `Технология приоритета загрузки ресурсов у источников`,

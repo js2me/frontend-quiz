@@ -1,8 +1,8 @@
 export default function question({ int }: QuestionHelpers): RawQuestion {
   const [a] = [int(1, 5) * 10];
   return {
-    upperText: "Что будет выведено в консоль ?",
-    helpLinks: ["https://learn.javascript.ru/promise-chaining"],
+    upperText: 'Что будет выведено в консоль ?',
+    helpLinks: ['https://learn.javascript.ru/promise-chaining'],
     code: `
 const promise = Promise.resolve(0)
 
@@ -19,8 +19,8 @@ promise.then(callback)
     answers: [
       { code: `${a} ${a * 2} ${a * 3}` },
       { code: `${a} ${a} ${a}`, right: true },
-      { text: "Ничего" },
-      { text: "Ошибка" },
+      { text: 'Ничего' },
+      { text: 'Ошибка' },
     ],
   };
 }

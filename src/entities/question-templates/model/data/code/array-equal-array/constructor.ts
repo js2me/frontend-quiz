@@ -1,12 +1,15 @@
-export default function question({ minorBool, string }: QuestionHelpers): RawQuestion {
+export default function question({
+  minorBool,
+  string,
+}: QuestionHelpers): RawQuestion {
   // [] == ![]
   // [] === []
   const wrong = minorBool();
   return {
-    upperText: "Что будет выведено в консоль ?",
+    upperText: 'Что будет выведено в консоль ?',
     code: `
   let array = [];
-  console.log(array ${wrong ? "===" : "=="} !array);
+  console.log(array ${wrong ? '===' : '=='} !array);
     `,
     helpText: wrong
       ? `
@@ -23,7 +26,7 @@ export default function question({ minorBool, string }: QuestionHelpers): RawQue
 6. <code>true</code>
 </code>
     `,
-    helpLinks: ["https://262.ecma-international.org/5.1/#sec-11.9.3"],
+    helpLinks: ['https://262.ecma-international.org/5.1/#sec-11.9.3'],
     answers: [
       { code: string(undefined) },
       { code: string(true), right: !wrong },
