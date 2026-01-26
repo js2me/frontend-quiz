@@ -1,5 +1,5 @@
 import { computed, makeObservable } from 'mobx';
-import { createModelLoader } from 'mobx-shared-entities';
+import { createModelLoader } from 'mobx-swiss-knife';
 import type { ViewModelSimple } from 'mobx-view-model';
 import { quizCreateSchema } from '@/features/quiz/create/model';
 import { SchemaForm } from '@/shared/lib/react/react-hook-form';

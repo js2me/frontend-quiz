@@ -1,13 +1,13 @@
 import { LinkedAbortController } from 'linked-abort-controller';
 import { makeObservable, observable, reaction } from 'mobx';
-import { StorageModel, TwoColorThemeStore } from 'mobx-shared-entities';
+import { Storage, TwoColorThemeStore } from 'mobx-swiss-knife';
 
 import { htmlElement } from '@/shared/config';
 
 import type { FontSizeSetting } from './model.types';
 
 export class SettingsModel {
-  private storageModel: StorageModel;
+  private storageModel: Storage;
   private abortController: AbortController;
   private themeStore: TwoColorThemeStore;
 
@@ -34,7 +34,7 @@ export class SettingsModel {
   constructor(abortSignal?: AbortSignal) {
     this.abortController = new LinkedAbortController(abortSignal);
 
-    this.storageModel = new StorageModel({
+    this.storageModel = new Storage({
       abortSignal: this.abortController.signal,
     });
     this.themeStore = new TwoColorThemeStore({
