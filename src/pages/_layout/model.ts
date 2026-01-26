@@ -10,7 +10,8 @@ import { homeRoute } from '../home';
 
 interface LayoutNavItem {
   text: string;
-  to: string | AnyRoute;
+  to?: string | AnyRoute;
+  href?: string | AnyRoute;
   icon?: ComponentType;
 }
 
@@ -30,7 +31,7 @@ export class LayoutModel implements ViewModelSimple {
       {
         text: 'GitHub',
         icon: GithubIcon,
-        to: 'https://github.com/js2me/frontend-quiz',
+        href: 'https://github.com/js2me/frontend-quiz',
       },
     ];
   }

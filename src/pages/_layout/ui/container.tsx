@@ -1,6 +1,5 @@
 import { Settings } from 'lucide-react';
 import { observer } from 'mobx-react-lite';
-import type { AnyRoute } from 'mobx-route';
 import { Link } from 'mobx-route/react';
 import { useCreateViewModel } from 'mobx-view-model';
 import type { ReactNode } from 'react';
@@ -49,12 +48,24 @@ export const Container = observer(({ children }: { children?: ReactNode }) => {
           skipDelayDuration={1000}
         >
           <NavigationMenuList>
-            {model.navItems.map(({ to, text, icon: Icon }) => {
-              const isActive = typeof to === 'string' ? undefined : to.isOpened;
+            {model.navItems.map((props) => {
+              const isActive =
+                'to' in props
+                  ? typeof props.to === 'string'
+                    ? undefined
+                    : props.to?.isOpened
+                  : false;
+
+              const { text, icon: Icon } = props;
 
               return (
                 <NavigationMenuItem key={text}>
-                  <Link to={to as AnyRoute} asChild>
+                  <Link
+                    asChild
+                    {...(props.to
+                      ? { to: props.to as any }
+                      : { href: props.href || ('' as any) })}
+                  >
                     <NavigationMenuLink
                       active={isActive}
                       className={cx(
