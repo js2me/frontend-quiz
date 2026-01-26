@@ -12,12 +12,12 @@ export const quizCreateSchema = z.object({
     .max(32, { message: 'Максимум 32' }),
   levels: z
     .array(z.union(availableQuestionLevels.map((level) => z.literal(level))))
-    .min(1),
+    .min(1, { message: 'Выберите хотя бы один уровень' }),
   categories: z
     .array(
       z.union(
         availableQuestionCategories.map((category) => z.literal(category)),
       ),
     )
-    .min(1),
+    .min(1, { message: 'Выберите хотя бы одну категорию' }),
 });

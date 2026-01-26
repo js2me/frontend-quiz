@@ -4,7 +4,7 @@ import { ChevronDownIcon } from 'lucide-react';
 import type * as React from 'react';
 import { cx } from 'yummies/css';
 
-import { cn } from '@/lib/utils';
+import { cn } from '@/shared/lib/shadcn';
 
 function NavigationMenu({
   className,

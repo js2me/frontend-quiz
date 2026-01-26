@@ -1,3 +1,3 @@
-import { Route } from 'mobx-route';
+import { createRoute } from 'mobx-route';
 
-export const aboutRoute = new Route('/about');
+export const aboutRoute = createRoute('/about');

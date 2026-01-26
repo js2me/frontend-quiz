@@ -1,7 +1,3 @@
-import { ViewModelStoreBase, viewModelsConfig } from 'mobx-view-model';
-
-viewModelsConfig.comparePayload = false;
-viewModelsConfig.payloadComputed = 'struct';
-viewModelsConfig.payloadObservable = 'ref';
+import { ViewModelStoreBase } from 'mobx-view-model';
 
 export const vmStore = new ViewModelStoreBase();

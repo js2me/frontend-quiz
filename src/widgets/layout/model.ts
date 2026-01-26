@@ -2,8 +2,10 @@ import { makeAutoObservable } from 'mobx';
 import type { AnyRoute } from 'mobx-route';
 import type { ViewModelSimple } from 'mobx-view-model';
 import type { ComponentType } from 'react';
+import { typeGuard } from 'yummies/type-guard';
 import { aboutRoute } from '@/pages/about';
 import { homeRoute } from '@/pages/home';
+import { quizRoute } from '@/pages/quiz';
 import { GithubIcon } from '@/shared/ui/icons/github';
 
 interface LayoutNavItem {
@@ -20,18 +22,18 @@ export class LayoutModel implements ViewModelSimple {
     return [
       {
         text: 'Квиз',
-        to: homeRoute,
+        to: quizRoute.isOpened ? quizRoute : homeRoute,
       },
-      {
+      !quizRoute.isOpened && {
         text: 'О проекте',
         to: aboutRoute,
       },
-      {
+      !quizRoute.isOpened && {
         text: 'GitHub',
         icon: GithubIcon,
         href: 'https://github.com/js2me/frontend-quiz',
       },
-    ];
+    ].filter((it) => typeGuard.isObject(it));
   }
 
   constructor() {
