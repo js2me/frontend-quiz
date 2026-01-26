@@ -1,11 +1,10 @@
 import { observer } from 'mobx-react-lite';
 import { RouteView } from 'mobx-route/react';
 import { ViewModelsProvider } from 'mobx-view-model';
-
-import { Layout } from '@/pages/_layout';
 import { aboutRoute } from '@/pages/about';
 import { homeRoute } from '@/pages/home';
 import { vmStore } from '@/shared/config';
+import { Layout } from '@/widgets/layout';
 
 export const App = observer(() => {
   return (

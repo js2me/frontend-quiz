@@ -1,8 +1,6 @@
 import { ChevronsUpDown } from 'lucide-react';
 import { observer } from 'mobx-react-lite';
 import { useToggle } from 'react-shared-utils/hooks';
-
-import { Layout } from '@/pages/_layout';
 import { Button } from '@/shared/ui/button';
 import {
   Collapsible,
@@ -10,6 +8,7 @@ import {
   CollapsibleTrigger,
 } from '@/shared/ui/collapsible';
 import { MediaViewer } from '@/shared/ui/media-viewer';
+import { Layout } from '@/widgets/layout';
 
 const oldVersionAssets = Object.values(
   import.meta.glob('../assets/old-versions/*', { eager: true }),

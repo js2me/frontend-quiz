@@ -2,11 +2,9 @@ import { makeAutoObservable } from 'mobx';
 import type { AnyRoute } from 'mobx-route';
 import type { ViewModelSimple } from 'mobx-view-model';
 import type { ComponentType } from 'react';
-
+import { aboutRoute } from '@/pages/about';
+import { homeRoute } from '@/pages/home';
 import { GithubIcon } from '@/shared/ui/icons/github';
-
-import { aboutRoute } from '../about';
-import { homeRoute } from '../home';
 
 interface LayoutNavItem {
   text: string;
