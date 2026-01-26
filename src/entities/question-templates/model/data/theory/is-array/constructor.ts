@@ -1,7 +1,4 @@
-export default function question({
-  word,
-  _choice,
-}: QuestionHelpers): RawQuestion {
+export default function question({ word }: QuestionHelpers): RawQuestion {
   const varName = word();
 
   return {

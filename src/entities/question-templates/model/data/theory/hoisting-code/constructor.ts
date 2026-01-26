@@ -1,13 +1,11 @@
 export default function question({
   word,
   string,
-  _int,
   varName,
   choice,
   camelCase,
   value,
   minorBool,
-  _majorBool,
   bool,
   createStringFunction,
   callStringFunction,

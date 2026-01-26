@@ -1,5 +1,5 @@
 import { LinkedAbortController } from 'linked-abort-controller';
-import { observable, reaction } from 'mobx';
+import { makeObservable, observable, reaction } from 'mobx';
 import { StorageModel, TwoColorThemeStore } from 'mobx-shared-entities';
 
 import { htmlElement } from '@/shared/config';
@@ -10,6 +10,26 @@ export class SettingsModel {
   private storageModel: StorageModel;
   private abortController: AbortController;
   private themeStore: TwoColorThemeStore;
+
+  get theme() {
+    return this.themeStore.theme;
+  }
+
+  switchTheme = () => {
+    this.themeStore.switchTheme();
+  };
+
+  fontSize: FontSizeSetting = 'md';
+
+  availableFontSizes: FontSizeSetting[] = ['sm', 'md', 'lg'];
+
+  setFontSize = (fontSize: FontSizeSetting) => {
+    this.fontSize = fontSize;
+  };
+
+  destroy() {
+    this.abortController.abort();
+  }
 
   constructor(abortSignal?: AbortSignal) {
     this.abortController = new LinkedAbortController(abortSignal);
@@ -29,6 +49,8 @@ export class SettingsModel {
       },
     });
 
+    makeObservable(this, { fontSize: observable });
+
     reaction(
       () => this.fontSize,
       (fontSize) => {
@@ -41,26 +63,5 @@ export class SettingsModel {
     );
 
     this.storageModel.syncProperty(this, 'fontSize');
-  }
-
-  get theme() {
-    return this.themeStore.theme;
-  }
-
-  switchTheme = () => {
-    this.themeStore.switchTheme();
-  };
-
-  @observable
-  accessor fontSize: FontSizeSetting = 'md';
-
-  availableFontSizes: FontSizeSetting[] = ['sm', 'md', 'lg'];
-
-  setFontSize = (fontSize: FontSizeSetting) => {
-    this.fontSize = fontSize;
-  };
-
-  destroy() {
-    this.abortController.abort();
   }
 }

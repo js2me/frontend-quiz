@@ -8,7 +8,6 @@ import react from '@vitejs/plugin-react';
 import browserslist from 'browserslist';
 import dotenv from 'dotenv';
 import { default as checker } from 'vite-plugin-checker';
-import { default as eslint } from 'vite-plugin-eslint';
 import { createHtmlPlugin as html } from 'vite-plugin-html';
 import svgr from 'vite-plugin-svgr';
 import { defineConfig } from 'vitest/config';
@@ -110,15 +109,7 @@ export default defineConfig({
     tailwindcss(),
     react({
       babel: {
-        plugins: [
-          [
-            '@babel/plugin-proposal-decorators',
-            {
-              version: '2023-05',
-            },
-          ],
-          ['@babel/plugin-proposal-explicit-resource-management'],
-        ],
+        plugins: [['@babel/plugin-proposal-explicit-resource-management']],
       },
     }),
     // swc.vite(),
@@ -128,10 +119,10 @@ export default defineConfig({
       additionalLegacyPolyfills: ['regenerator-runtime/runtime'],
     }),
     svgr({}),
-    isProd && eslint(),
     isProd &&
       checker({
         typescript: true,
+        biome: true,
       }),
     html({
       minify: isProd,

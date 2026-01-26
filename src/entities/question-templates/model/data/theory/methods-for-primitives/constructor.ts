@@ -1,4 +1,4 @@
-export default function question({ _minorBool }: QuestionHelpers): RawQuestion {
+export default function question(): RawQuestion {
   return {
     upperText: 'У каких примитив нет методов?',
     display: 'grid',
