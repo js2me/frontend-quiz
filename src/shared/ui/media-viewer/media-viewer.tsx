@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
-import { useToggle } from 'react-shared-utils/hooks';
 import { cx } from 'yummies/css';
+import { useToggle } from 'yummies/react';
 
 import { Dialog, DialogContent, DialogTrigger } from '../dialog';
 

@@ -1,6 +1,6 @@
 import { ChevronsUpDown } from 'lucide-react';
 import { observer } from 'mobx-react-lite';
-import { useToggle } from 'react-shared-utils/hooks';
+import { useToggle } from 'yummies/react';
 import { Button } from '@/shared/ui/button';
 import {
   Collapsible,
