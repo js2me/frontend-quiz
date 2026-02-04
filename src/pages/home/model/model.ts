@@ -40,13 +40,13 @@ export class HomePageVM implements ViewModelSimple {
     return this.modelLoader.isLoading('questionTemplates');
   }
 
-  unmount() {
-    this.abortCtrl.abort();
-  }
-
-  constructor() {
+  mount(): void {
     makeObservable(this, {
       isLoading: computed,
     });
+  }
+
+  unmount() {
+    this.abortCtrl.abort();
   }
 }
