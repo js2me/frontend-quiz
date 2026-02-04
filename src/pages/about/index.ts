@@ -1,3 +1,3 @@
 import { createRoute } from 'mobx-route';
 
-export const aboutRoute = createRoute('/about');
+export const aboutRoute = createRoute('/about', { exact: true });

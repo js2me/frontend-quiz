@@ -11,11 +11,15 @@ export class Quiz {
   ) {
     storage.set({ key: 'params', value: params });
     storage.set({ key: 'state', value: lastState });
-    console.log('dd', params, lastState);
   }
 
   get isActive() {
     return true;
+  }
+
+  finish() {
+    storage.unset({ key: 'params' });
+    storage.unset({ key: 'state' });
   }
 
   static current: Quiz | null = null;

@@ -7,6 +7,8 @@ import { quizRoute } from '@/pages/quiz';
 import { vmStore } from '@/shared/config';
 import { Layout } from '@/widgets/layout';
 
+console.log(homeRoute, aboutRoute, quizRoute);
+
 export const App = observer(() => {
   return (
     <ViewModelsProvider value={vmStore}>
