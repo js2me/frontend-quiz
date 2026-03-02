@@ -27,7 +27,7 @@
   "include": [
     "src",
     "types"
-  ],
+, "src/entities/question-helpers/config/.ts"  ],
   "exclude": [
     "*.mock.ts",
     "*.mock.tsx",

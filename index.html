@@ -1,26 +1,44 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
   <head>
     <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-    <meta charset="UTF-8"/>
+    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <link rel="shortcut icon" href="/favicon.png" type="image/png" />
-    <link rel="manifest" href="/manifest.webmanifest">
+    <link rel="manifest" href="/manifest.webmanifest" />
     <title>Фронтенд Quiz</title>
-    <meta name="description" content="Квиз для подготовки к интервью на позицию фронтенд разработчика" />
-    <meta name="keywords" content="frontend quiz web interview questions react javascript typescript react ecmascript js ts css html developer programmer interview code фронтенд квиз разработчик программист" />
+    <meta
+      name="description"
+      content="Квиз для подготовки к интервью на позицию фронтенд разработчика"
+    />
+    <meta
+      name="keywords"
+      content="frontend quiz web interview questions react javascript typescript react ecmascript js ts css html developer programmer interview code фронтенд квиз разработчик программист"
+    />
     <!-- Open Graph / Facebook -->
     <meta name="author" content="Сергей Волков (js2me@outlook.com)" />
-    <meta property="og:description" content="Квиз для подготовки к интервью на позицию фронтенд разработчика" />
+    <meta
+      property="og:description"
+      content="Квиз для подготовки к интервью на позицию фронтенд разработчика"
+    />
     <meta property="og:image" content="/og-logo.png" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Фронтенд Quiz" />
-    <meta http-equiv="Content-Security-Policy" content="default-src * self blob: data: gap:; style-src * self 'unsafe-inline' blob: data: gap:; script-src * 'self' 'unsafe-eval' 'unsafe-inline' blob: data: gap:; object-src * 'self' blob: data: gap:; img-src * self 'unsafe-inline' blob: data: gap:; connect-src self * 'unsafe-inline' blob: data: gap:; frame-src * self blob: data: gap:;">
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src * self blob: data: gap:; style-src * self 'unsafe-inline' blob: data: gap:; script-src * 'self' 'unsafe-eval' 'unsafe-inline' blob: data: gap:; object-src * 'self' blob: data: gap:; img-src * self 'unsafe-inline' blob: data: gap:; connect-src self * 'unsafe-inline' blob: data: gap:; frame-src * self blob: data: gap:;"
+    />
     <%- injectScript %>
   </head>
   <body id="body">
     <div id="root"></div>
     <div id="portal"></div>
+    <script type="module" src="/src/app/polyfills.ts"></script>
     <script type="module" src="/src/main.tsx"></script>
+    <div
+      id="scope"
+      class="fixed pointer-events-none overflow-hidden"
+      style="left: -9999px; bottom: -9999px"
+    ></div>
   </body>
 </html>

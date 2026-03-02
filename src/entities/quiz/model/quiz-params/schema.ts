@@ -1,11 +1,10 @@
 import * as z from 'zod';
-
 import {
   availableQuestionCategories,
   availableQuestionLevels,
-} from '../config';
+} from '@/entities/quiz/model/config';
 
-export const quizCreateSchema = z.object({
+export const quizParamsSchema = z.object({
   questionsCount: z
     .number({ message: 'Значение должно быть числом' })
     .min(8, { message: 'Минимум 8' })

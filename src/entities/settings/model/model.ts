@@ -15,6 +15,10 @@ export class SettingsModel {
     return this.themeStore.theme;
   }
 
+  get colorScheme() {
+    return this.themeStore.colorScheme;
+  }
+
   switchTheme = () => {
     this.themeStore.switchTheme();
   };

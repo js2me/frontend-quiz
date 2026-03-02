@@ -11,15 +11,12 @@ importers:
       '@babel/plugin-proposal-decorators':
         specifier: ^7.29.0
         version: 7.29.0(@babel/core@7.29.0)
-      '@babel/plugin-proposal-explicit-resource-management':
-        specifier: ^7.27.4
-        version: 7.27.4(@babel/core@7.29.0)
+      '@babel/plugin-transform-explicit-resource-management':
+        specifier: ^7.28.6
+        version: 7.28.6(@babel/core@7.29.0)
       '@hookform/resolvers':
         specifier: ^5.2.2
         version: 5.2.2(react-hook-form@7.71.1(react@18.3.1))
-      '@mantine/core':
-        specifier: ^8.3.14
-        version: 8.3.14(@mantine/hooks@8.3.14(react@18.3.1))(@types/react@18.3.27)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@radix-ui/react-alert-dialog':
         specifier: ^1.1.15
         version: 1.1.15(@types/react-dom@18.3.7(@types/react@18.3.27))(@types/react@18.3.27)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -59,9 +56,18 @@ importers:
       '@radix-ui/react-tooltip':
         specifier: ^1.2.8
         version: 1.2.8(@types/react-dom@18.3.7(@types/react@18.3.27))(@types/react@18.3.27)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@types/dom-to-image':
+        specifier: ^2.6.7
+        version: 2.6.7
       class-variance-authority:
         specifier: ^0.7.1
         version: 0.7.1
+      dom-to-image:
+        specifier: ^2.6.0
+        version: 2.6.0
+      highlight.js:
+        specifier: ^11.11.1
+        version: 11.11.1
       linked-abort-controller:
         specifier: ^1.1.1
         version: 1.1.1
@@ -75,23 +81,29 @@ importers:
         specifier: ^6.15.0
         version: 6.15.0
       mobx-react-hook-form:
-        specifier: ^6.2.1
-        version: 6.2.1(mobx-react-lite@4.1.1(mobx@6.15.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(mobx@6.15.0)(react-hook-form@7.71.1(react@18.3.1))(react@18.3.1)
+        specifier: ^6.3.0
+        version: 6.3.0(mobx-react-lite@4.1.1(mobx@6.15.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(mobx@6.15.0)(react-hook-form@7.71.1(react@18.3.1))(react@18.3.1)
       mobx-react-lite:
         specifier: ^4.1.1
         version: 4.1.1(mobx@6.15.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       mobx-route:
-        specifier: ^0.23.5
-        version: 0.23.5(mobx-react-lite@4.1.1(mobx@6.15.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(mobx-view-model@8.10.1(mobx-react-lite@4.1.1(mobx@6.15.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(mobx@6.15.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(mobx@6.15.0)(react@18.3.1)
+        specifier: ^0.27.0
+        version: 0.27.0(mobx-react-lite@4.1.1(mobx@6.15.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(mobx-view-model@9.0.0(mobx-react-lite@4.1.1(mobx@6.15.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(mobx@6.15.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(mobx@6.15.0)(react@18.3.1)
       mobx-swiss-knife:
         specifier: ^1.14.1
         version: 1.14.1(mobx@6.15.0)(react@18.3.1)
       mobx-view-model:
-        specifier: ^8.10.1
-        version: 8.10.1(mobx-react-lite@4.1.1(mobx@6.15.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(mobx@6.15.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: ^9.0.0
+        version: 9.0.0(mobx-react-lite@4.1.1(mobx@6.15.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(mobx@6.15.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      mobx-web-api:
+        specifier: ^1.13.0
+        version: 1.13.0(mobx@6.15.0)(react@18.3.1)
       plural-ru:
         specifier: ^2.0.2
         version: 2.0.2
+      quickjs-emscripten:
+        specifier: ^0.32.0
+        version: 0.32.0
       react:
         specifier: ^18.3.1
         version: 18.3.1
@@ -102,14 +114,17 @@ importers:
         specifier: ^7.71.1
         version: 7.71.1(react@18.3.1)
       react-simple-loadable:
-        specifier: ^3.0.0
-        version: 3.0.0(react@18.3.1)
+        specifier: ^3.1.0
+        version: 3.1.0(react@18.3.1)
+      sonner:
+        specifier: 1.3.1
+        version: 1.3.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       tailwind-merge:
         specifier: ^3.4.0
         version: 3.4.0
       yummies:
-        specifier: ^7.3.1
-        version: 7.3.1(mobx@6.15.0)(react@18.3.1)
+        specifier: ^7.9.0
+        version: 7.9.0(mobx@6.15.0)(react@18.3.1)
       zod:
         specifier: ^4.3.6
         version: 4.3.6
@@ -118,8 +133,8 @@ importers:
         version: 1.1.1(zod@4.3.6)
     devDependencies:
       '@biomejs/biome':
-        specifier: 2.3.11
-        version: 2.3.11
+        specifier: 2.3.14
+        version: 2.3.14
       '@tailwindcss/typography':
         specifier: ^0.5.19
         version: 0.5.19(tailwindcss@4.1.18)
@@ -178,8 +193,8 @@ importers:
         specifier: ^16.6.1
         version: 16.6.1
       js2me-biome-config:
-        specifier: ^1.0.8
-        version: 1.0.8
+        specifier: ^1.1.0
+        version: 1.1.0
       lefthook:
         specifier: ^1.13.6
         version: 1.13.6
@@ -230,7 +245,7 @@ importers:
         version: 7.3.1(@types/node@22.19.8)(jiti@1.21.7)(lightningcss@1.30.2)(sass@1.97.3)(terser@5.46.0)(yaml@2.8.0)
       vite-plugin-checker:
         specifier: ^0.12.0
-        version: 0.12.0(@biomejs/biome@2.3.11)(meow@13.2.0)(optionator@0.9.4)(typescript@5.9.3)(vite@7.3.1(@types/node@22.19.8)(jiti@1.21.7)(lightningcss@1.30.2)(sass@1.97.3)(terser@5.46.0)(yaml@2.8.0))
+        version: 0.12.0(@biomejs/biome@2.3.14)(meow@13.2.0)(optionator@0.9.4)(typescript@5.9.3)(vite@7.3.1(@types/node@22.19.8)(jiti@1.21.7)(lightningcss@1.30.2)(sass@1.97.3)(terser@5.46.0)(yaml@2.8.0))
       vite-plugin-html:
         specifier: ^3.2.2
         version: 3.2.2(vite@7.3.1(@types/node@22.19.8)(jiti@1.21.7)(lightningcss@1.30.2)(sass@1.97.3)(terser@5.46.0)(yaml@2.8.0))
@@ -397,13 +412,6 @@ packages:
   '@babel/plugin-proposal-decorators@7.29.0':
     resolution: {integrity: sha512-CVBVv3VY/XRMxRYq5dwr2DS7/MvqPm23cOCjbwNnVrfOqcWlnefua1uUs0sjdKOGjvPUG633o07uWzJq4oI6dA==}
     engines: {node: '>=6.9.0'}
-    peerDependencies:
-      '@babel/core': ^7.0.0-0
-
-  '@babel/plugin-proposal-explicit-resource-management@7.27.4':
-    resolution: {integrity: sha512-1SwtCDdZWQvUU1i7wt/ihP7W38WjC3CSTOHAl+Xnbze8+bbMNjRvRQydnj0k9J1jPqCAZctBFp6NHJXkrVVmEA==}
-    engines: {node: '>=6.9.0'}
-    deprecated: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-explicit-resource-management instead.
     peerDependencies:
       '@babel/core': ^7.0.0-0
 
@@ -782,55 +790,55 @@ packages:
     resolution: {integrity: sha512-LwdZHpScM4Qz8Xw2iKSzS+cfglZzJGvofQICy7W7v4caru4EaAmyUuO6BGrbyQ2mYV11W0U8j5mBhd14dd3B0A==}
     engines: {node: '>=6.9.0'}
 
-  '@biomejs/biome@2.3.11':
-    resolution: {integrity: sha512-/zt+6qazBWguPG6+eWmiELqO+9jRsMZ/DBU3lfuU2ngtIQYzymocHhKiZRyrbra4aCOoyTg/BmY+6WH5mv9xmQ==}
+  '@biomejs/biome@2.3.14':
+    resolution: {integrity: sha512-QMT6QviX0WqXJCaiqVMiBUCr5WRQ1iFSjvOLoTk6auKukJMvnMzWucXpwZB0e8F00/1/BsS9DzcKgWH+CLqVuA==}
     engines: {node: '>=14.21.3'}
     hasBin: true
 
-  '@biomejs/cli-darwin-arm64@2.3.11':
-    resolution: {integrity: sha512-/uXXkBcPKVQY7rc9Ys2CrlirBJYbpESEDme7RKiBD6MmqR2w3j0+ZZXRIL2xiaNPsIMMNhP1YnA+jRRxoOAFrA==}
+  '@biomejs/cli-darwin-arm64@2.3.14':
+    resolution: {integrity: sha512-UJGPpvWJMkLxSRtpCAKfKh41Q4JJXisvxZL8ChN1eNW3m/WlPFJ6EFDCE7YfUb4XS8ZFi3C1dFpxUJ0Ety5n+A==}
     engines: {node: '>=14.21.3'}
     cpu: [arm64]
     os: [darwin]
 
-  '@biomejs/cli-darwin-x64@2.3.11':
-    resolution: {integrity: sha512-fh7nnvbweDPm2xEmFjfmq7zSUiox88plgdHF9OIW4i99WnXrAC3o2P3ag9judoUMv8FCSUnlwJCM1B64nO5Fbg==}
+  '@biomejs/cli-darwin-x64@2.3.14':
+    resolution: {integrity: sha512-PNkLNQG6RLo8lG7QoWe/hhnMxJIt1tEimoXpGQjwS/dkdNiKBLPv4RpeQl8o3s1OKI3ZOR5XPiYtmbGGHAOnLA==}
     engines: {node: '>=14.21.3'}
     cpu: [x64]
     os: [darwin]
 
-  '@biomejs/cli-linux-arm64-musl@2.3.11':
-    resolution: {integrity: sha512-XPSQ+XIPZMLaZ6zveQdwNjbX+QdROEd1zPgMwD47zvHV+tCGB88VH+aynyGxAHdzL+Tm/+DtKST5SECs4iwCLg==}
+  '@biomejs/cli-linux-arm64-musl@2.3.14':
+    resolution: {integrity: sha512-LInRbXhYujtL3sH2TMCH/UBwJZsoGwfQjBrMfl84CD4hL/41C/EU5mldqf1yoFpsI0iPWuU83U+nB2TUUypWeg==}
     engines: {node: '>=14.21.3'}
     cpu: [arm64]
     os: [linux]
 
-  '@biomejs/cli-linux-arm64@2.3.11':
-    resolution: {integrity: sha512-l4xkGa9E7Uc0/05qU2lMYfN1H+fzzkHgaJoy98wO+b/7Gl78srbCRRgwYSW+BTLixTBrM6Ede5NSBwt7rd/i6g==}
+  '@biomejs/cli-linux-arm64@2.3.14':
+    resolution: {integrity: sha512-KT67FKfzIw6DNnUNdYlBg+eU24Go3n75GWK6NwU4+yJmDYFe9i/MjiI+U/iEzKvo0g7G7MZqoyrhIYuND2w8QQ==}
     engines: {node: '>=14.21.3'}
     cpu: [arm64]
     os: [linux]
 
-  '@biomejs/cli-linux-x64-musl@2.3.11':
-    resolution: {integrity: sha512-vU7a8wLs5C9yJ4CB8a44r12aXYb8yYgBn+WeyzbMjaCMklzCv1oXr8x+VEyWodgJt9bDmhiaW/I0RHbn7rsNmw==}
+  '@biomejs/cli-linux-x64-musl@2.3.14':
+    resolution: {integrity: sha512-KQU7EkbBBuHPW3/rAcoiVmhlPtDSGOGRPv9js7qJVpYTzjQmVR+C9Rfcz+ti8YCH+zT1J52tuBybtP4IodjxZQ==}
     engines: {node: '>=14.21.3'}
     cpu: [x64]
     os: [linux]
 
-  '@biomejs/cli-linux-x64@2.3.11':
-    resolution: {integrity: sha512-/1s9V/H3cSe0r0Mv/Z8JryF5x9ywRxywomqZVLHAoa/uN0eY7F8gEngWKNS5vbbN/BsfpCG5yeBT5ENh50Frxg==}
+  '@biomejs/cli-linux-x64@2.3.14':
+    resolution: {integrity: sha512-ZsZzQsl9U+wxFrGGS4f6UxREUlgHwmEfu1IrXlgNFrNnd5Th6lIJr8KmSzu/+meSa9f4rzFrbEW9LBBA6ScoMA==}
     engines: {node: '>=14.21.3'}
     cpu: [x64]
     os: [linux]
 
-  '@biomejs/cli-win32-arm64@2.3.11':
-    resolution: {integrity: sha512-PZQ6ElCOnkYapSsysiTy0+fYX+agXPlWugh6+eQ6uPKI3vKAqNp6TnMhoM3oY2NltSB89hz59o8xIfOdyhi9Iw==}
+  '@biomejs/cli-win32-arm64@2.3.14':
+    resolution: {integrity: sha512-+IKYkj/pUBbnRf1G1+RlyA3LWiDgra1xpS7H2g4BuOzzRbRB+hmlw0yFsLprHhbbt7jUzbzAbAjK/Pn0FDnh1A==}
     engines: {node: '>=14.21.3'}
     cpu: [arm64]
     os: [win32]
 
-  '@biomejs/cli-win32-x64@2.3.11':
-    resolution: {integrity: sha512-43VrG813EW+b5+YbDbz31uUsheX+qFKCpXeY9kfdAx+ww3naKxeVkTD9zLIWxUPfJquANMHrmW3wbe/037G0Qg==}
+  '@biomejs/cli-win32-x64@2.3.14':
+    resolution: {integrity: sha512-oizCjdyQ3WJEswpb3Chdngeat56rIdSYK12JI3iI11Mt5T5EXcZ7WLuowzEaFPNJ3zmOQFliMN8QY1Pi+qsfdQ==}
     engines: {node: '>=14.21.3'}
     cpu: [x64]
     os: [win32]
@@ -1010,12 +1018,6 @@ packages:
       react: '>=16.8.0'
       react-dom: '>=16.8.0'
 
-  '@floating-ui/react@0.27.17':
-    resolution: {integrity: sha512-LGVZKHwmWGg6MRHjLLgsfyaX2y2aCNgnD1zT/E6B+/h+vxg+nIJUqHPAlTzsHDyqdgEpJ1Np5kxWuFEErXzoGg==}
-    peerDependencies:
-      react: '>=17.0.0'
-      react-dom: '>=17.0.0'
-
   '@floating-ui/utils@0.2.10':
     resolution: {integrity: sha512-aGTxbpbg8/b5JfU1HXSrbH3wXZuLPJcNEcZQFMxLs3oSzgtVu6nFPkbbGGUvBcUjKV2YyB9Wxxabo+HEH9tcRQ==}
 
@@ -1023,6 +1025,21 @@ packages:
     resolution: {integrity: sha512-A/IxlMLShx3KjV/HeTcTfaMxdwy690+L/ZADoeaTltLx+CVuzkeVIPuybK3jrRfw7YZnmdKsVVHAlEPIAEUNlA==}
     peerDependencies:
       react-hook-form: ^7.55.0
+
+  '@jitl/quickjs-ffi-types@0.32.0':
+    resolution: {integrity: sha512-v9T+GQpmk43VDJ7d72sf0Nexhk+ArvtUihW27dy7lqAl0zBObFKtSBBIm5RBjwIhE8VwsPPm9PNuvPvNqLWUEg==}
+
+  '@jitl/quickjs-wasmfile-debug-asyncify@0.32.0':
+    resolution: {integrity: sha512-EX8zbXwGqCgAE764M+qvkHtyXDi/FUoMBea0JnES7vCM3P7a2+EOZOjGv85wtZ2sJhI1oJ+nekmqpOODFDY+hw==}
+
+  '@jitl/quickjs-wasmfile-debug-sync@0.32.0':
+    resolution: {integrity: sha512-LeYWrPGC1uNCTBWvibo3ZLJj0CSVNYUXvJpXMCmuQ5Sap2cCACc3uvGvYV4homHHBAzfw5akoTqMMS4YFRtw+Q==}
+
+  '@jitl/quickjs-wasmfile-release-asyncify@0.32.0':
+    resolution: {integrity: sha512-3oSwPfja12ICz4aIblB58cuY8JlEq5Txt8Cut4VLo+LH47QN+mzCnSgnbB03hWzg1LBcc+VyyI9UOag7a1NF+Q==}
+
+  '@jitl/quickjs-wasmfile-release-sync@0.32.0':
+    resolution: {integrity: sha512-BKNDI/TPBfGlLNGYpLrhcDGXmIk4xHm4MRAisOBnOzpXVn9HZWsfmMAc9WMBrAHjvvds6HOikKeaOBKdPdpVrg==}
 
   '@jridgewell/gen-mapping@0.3.13':
     resolution: {integrity: sha512-2kkt/7niJ6MgEPxF0bYdQ6etZaA+fQvDcLKckhy1yIQOzaoKjBBjSj63/aLVjYE3qhRt5dvM+uUyfCg6UKCBbA==}
@@ -1042,18 +1059,6 @@ packages:
 
   '@jridgewell/trace-mapping@0.3.31':
     resolution: {integrity: sha512-zzNR+SdQSDJzc8joaeP8QQoCQr8NuYx2dIIytl1QeBEZHJ9uW6hebsrYgbz8hJwUQao3TWCMtmfV8Nu1twOLAw==}
-
-  '@mantine/core@8.3.14':
-    resolution: {integrity: sha512-ZOxggx65Av1Ii1NrckCuqzluRpmmG+8DyEw24wDom3rmwsPg9UV+0le2QTyI5Eo60LzPfUju1KuEPiUzNABIPg==}
-    peerDependencies:
-      '@mantine/hooks': 8.3.14
-      react: ^18.x || ^19.x
-      react-dom: ^18.x || ^19.x
-
-  '@mantine/hooks@8.3.14':
-    resolution: {integrity: sha512-0SbHnGEuHcF2QyjzBBcqidpjNmIb6n7TC3obnhkBToYhUTbMcJSK/8ei/yHtAelridJH4CPeohRlQdc0HajHyQ==}
-    peerDependencies:
-      react: ^18.x || ^19.x
 
   '@nodelib/fs.scandir@2.1.5':
     resolution: {integrity: sha512-vq24Bq3ym5HEQm2NKCr3yXDwjc7vTsEThRDnkp2DK9p1uqLR+DHurm/NOTo0KG7HYHU7eppKZj3MyqYuMBf62g==}
@@ -2030,6 +2035,9 @@ packages:
   '@types/dom-css@2.1.1':
     resolution: {integrity: sha512-ZRruYScw5hPpWY8gOhcHRkBB02CC9uZAmtxkgP+obMLvwfwezQ2adYfAjfBhJR9NdcQAbkexpbuQ1Fj28FejaA==}
 
+  '@types/dom-to-image@2.6.7':
+    resolution: {integrity: sha512-me5VbCv+fcXozblWwG13krNBvuEOm6kA5xoa4RrjDJCNFOZSWR3/QLtOXimBHk1Fisq69Gx3JtOoXtg1N1tijg==}
+
   '@types/estree@0.0.39':
     resolution: {integrity: sha512-EYNwp3bU+98cpU4lAWYYL7Zz+2gryWH1qbdDTidVd6hkiR6weksdbMadyXKXNPEkQFhXM+hVO9ZygomHXp+AIw==}
 
@@ -2498,6 +2506,9 @@ packages:
   dom-serializer@2.0.0:
     resolution: {integrity: sha512-wIkAryiqt/nV5EQKqQpo3SToSOV9J0DnbJqwK7Wv/Trc92zIAYZ4FlMu+JPFW1DfGFt81ZTCGgDEabffXeLyJg==}
 
+  dom-to-image@2.6.0:
+    resolution: {integrity: sha512-Dt0QdaHmLpjURjU7Tnu3AgYSF2LuOmksSGsUcE6ItvJoCWTBEmiMXcqBdNSAm9+QbbwD7JMoVsuuKX6ZVQv1qA==}
+
   domelementtype@2.3.0:
     resolution: {integrity: sha512-OLETBj6w0OsagBwdXnPdN0cnMfF9opN69co+7ZrbfPGrdpPVNBUj02spi6B1N7wChLQiPn4CSH/zJvXw56gmHw==}
 
@@ -2756,6 +2767,10 @@ packages:
     resolution: {integrity: sha512-F/1DnUGPopORZi0ni+CvrCgHQ5FyEAHRLSApuYWMmrbSwoN2Mn/7k+Gl38gJnR7yyDZk6WLXwiGod1JOWNDKGw==}
     hasBin: true
 
+  highlight.js@11.11.1:
+    resolution: {integrity: sha512-Xwwo44whKBVCYoliBQwaPvtd/2tYFkRQtXDWj1nackaV2JPXx3L0+Jvd8/qCJ2p+ML0/XVkJ2q+Mr+UVdpJK5w==}
+    engines: {node: '>=12.0.0'}
+
   history@5.3.0:
     resolution: {integrity: sha512-ZqaKwjjrAYUYfLG+htGaIIZ4nioX2L70ZUMIFysS3xvBsSG4x/n1V6TXV3N8ZYNuFGlDirFg32T7B6WOUPDYcQ==}
 
@@ -2940,8 +2955,8 @@ packages:
     resolution: {integrity: sha512-qQKT4zQxXl8lLwBtHMWwaTcGfFOZviOJet3Oy/xmGk2gZH677CJM9EvtfdSkgWcATZhj/55JZ0rmy3myCT5lsA==}
     hasBin: true
 
-  js2me-biome-config@1.0.8:
-    resolution: {integrity: sha512-6tMh5dqVhDvAHblURsDqyejDaDS/N0zFn3OrLDYudF3xKpX3QMkaIGy1RCOLDFxjRCYU0tLb6LI5CbXS0Oh9Ow==}
+  js2me-biome-config@1.1.0:
+    resolution: {integrity: sha512-eBc4Im/stj6egsAeEYww7GQUWhQutR38pSmJFcq3+Q5VRzYDfG30NGMayTw+YhfTwPnLDeARBjY/o7p8Nhrbyw==}
 
   jsesc@3.1.0:
     resolution: {integrity: sha512-/sM3dO2FOzXjKQhJuo0Q173wf2KOo8t4I8vHy6lF9poUp7bKT0/NHE8fPX23PwfhnykfqnC2xRxOnVw5XuGIaA==}
@@ -3187,8 +3202,8 @@ packages:
     peerDependencies:
       mobx: ^6.13.3
 
-  mobx-react-hook-form@6.2.1:
-    resolution: {integrity: sha512-R0cb6OpQWTPfUW76Uqsk/eFthw/5GFqKNLXU4AuRAnVGg2ZXVcFAN+D/J5+RN6y39CB1/8m0qFnN+O8NKGnlcg==}
+  mobx-react-hook-form@6.3.0:
+    resolution: {integrity: sha512-RbMOVe6f1AdhQpBENg50UB0Si+tI6FdKQSqZmOSIrtAS0JrXPjqFV/4+gSIkQlAisGwn0R8pqvsWDYHs8t/d4w==}
     peerDependencies:
       mobx: ^6.12.4
       mobx-react-lite: ^4.0.7
@@ -3208,12 +3223,12 @@ packages:
       react-native:
         optional: true
 
-  mobx-route@0.23.5:
-    resolution: {integrity: sha512-hZnY200zjKquCj/zC76oJr4Sa8sZ51WYVnvpDc6LZd8BPTSrWSfjzKQVUygkcoVltxPJEXIKqKwc1L93HpuBLg==}
+  mobx-route@0.27.0:
+    resolution: {integrity: sha512-f9UL4P+XM5LEqf2DN9iR3Mt/Gc2m8yE2HSEE+rL/v+wIfOmMrWTCxJS3ViAe5+dE67FTgHwTJyrLVJc5EQXf6w==}
     peerDependencies:
       mobx: ^6.12.4
       mobx-react-lite: ^4.0.7
-      mobx-view-model: ^8.10.0
+      mobx-view-model: ^8.10.0 || ^9.0.0
       react: ^18.0.0 || ^19.0.0
     peerDependenciesMeta:
       mobx-react-lite:
@@ -3228,8 +3243,8 @@ packages:
     peerDependencies:
       mobx: ^6.12.4
 
-  mobx-view-model@8.10.1:
-    resolution: {integrity: sha512-Obarztd+JGvaKXky13B7/Dz5nVNlTHPLKjf/piMBTNiirkIo0XdtIvjaGW0OvZkIr6NyN4EiRrRKBt/n7UMDiw==}
+  mobx-view-model@9.0.0:
+    resolution: {integrity: sha512-x2I472UHZtOil98m5rI+xfJ1bOE3WE5+grPn7QZTJG7aJ80KvOxyaIrtOBSqJR6HARdgCUISPb3CQvyusJYhgw==}
     peerDependencies:
       mobx: ^6.12.4
       mobx-react-lite: ^4.0.7
@@ -3242,6 +3257,11 @@ packages:
         optional: true
       react-dom:
         optional: true
+
+  mobx-web-api@1.13.0:
+    resolution: {integrity: sha512-UG8fNjRiU2r8bops3RW9thavQfx/HYGjI/JkNPsdrSrxuNWayK1QK9/AybiFkEUq93mN0z05iiH16Akib2kuIw==}
+    peerDependencies:
+      mobx: ^6.13.6
 
   mobx@6.15.0:
     resolution: {integrity: sha512-UczzB+0nnwGotYSgllfARAqWCJ5e/skuV2K/l+Zyck/H6pJIhLXuBnz+6vn2i211o7DtbE78HQtsYEKICHGI+g==}
@@ -3690,6 +3710,13 @@ packages:
   queue-microtask@1.2.3:
     resolution: {integrity: sha512-NuaNSa6flKT5JaSYQzJok04JzTL1CA6aGhv5rfLW3PgqA+M2ChpZQnAC8h8i4ZFkBS8X5RqkDBHA7r4hej3K9A==}
 
+  quickjs-emscripten-core@0.32.0:
+    resolution: {integrity: sha512-QFnPfjFey8EqknSrSxe1hZrf1/8z7/6s1QzGOmKo6++02r7QRRX7ZoyNaZh7JuVjWsVW87KnQrbZqnHkOAzUyg==}
+
+  quickjs-emscripten@0.32.0:
+    resolution: {integrity: sha512-So0Sqw869y/S2oE3Nuc0uT3Dhqgvsj8FSrwBdsuTosVsG8ME5/OcudU1GxsrIFdFABgy17GHnTVO9TYV/bLQcA==}
+    engines: {node: '>=16.0.0'}
+
   randombytes@2.1.0:
     resolution: {integrity: sha512-vYl3iOX+4CKUWuxGi9Ukhie6fsqXqS9FE2Zaic4tNFD2N2QQaXOMFbuKK4QmDHC0JO6B1Zp41J0LpT0oR68amQ==}
 
@@ -3703,12 +3730,6 @@ packages:
     engines: {node: '>=18.0.0'}
     peerDependencies:
       react: ^16.8.0 || ^17 || ^18 || ^19
-
-  react-number-format@5.4.4:
-    resolution: {integrity: sha512-wOmoNZoOpvMminhifQYiYSTCLUDOiUbBunrMrMjA+dV52sY+vck1S4UhR6PkgnoCquvvMSeJjErXZ4qSaWCliA==}
-    peerDependencies:
-      react: ^0.14 || ^15.0.0 || ^16.0.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
-      react-dom: ^0.14 || ^15.0.0 || ^16.0.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
 
   react-refresh@0.17.0:
     resolution: {integrity: sha512-z6F7K9bV85EfseRCp2bzrpyQ0Gkw1uLoCel9XBVWPg/TjRj94SkJzUTGfOa4bs7iJvBWtQG0Wq7wnI0syw3EBQ==}
@@ -3734,13 +3755,8 @@ packages:
       '@types/react':
         optional: true
 
-  react-simple-loadable@2.3.9:
-    resolution: {integrity: sha512-XEVV0N64wNct7XZgUIoXHWpkp8en36APdlJatAA+I3i9JeFHDxf0w/Y0zVeE8hoWBvYez/Y8Hulem16SkmRalg==}
-    peerDependencies:
-      react: ^18.0.0 || ^19.0.0
-
-  react-simple-loadable@3.0.0:
-    resolution: {integrity: sha512-NbEsqBx48KoVrCpl97PLvlVE1cST9ZPdMPqLiGoV1qvteoYzgsdEq6NTLpoWHi/HW4oBsrKIj/uUZEE4Mfr9fg==}
+  react-simple-loadable@3.1.0:
+    resolution: {integrity: sha512-71o41VMtYuT7Y+vHfaPO350WP47vPtNQJX8zlFbT4y+9tI/cTt9Rr+XhChaliRVyzhZlcKR+dPS4k9NHL4KRSA==}
     peerDependencies:
       react: ^18.0.0 || ^19.0.0
 
@@ -3753,12 +3769,6 @@ packages:
     peerDependenciesMeta:
       '@types/react':
         optional: true
-
-  react-textarea-autosize@8.5.9:
-    resolution: {integrity: sha512-U1DGlIQN5AwgjTyOEnI1oCcMuEr1pv1qOtklB2l4nyMGbHzWrI0eFsYK0zos2YWqAolJyG0IWJaqWmWj5ETh0A==}
-    engines: {node: '>=10'}
-    peerDependencies:
-      react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
 
   react@18.3.1:
     resolution: {integrity: sha512-wS+hAgJShR0KhEvPJArfuPVN1+Hz1t0Y6n5jLrGQbkb4urgPE/0Rve+1kMB1v/oWgHgm4WIcV+i7F2pTVj+2iQ==}
@@ -3935,6 +3945,12 @@ packages:
     resolution: {integrity: sha512-HLpt+uLy/pxB+bum/9DzAgiKS8CX1EvbWxI4zlmgGCExImLdiad2iCwXT5Z4c9c3Eq8rP2318mPW2c+QbtjK8A==}
     engines: {node: '>= 10.0.0', npm: '>= 3.0.0'}
 
+  sonner@1.3.1:
+    resolution: {integrity: sha512-+rOAO56b2eI3q5BtgljERSn2umRk63KFIvgb2ohbZ5X+Eb5u+a/7/0ZgswYqgBMg8dyl7n6OXd9KasA8QF9ToA==}
+    peerDependencies:
+      react: ^18.0.0
+      react-dom: ^18.0.0
+
   source-map-js@1.2.1:
     resolution: {integrity: sha512-UXWMKhLOwVKb728IUtQPXxfYU+usdybtUrK/8uGE8CQMvrhOpwvzDBwj0QhSL7MQc7vIsISBG8VQ8+IDQxpfQA==}
     engines: {node: '>=0.10.0'}
@@ -4017,9 +4033,6 @@ packages:
 
   systemjs@6.15.1:
     resolution: {integrity: sha512-Nk8c4lXvMB98MtbmjX7JwJRgJOL8fluecYCfCeYBznwmpOs8Bf15hLM6z4z71EDAhQVrQrI+wt1aLWSXZq+hXA==}
-
-  tabbable@6.4.0:
-    resolution: {integrity: sha512-05PUHKSNE8ou2dwIxTngl4EzcnsCDZGJ/iCLtDflR/SHB/ny14rXc+qU5P4mG9JkusiV7EivzY9Mhm55AzAvCg==}
 
   tailwind-children@0.5.0:
     resolution: {integrity: sha512-erFCoS3v7beWuuJ9WdTeG+ZVL0SQrQ8gVxvx0zByYqhfXyPMYSCUNjA/RzYan0HGT/ejPayaCOH4zdXGN9A5IQ==}
@@ -4110,10 +4123,6 @@ packages:
     resolution: {integrity: sha512-eaBzG6MxNzEn9kiwvtre90cXaNLkmadMWa1zQMs3XORCXNbsH/OewwbxC5ia9dCxIxnTAsSxXJaa/p5y8DlvJg==}
     engines: {node: '>=10'}
 
-  type-fest@4.41.0:
-    resolution: {integrity: sha512-TeTSQ6H5YHvpqVwBRcnLDCBnDOHWYu7IvGbHT6N8AOymcr9PJGjc1GTtiWZTYg0NCgYwvnYWEkVChQAr9bjfwA==}
-    engines: {node: '>=16'}
-
   typed-array-buffer@1.0.3:
     resolution: {integrity: sha512-nAYYwfY3qnzX30IkA6AQZjVbtK6duGontcQm1WSG1MD94YLqK0515GNApXkoxKOWMusVssAHWLh9SeaoefYFGw==}
     engines: {node: '>= 0.4'}
@@ -4186,33 +4195,6 @@ packages:
     peerDependencies:
       '@types/react': '*'
       react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0 || ^19.0.0-rc
-    peerDependenciesMeta:
-      '@types/react':
-        optional: true
-
-  use-composed-ref@1.4.0:
-    resolution: {integrity: sha512-djviaxuOOh7wkj0paeO1Q/4wMZ8Zrnag5H6yBvzN7AKKe8beOaED9SF5/ByLqsku8NP4zQqsvM2u3ew/tJK8/w==}
-    peerDependencies:
-      '@types/react': '*'
-      react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
-    peerDependenciesMeta:
-      '@types/react':
-        optional: true
-
-  use-isomorphic-layout-effect@1.2.1:
-    resolution: {integrity: sha512-tpZZ+EX0gaghDAiFR37hj5MgY6ZN55kLiPkJsKxBMZ6GZdOSPJXiOzPM984oPYZ5AnehYx5WQp1+ME8I/P/pRA==}
-    peerDependencies:
-      '@types/react': '*'
-      react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
-    peerDependenciesMeta:
-      '@types/react':
-        optional: true
-
-  use-latest@1.3.0:
-    resolution: {integrity: sha512-mhg3xdm9NaM8q+gLT8KryJPnRFOz1/5XPBhmDEVZK1webPzDjrPk7f/mbpeLqTgB9msytYWANxgALOCJKnLvcQ==}
-    peerDependencies:
-      '@types/react': '*'
-      react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
     peerDependenciesMeta:
       '@types/react':
         optional: true
@@ -4466,8 +4448,8 @@ packages:
     engines: {node: '>= 14.6'}
     hasBin: true
 
-  yummies@7.3.1:
-    resolution: {integrity: sha512-qcJemYsvsogrHsrjNaC2/qFRpmcpW/D21eGSS2yckEMtz7CNlpdnxt4zyau9oTJM1OGrC24L/RJZOihsldTBbg==}
+  yummies@7.9.0:
+    resolution: {integrity: sha512-34Ky9uWmdVRTkH49Z/wMUO0mVNaYwEB8BHL0srKaHF9vGa8CZGVfjVEIBd4wtdJmOw+rI8PJSR9lrEq+axecag==}
     peerDependencies:
       mobx: ^6.12.4
       react: ^18 || ^19
@@ -4695,14 +4677,6 @@ snapshots:
       '@babel/helper-create-class-features-plugin': 7.28.6(@babel/core@7.29.0)
       '@babel/helper-plugin-utils': 7.28.6
       '@babel/plugin-syntax-decorators': 7.28.6(@babel/core@7.29.0)
-    transitivePeerDependencies:
-      - supports-color
-
-  '@babel/plugin-proposal-explicit-resource-management@7.27.4(@babel/core@7.29.0)':
-    dependencies:
-      '@babel/core': 7.29.0
-      '@babel/helper-plugin-utils': 7.28.6
-      '@babel/plugin-transform-destructuring': 7.28.5(@babel/core@7.29.0)
     transitivePeerDependencies:
       - supports-color
 
@@ -5182,39 +5156,39 @@ snapshots:
       '@babel/helper-string-parser': 7.27.1
       '@babel/helper-validator-identifier': 7.28.5
 
-  '@biomejs/biome@2.3.11':
+  '@biomejs/biome@2.3.14':
     optionalDependencies:
-      '@biomejs/cli-darwin-arm64': 2.3.11
-      '@biomejs/cli-darwin-x64': 2.3.11
-      '@biomejs/cli-linux-arm64': 2.3.11
-      '@biomejs/cli-linux-arm64-musl': 2.3.11
-      '@biomejs/cli-linux-x64': 2.3.11
-      '@biomejs/cli-linux-x64-musl': 2.3.11
-      '@biomejs/cli-win32-arm64': 2.3.11
-      '@biomejs/cli-win32-x64': 2.3.11
+      '@biomejs/cli-darwin-arm64': 2.3.14
+      '@biomejs/cli-darwin-x64': 2.3.14
+      '@biomejs/cli-linux-arm64': 2.3.14
+      '@biomejs/cli-linux-arm64-musl': 2.3.14
+      '@biomejs/cli-linux-x64': 2.3.14
+      '@biomejs/cli-linux-x64-musl': 2.3.14
+      '@biomejs/cli-win32-arm64': 2.3.14
+      '@biomejs/cli-win32-x64': 2.3.14
 
-  '@biomejs/cli-darwin-arm64@2.3.11':
+  '@biomejs/cli-darwin-arm64@2.3.14':
     optional: true
 
-  '@biomejs/cli-darwin-x64@2.3.11':
+  '@biomejs/cli-darwin-x64@2.3.14':
     optional: true
 
-  '@biomejs/cli-linux-arm64-musl@2.3.11':
+  '@biomejs/cli-linux-arm64-musl@2.3.14':
     optional: true
 
-  '@biomejs/cli-linux-arm64@2.3.11':
+  '@biomejs/cli-linux-arm64@2.3.14':
     optional: true
 
-  '@biomejs/cli-linux-x64-musl@2.3.11':
+  '@biomejs/cli-linux-x64-musl@2.3.14':
     optional: true
 
-  '@biomejs/cli-linux-x64@2.3.11':
+  '@biomejs/cli-linux-x64@2.3.14':
     optional: true
 
-  '@biomejs/cli-win32-arm64@2.3.11':
+  '@biomejs/cli-win32-arm64@2.3.14':
     optional: true
 
-  '@biomejs/cli-win32-x64@2.3.11':
+  '@biomejs/cli-win32-x64@2.3.14':
     optional: true
 
   '@csstools/normalize.css@12.1.1': {}
@@ -5314,20 +5288,30 @@ snapshots:
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
 
-  '@floating-ui/react@0.27.17(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
-    dependencies:
-      '@floating-ui/react-dom': 2.1.7(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@floating-ui/utils': 0.2.10
-      react: 18.3.1
-      react-dom: 18.3.1(react@18.3.1)
-      tabbable: 6.4.0
-
   '@floating-ui/utils@0.2.10': {}
 
   '@hookform/resolvers@5.2.2(react-hook-form@7.71.1(react@18.3.1))':
     dependencies:
       '@standard-schema/utils': 0.3.0
       react-hook-form: 7.71.1(react@18.3.1)
+
+  '@jitl/quickjs-ffi-types@0.32.0': {}
+
+  '@jitl/quickjs-wasmfile-debug-asyncify@0.32.0':
+    dependencies:
+      '@jitl/quickjs-ffi-types': 0.32.0
+
+  '@jitl/quickjs-wasmfile-debug-sync@0.32.0':
+    dependencies:
+      '@jitl/quickjs-ffi-types': 0.32.0
+
+  '@jitl/quickjs-wasmfile-release-asyncify@0.32.0':
+    dependencies:
+      '@jitl/quickjs-ffi-types': 0.32.0
+
+  '@jitl/quickjs-wasmfile-release-sync@0.32.0':
+    dependencies:
+      '@jitl/quickjs-ffi-types': 0.32.0
 
   '@jridgewell/gen-mapping@0.3.13':
     dependencies:
@@ -5352,24 +5336,6 @@ snapshots:
     dependencies:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.5
-
-  '@mantine/core@8.3.14(@mantine/hooks@8.3.14(react@18.3.1))(@types/react@18.3.27)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
-    dependencies:
-      '@floating-ui/react': 0.27.17(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@mantine/hooks': 8.3.14(react@18.3.1)
-      clsx: 2.1.1
-      react: 18.3.1
-      react-dom: 18.3.1(react@18.3.1)
-      react-number-format: 5.4.4(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      react-remove-scroll: 2.7.2(@types/react@18.3.27)(react@18.3.1)
-      react-textarea-autosize: 8.5.9(@types/react@18.3.27)(react@18.3.1)
-      type-fest: 4.41.0
-    transitivePeerDependencies:
-      - '@types/react'
-
-  '@mantine/hooks@8.3.14(react@18.3.1)':
-    dependencies:
-      react: 18.3.1
 
   '@nodelib/fs.scandir@2.1.5':
     dependencies:
@@ -6223,6 +6189,8 @@ snapshots:
 
   '@types/dom-css@2.1.1': {}
 
+  '@types/dom-to-image@2.6.7': {}
+
   '@types/estree@0.0.39': {}
 
   '@types/estree@1.0.8': {}
@@ -6754,6 +6722,8 @@ snapshots:
       domhandler: 5.0.3
       entities: 4.5.0
 
+  dom-to-image@2.6.0: {}
+
   domelementtype@2.3.0: {}
 
   domhandler@4.3.1:
@@ -7089,6 +7059,8 @@ snapshots:
 
   he@1.2.0: {}
 
+  highlight.js@11.11.1: {}
+
   history@5.3.0:
     dependencies:
       '@babel/runtime': 7.28.6
@@ -7271,7 +7243,7 @@ snapshots:
     dependencies:
       argparse: 2.0.1
 
-  js2me-biome-config@1.0.8: {}
+  js2me-biome-config@1.1.0: {}
 
   jsesc@3.1.0: {}
 
@@ -7465,11 +7437,11 @@ snapshots:
       linked-abort-controller: 1.1.1
       mobx: 6.15.0
       qs: 6.14.1
-      yummies: 7.3.1(mobx@6.15.0)(react@18.3.1)
+      yummies: 7.9.0(mobx@6.15.0)(react@18.3.1)
     transitivePeerDependencies:
       - react
 
-  mobx-react-hook-form@6.2.1(mobx-react-lite@4.1.1(mobx@6.15.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(mobx@6.15.0)(react-hook-form@7.71.1(react@18.3.1))(react@18.3.1):
+  mobx-react-hook-form@6.3.0(mobx-react-lite@4.1.1(mobx@6.15.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(mobx@6.15.0)(react-hook-form@7.71.1(react@18.3.1))(react@18.3.1):
     dependencies:
       '@types/react': 18.3.27
       linked-abort-controller: 1.1.1
@@ -7477,7 +7449,7 @@ snapshots:
       mobx-react-lite: 4.1.1(mobx@6.15.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       react: 18.3.1
       react-hook-form: 7.71.1(react@18.3.1)
-      yummies: 7.3.1(mobx@6.15.0)(react@18.3.1)
+      yummies: 7.9.0(mobx@6.15.0)(react@18.3.1)
 
   mobx-react-lite@4.1.1(mobx@6.15.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
     dependencies:
@@ -7487,17 +7459,17 @@ snapshots:
     optionalDependencies:
       react-dom: 18.3.1(react@18.3.1)
 
-  mobx-route@0.23.5(mobx-react-lite@4.1.1(mobx@6.15.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(mobx-view-model@8.10.1(mobx-react-lite@4.1.1(mobx@6.15.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(mobx@6.15.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(mobx@6.15.0)(react@18.3.1):
+  mobx-route@0.27.0(mobx-react-lite@4.1.1(mobx@6.15.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(mobx-view-model@9.0.0(mobx-react-lite@4.1.1(mobx@6.15.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(mobx@6.15.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(mobx@6.15.0)(react@18.3.1):
     dependencies:
       linked-abort-controller: 1.1.1
       mobx: 6.15.0
       mobx-location-history: 9.2.1(mobx@6.15.0)(react@18.3.1)
       path-to-regexp: 8.3.0
-      react-simple-loadable: 3.0.0(react@18.3.1)
-      yummies: 7.3.1(mobx@6.15.0)(react@18.3.1)
+      react-simple-loadable: 3.1.0(react@18.3.1)
+      yummies: 7.9.0(mobx@6.15.0)(react@18.3.1)
     optionalDependencies:
       mobx-react-lite: 4.1.1(mobx@6.15.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      mobx-view-model: 8.10.1(mobx-react-lite@4.1.1(mobx@6.15.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(mobx@6.15.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      mobx-view-model: 9.0.0(mobx-react-lite@4.1.1(mobx@6.15.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(mobx@6.15.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       react: 18.3.1
 
   mobx-swiss-knife@1.14.1(mobx@6.15.0)(react@18.3.1):
@@ -7507,19 +7479,25 @@ snapshots:
       linked-abort-controller: 1.1.1
       lodash-es: 4.17.23
       mobx: 6.15.0
-      yummies: 7.3.1(mobx@6.15.0)(react@18.3.1)
+      yummies: 7.9.0(mobx@6.15.0)(react@18.3.1)
     transitivePeerDependencies:
       - react
 
-  mobx-view-model@8.10.1(mobx-react-lite@4.1.1(mobx@6.15.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(mobx@6.15.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
+  mobx-view-model@9.0.0(mobx-react-lite@4.1.1(mobx@6.15.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(mobx@6.15.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
     dependencies:
       mobx: 6.15.0
-      react-simple-loadable: 2.3.9(react@18.3.1)
-      yummies: 7.3.1(mobx@6.15.0)(react@18.3.1)
+      yummies: 7.9.0(mobx@6.15.0)(react@18.3.1)
     optionalDependencies:
       mobx-react-lite: 4.1.1(mobx@6.15.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
+
+  mobx-web-api@1.13.0(mobx@6.15.0)(react@18.3.1):
+    dependencies:
+      mobx: 6.15.0
+      yummies: 7.9.0(mobx@6.15.0)(react@18.3.1)
+    transitivePeerDependencies:
+      - react
 
   mobx@6.15.0: {}
 
@@ -7916,6 +7894,18 @@ snapshots:
 
   queue-microtask@1.2.3: {}
 
+  quickjs-emscripten-core@0.32.0:
+    dependencies:
+      '@jitl/quickjs-ffi-types': 0.32.0
+
+  quickjs-emscripten@0.32.0:
+    dependencies:
+      '@jitl/quickjs-wasmfile-debug-asyncify': 0.32.0
+      '@jitl/quickjs-wasmfile-debug-sync': 0.32.0
+      '@jitl/quickjs-wasmfile-release-asyncify': 0.32.0
+      '@jitl/quickjs-wasmfile-release-sync': 0.32.0
+      quickjs-emscripten-core: 0.32.0
+
   randombytes@2.1.0:
     dependencies:
       safe-buffer: 5.2.1
@@ -7929,11 +7919,6 @@ snapshots:
   react-hook-form@7.71.1(react@18.3.1):
     dependencies:
       react: 18.3.1
-
-  react-number-format@5.4.4(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
-    dependencies:
-      react: 18.3.1
-      react-dom: 18.3.1(react@18.3.1)
 
   react-refresh@0.17.0: {}
 
@@ -7956,11 +7941,7 @@ snapshots:
     optionalDependencies:
       '@types/react': 18.3.27
 
-  react-simple-loadable@2.3.9(react@18.3.1):
-    dependencies:
-      react: 18.3.1
-
-  react-simple-loadable@3.0.0(react@18.3.1):
+  react-simple-loadable@3.1.0(react@18.3.1):
     dependencies:
       react: 18.3.1
 
@@ -7971,15 +7952,6 @@ snapshots:
       tslib: 2.8.1
     optionalDependencies:
       '@types/react': 18.3.27
-
-  react-textarea-autosize@8.5.9(@types/react@18.3.27)(react@18.3.1):
-    dependencies:
-      '@babel/runtime': 7.28.6
-      react: 18.3.1
-      use-composed-ref: 1.4.0(@types/react@18.3.27)(react@18.3.1)
-      use-latest: 1.3.0(@types/react@18.3.27)(react@18.3.1)
-    transitivePeerDependencies:
-      - '@types/react'
 
   react@18.3.1:
     dependencies:
@@ -8218,6 +8190,11 @@ snapshots:
       ip-address: 10.1.0
       smart-buffer: 4.2.0
 
+  sonner@1.3.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
+    dependencies:
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
+
   source-map-js@1.2.1: {}
 
   source-map-support@0.5.21:
@@ -8325,8 +8302,6 @@ snapshots:
 
   systemjs@6.15.1: {}
 
-  tabbable@6.4.0: {}
-
   tailwind-children@0.5.0(yaml@2.8.0):
     dependencies:
       require-esm-in-cjs: 0.1.0
@@ -8433,8 +8408,6 @@ snapshots:
 
   type-fest@0.16.0: {}
 
-  type-fest@4.41.0: {}
-
   typed-array-buffer@1.0.3:
     dependencies:
       call-bound: 1.0.4
@@ -8513,25 +8486,6 @@ snapshots:
     optionalDependencies:
       '@types/react': 18.3.27
 
-  use-composed-ref@1.4.0(@types/react@18.3.27)(react@18.3.1):
-    dependencies:
-      react: 18.3.1
-    optionalDependencies:
-      '@types/react': 18.3.27
-
-  use-isomorphic-layout-effect@1.2.1(@types/react@18.3.27)(react@18.3.1):
-    dependencies:
-      react: 18.3.1
-    optionalDependencies:
-      '@types/react': 18.3.27
-
-  use-latest@1.3.0(@types/react@18.3.27)(react@18.3.1):
-    dependencies:
-      react: 18.3.1
-      use-isomorphic-layout-effect: 1.2.1(@types/react@18.3.27)(react@18.3.1)
-    optionalDependencies:
-      '@types/react': 18.3.27
-
   use-sidecar@1.1.3(@types/react@18.3.27)(react@18.3.1):
     dependencies:
       detect-node-es: 1.1.0
@@ -8567,7 +8521,7 @@ snapshots:
       - tsx
       - yaml
 
-  vite-plugin-checker@0.12.0(@biomejs/biome@2.3.11)(meow@13.2.0)(optionator@0.9.4)(typescript@5.9.3)(vite@7.3.1(@types/node@22.19.8)(jiti@1.21.7)(lightningcss@1.30.2)(sass@1.97.3)(terser@5.46.0)(yaml@2.8.0)):
+  vite-plugin-checker@0.12.0(@biomejs/biome@2.3.14)(meow@13.2.0)(optionator@0.9.4)(typescript@5.9.3)(vite@7.3.1(@types/node@22.19.8)(jiti@1.21.7)(lightningcss@1.30.2)(sass@1.97.3)(terser@5.46.0)(yaml@2.8.0)):
     dependencies:
       '@babel/code-frame': 7.29.0
       chokidar: 4.0.3
@@ -8579,7 +8533,7 @@ snapshots:
       vite: 7.3.1(@types/node@22.19.8)(jiti@1.21.7)(lightningcss@1.30.2)(sass@1.97.3)(terser@5.46.0)(yaml@2.8.0)
       vscode-uri: 3.1.0
     optionalDependencies:
-      '@biomejs/biome': 2.3.11
+      '@biomejs/biome': 2.3.14
       meow: 13.2.0
       optionator: 0.9.4
       typescript: 5.9.3
@@ -8863,7 +8817,7 @@ snapshots:
   yaml@2.8.0:
     optional: true
 
-  yummies@7.3.1(mobx@6.15.0)(react@18.3.1):
+  yummies@7.9.0(mobx@6.15.0)(react@18.3.1):
     dependencies:
       class-variance-authority: 0.7.1
       clsx: 2.1.1

@@ -109,7 +109,7 @@ export default defineConfig({
     tailwindcss(),
     react({
       babel: {
-        plugins: [['@babel/plugin-proposal-explicit-resource-management']],
+        plugins: [['@babel/plugin-transform-explicit-resource-management']],
       },
     }),
     // swc.vite(),

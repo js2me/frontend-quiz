@@ -1,13 +1,13 @@
 import { observer } from 'mobx-react-lite';
 import { RouteView } from 'mobx-route/react';
 import { ViewModelsProvider } from 'mobx-view-model';
+import { settings } from '@/entities/settings/model';
 import { aboutRoute } from '@/pages/about';
 import { homeRoute } from '@/pages/home';
 import { quizRoute } from '@/pages/quiz';
 import { vmStore } from '@/shared/config';
+import { Toaster } from '@/shared/ui/toast/toaster';
 import { Layout } from '@/widgets/layout';
-
-console.log(homeRoute, aboutRoute, quizRoute);
 
 export const App = observer(() => {
   return (
@@ -31,6 +31,7 @@ export const App = observer(() => {
           }
         />
       </Layout.Container>
+      <Toaster theme={settings.colorScheme} position="bottom-center" />
     </ViewModelsProvider>
   );
 });

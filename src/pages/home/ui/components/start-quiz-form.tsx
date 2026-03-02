@@ -10,7 +10,7 @@ import {
 import {
   availableQuestionCategories,
   availableQuestionLevels,
-} from '@/features/quiz/create/config';
+} from '@/entities/quiz/model/config';
 import { Button } from '@/shared/ui/button';
 import { Field } from '@/shared/ui/field';
 import { Tabs, TabsList, TabsTrigger } from '@/shared/ui/tabs';
@@ -28,7 +28,7 @@ export const StartQuizForm = observer(() => {
       onSubmit={model.newQuizForm.submit}
       onReset={model.newQuizForm.reset}
     >
-      <div className={'flex min-h-[240px] flex-col gap-6'}>
+      <div className={'flex min-h-60 flex-col gap-6'}>
         <Controller
           control={model.newQuizForm.control}
           name={'questionsCount'}
@@ -44,7 +44,7 @@ export const StartQuizForm = observer(() => {
                       <TabsTrigger
                         key={count}
                         value={`${count}`}
-                        className={'w-[50px]'}
+                        className={'w-12.5'}
                         onClick={() => field.onChange(count)}
                       >
                         {count}

@@ -1,8 +1,7 @@
 import { createRoute } from 'mobx-route';
-import { Quiz } from '@/features/quiz/create/model/model';
-
+import { Quiz } from '@/entities/quiz/model/quiz';
 export const quizRoute = createRoute('/quiz', { exact: true });
 
-if (Quiz.tryToRestore() && !quizRoute.isOpened) {
+if (Quiz.hasActive && !quizRoute.isOpened) {
   quizRoute.open({}, { replace: true });
 }

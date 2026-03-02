@@ -1,52 +1,40 @@
 import { computed, makeObservable } from 'mobx';
-import { createModelLoader } from 'mobx-swiss-knife';
-import type { ViewModelSimple } from 'mobx-view-model';
-import { quizCreateSchema } from '@/features/quiz/create/model';
-import { Quiz } from '@/features/quiz/create/model/model';
+import { ViewModelBase } from 'mobx-view-model';
+import { Quiz } from '@/entities/quiz/model/quiz';
+import { quizParamsSchema } from '@/entities/quiz/model/quiz-params/schema';
 import { quizRoute } from '@/pages/quiz';
 import { SchemaForm } from '@/shared/lib/react/react-hook-form';
+import { createToast } from '@/shared/ui/toast';
 import { quizAvailableCountToChoose } from '../config';
 
-export class HomePageVM implements ViewModelSimple {
-  private abortCtrl = new AbortController();
-
-  private modelLoader = createModelLoader({
-    abortSignal: this.abortCtrl.signal,
-    context: this,
-  });
-
-  questionTemplates = this.modelLoader.connect({
-    property: 'questionTemplates',
-    fn: () =>
-      import('@/entities/question-templates/model').then(
-        (m) => new m.QuestionTemplatesModel(),
-      ),
-  });
-
+export class HomePageVM extends ViewModelBase {
   newQuizForm = new SchemaForm({
-    schema: quizCreateSchema,
-    defaultValues: {
+    schema: quizParamsSchema,
+    defaultValues: Quiz.lastParams ?? {
       questionsCount: quizAvailableCountToChoose[1],
       levels: ['low', 'medium'],
       categories: ['theory', 'code'],
     },
-    onSubmit: (formData) => {
-      Quiz.create(formData);
-      quizRoute.open();
+    onSubmit: async (formData) => {
+      try {
+        await Quiz.create(formData);
+        await quizRoute.open();
+      } catch {
+        createToast({
+          message: 'Что-то пошло не так',
+          type: 'error',
+        });
+      }
     },
   });
 
   get isLoading() {
-    return this.modelLoader.isLoading('questionTemplates');
+    return this.newQuizForm.isSubmitting;
   }
 
-  mount(): void {
+  willMount(): void {
     makeObservable(this, {
       isLoading: computed,
     });
-  }
-
-  unmount() {
-    this.abortCtrl.abort();
   }
 }
