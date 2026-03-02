@@ -6,11 +6,11 @@ export type QuestionCategory =
   | 'react'
   | 'effector';
 
-type QuestionConstructor = (helpers: QuestionHelpers) => RawQuestion;
+export type QuestionConstructor = (helpers: QuestionHelpers) => RawQuestion;
 
 export type QuestionLevel = 'low' | 'medium' | 'high';
 
-export interface QuestionTemplateConfig {
+export interface QuestionTemplate {
   name: string;
   enabled: boolean;
   category: QuestionCategory;
@@ -26,14 +26,8 @@ export interface QuestionTemplateConfig {
    * Частота
    */
   frequency: Record<QuestionLevel, number>;
-  loader: () => Promise<{ default: QuestionConstructor }>;
+  loadConstructor: () => Promise<{ default: QuestionConstructor }>;
 }
-
-export type TemplateConfigLoaderFn = () => Promise<{
-  default: QuestionTemplateConfig;
-}>;
-
-export type TemplateLoadedConfig = QuestionTemplateConfig;
 
 export interface QuestionTemplatesCollectParams {
   categories: QuestionCategory[];

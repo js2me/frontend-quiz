@@ -1,4 +1,4 @@
-import type { QuestionTemplateConfig } from '@/entities/question-templates/model';
+import type { QuestionTemplate } from '@/entities/question-templates/model';
 
 export default {
   name: 'NaNnotEqualNaN',
@@ -11,5 +11,5 @@ export default {
     medium: 0.74,
     high: 0.91,
   },
-  loader: () => import('./constructor'),
-} satisfies QuestionTemplateConfig;
+  loadConstructor: () => import('./constructor'),
+} satisfies QuestionTemplate;

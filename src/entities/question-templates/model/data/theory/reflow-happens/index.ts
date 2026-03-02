@@ -1,4 +1,4 @@
-import type { QuestionTemplateConfig } from '@/entities/question-templates/model';
+import type { QuestionTemplate } from '@/entities/question-templates/model';
 
 export default {
   name: 'reflowHappens',
@@ -11,5 +11,5 @@ export default {
     medium: 0.07,
     high: 1,
   },
-  loader: () => import('./constructor'),
-} satisfies QuestionTemplateConfig;
+  loadConstructor: () => import('./constructor'),
+} satisfies QuestionTemplate;

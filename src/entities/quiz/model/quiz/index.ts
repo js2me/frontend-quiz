@@ -1,6 +1,6 @@
 import { makeAutoObservable } from 'mobx';
 import { storageData } from 'mobx-web-api';
-import { generateId, generateNumericId } from 'yummies/id';
+import { generateId } from 'yummies/id';
 import { models } from '@/shared/lib/mobx/models';
 import type { QuizParams } from '../quiz-params';
 import type { Question, QuizState } from './types';
@@ -38,9 +38,8 @@ export class Quiz {
   }
 
   get activeQuestion() {
-    return this.state.questions.find(it => it.position === this.position);
+    return this.state.questions.find((it) => it.position === this.position);
   }
-
 
   finish() {
     this.state.finishedDate = Date.now();
@@ -61,25 +60,25 @@ export class Quiz {
       '@/entities/question-helpers/model'
     );
 
-    const questionTemplateConfigs =
-      questionTemplatesModel.collectTemplateConfigs({
-        categories: params.categories,
-        count: params.questionsCount,
-        levels: params.levels,
-        sortByComplexity: true,
-      });
+    const questionTemplates = questionTemplatesModel.collectTemplates({
+      categories: params.categories,
+      count: params.questionsCount,
+      levels: params.levels,
+      sortByComplexity: true,
+    });
 
     const questions: Question[] = [];
 
-    for await (const questionTemplateConfig of questionTemplateConfigs) {
+    for await (const questionTemplate of questionTemplates) {
       const questionHelpers = createQuestionHelpers();
-      const questionExecutor = (await questionTemplateConfig.loader()).default;
+      const questionConstructor = (await questionTemplate.loadConstructor())
+        .default;
 
-      const rawQuestion = questionExecutor(questionHelpers);
+      const rawQuestion = questionConstructor(questionHelpers);
 
       questions.push({
         id: questions.length,
-        template: questionTemplateConfig,
+        template: questionTemplate,
         position: questions.length,
         pings: 0,
         skipCount: 0,

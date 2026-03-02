@@ -1,4 +1,4 @@
-import type { QuestionTemplateConfig } from '@/entities/question-templates/model';
+import type { QuestionTemplate } from '@/entities/question-templates/model';
 
 export default {
   name: 'stringMutationByIndex',
@@ -11,5 +11,5 @@ export default {
     medium: 0.64,
     high: 0.5,
   },
-  loader: () => import('./constructor'),
-} satisfies QuestionTemplateConfig;
+  loadConstructor: () => import('./constructor'),
+} satisfies QuestionTemplate;

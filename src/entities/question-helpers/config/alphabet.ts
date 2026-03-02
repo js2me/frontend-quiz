@@ -1,2 +1,1 @@
-
 export const ALPHABET = 'abcdefghijklmnopqrstuvwxyz';

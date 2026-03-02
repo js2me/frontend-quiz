@@ -1,8 +1,8 @@
-import type { QuestionTemplateConfig } from '@/entities/question-templates/model';
+import type { QuestionTemplate } from '@/entities/question-templates/model';
 
 export interface Question {
   id: number;
-  template: QuestionTemplateConfig;
+  template: QuestionTemplate;
   position: number;
   pings: number;
   generated: RawQuestion;

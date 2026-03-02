@@ -4,7 +4,7 @@ import { getFrequencyValue, getRandomInt } from '@/shared/lib/random';
 import type {
   QuestionCategory,
   QuestionLevel,
-  QuestionTemplateConfig,
+  QuestionTemplate,
   QuestionTemplatesCollectParams,
 } from './model.types';
 
@@ -14,7 +14,7 @@ const questionTemplateScannedPaths = import.meta.glob('./data/**/index.ts', {
 });
 
 export class QuestionTemplatesModel extends AbstractModel {
-  private data: Record<QuestionCategory, QuestionTemplateConfig[]> = {
+  private data: Record<QuestionCategory, QuestionTemplate[]> = {
     theory: [],
     code: [],
     layout: [],
@@ -28,22 +28,20 @@ export class QuestionTemplatesModel extends AbstractModel {
 
     Object.entries(questionTemplateScannedPaths).forEach(([path, module]) => {
       const category = path.split('/')[2] as QuestionCategory;
-      const questionConfig = (module as any).default as QuestionTemplateConfig;
+      const questionConfig = (module as any).default as QuestionTemplate;
       this.data[category].push(questionConfig);
     });
   }
 
-  getTemplateConfigs(category: QuestionCategory, onlyEnabled?: boolean) {
+  private getTemplatesByCategory(category: QuestionCategory, onlyEnabled?: boolean) {
     const templates = this.data[category];
     if (onlyEnabled) return templates.filter((config) => config.enabled);
 
     return templates;
   }
 
-  collectTemplateConfigs(
-    params: QuestionTemplatesCollectParams,
-  ): QuestionTemplateConfig[] {
-    const result: QuestionTemplateConfig[] = [];
+  collectTemplates(params: QuestionTemplatesCollectParams): QuestionTemplate[] {
+    const result: QuestionTemplate[] = [];
 
     const questionCountPerGroup = Math.floor(
       params.count / params.categories.length,
@@ -55,10 +53,10 @@ export class QuestionTemplatesModel extends AbstractModel {
 
     let i = 0;
     for (const category of params.categories) {
-      const templateConfigs = this.getTemplateConfigs(category, true);
+      const templateConfigs = this.getTemplatesByCategory(category, true);
 
       if (category === 'code' && hasAsyncQuestions) {
-        const asyncTemplateConfigs = this.getTemplateConfigs('async', true);
+        const asyncTemplateConfigs = this.getTemplatesByCategory('async', true);
 
         asyncTemplateConfigs.forEach((it) => {
           templateConfigs.push({ ...it });

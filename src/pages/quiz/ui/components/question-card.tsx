@@ -4,6 +4,7 @@ import {
   sortAnswersByOrder,
   sortAnswersBySelectedOrder,
 } from '@/entities/quiz/lib';
+import type { Question } from '@/entities/quiz/model/quiz/types';
 import {
   type AnswerDtoDC,
   type FullQuestionDtoDC,
@@ -22,7 +23,6 @@ import { Skeleton } from '@/shared/ui/skeleton';
 import { QuestionAnswer } from './question-answer';
 import { QuestionCode } from './question-code';
 import { QuestionTypeBadge } from './question-type-badge';
-import { Question } from '@/entities/quiz/model/quiz/types';
 
 export interface QuestionCardProps {
   loading?: boolean;
